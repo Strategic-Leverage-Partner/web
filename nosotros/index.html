@@ -104,6 +104,70 @@
         }
       }
     </script>
+  <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "Equipo Directivo | Strategic Leverage Partner",
+        "url": "https://strategicleverage.partners/nosotros#equipo",
+        "about": {
+          "@type": "Organization",
+          "name": "Strategic Leverage Partner",
+          "url": "https://strategicleverage.partners/",
+          "founder": [
+            {
+              "@type": "Person",
+              "name": "Jonathan Francisco Durán Vega",
+              "image": "https://strategicleverage.partners/images/equipo/ceo.webp",
+              "jobTitle": "CEO & Managing Partner",
+              "description": "Socio Fundador y CEO de Strategic Leverage Partners. Más de 25 años en alta dirección corporativa: Gerente General de Skyline Construction, CFO de Liga Deportiva Universitaria y ex CFO de Alpha Builders.",
+              "honorificSuffix": "CPA, MBA",
+              "worksFor": { "@type": "Organization", "name": "Strategic Leverage Partner" },
+              "alumniOf": { "@type": "CollegeOrUniversity", "name": "Saint Leo University" },
+              "knowsAbout": [
+                "Auditoría financiera y operativa estratégica",
+                "Due Diligence y M&A",
+                "Estructura de capital e inversión",
+                "Data Analytics financiero"
+              ]
+            },
+            {
+              "@type": "Person",
+              "name": "Wendy Alava",
+              "image": "https://strategicleverage.partners/images/equipo/comercial.webp",
+              "jobTitle": "Socia Fundadora, Managing Partner y Gerente Comercial y de Operaciones",
+              "description": "Directora de Auditoría Operativa, Control Regulatorio y Reingeniería de Procesos. Experiencia en auditorías financieras y operativas en instituciones públicas con presupuestos multimillonarios.",
+              "honorificSuffix": "Ing., MBA",
+              "worksFor": { "@type": "Organization", "name": "Strategic Leverage Partner" },
+              "alumniOf": [
+                { "@type": "CollegeOrUniversity", "name": "Pontificia Universidad Católica del Ecuador" },
+                { "@type": "CollegeOrUniversity", "name": "Escuela Politécnica Nacional" }
+              ],
+              "knowsAbout": [
+                "Auditoría de control interno y normativa estatal",
+                "Contratación pública y fiscalización",
+                "Reingeniería de procesos",
+                "Control presupuestario y gobernanza corporativa"
+              ]
+            }
+          ],
+          "member": {
+            "@type": "Person",
+            "name": "Jonathan Suárez Moreano",
+            "image": "https://strategicleverage.partners/images/equipo/abogado.webp",
+            "jobTitle": "Socio Aliado Legal",
+            "description": "Más de 20 años de ejercicio profesional en derecho societario, laboral preventivo, civil y patrimonial, trámites notariales estratégicos y derecho de familia / family office.",
+            "knowsAbout": [
+              "Derecho societario y gobierno corporativo",
+              "Derecho laboral preventivo",
+              "Derecho civil y patrimonial",
+              "Trámites notariales",
+              "Planificación sucesoria"
+            ]
+          }
+        }
+      }
+    </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-5JZL370WFN"></script>
   <script>
@@ -432,7 +496,9 @@
                 <a href="/" class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
                   <span data-astro-cid-qgrrgaau>Inicio</span> </a><a href="/nosotros"
                   class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
-                  <span data-astro-cid-qgrrgaau>Nosotros</span> </a><a href="/contactos"
+                  <span data-astro-cid-qgrrgaau>Nosotros</span> </a><a href="/nosotros#equipo"
+                  class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
+                  <span data-astro-cid-qgrrgaau>Equipo</span> </a><a href="/contactos"
                   class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
                   <span data-astro-cid-qgrrgaau>Contactos</span>
                 </a>
@@ -520,7 +586,7 @@
         </div>
       </div>
     </div>
-    <a href="https://wa.link/w5r8ke" target="_blank" rel="noreferrer noopener"
+    <a href="https://wa.me/593995728488" target="_blank" rel="noreferrer noopener"
       class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#25d366] m-0">
       <div class="absolute z-10 top-0 left-0 w-full h-full rounded-full bg-[#25d366] animate-ping"></div>
       <div class="relative z-20">
@@ -633,6 +699,827 @@
         </div>
       </div>
     </div>
+    <!-- ===================== EQUIPO DIRECTIVO / PERFILES ===================== -->
+    <style>
+      .slp-team {
+        --slp-verde: #015d4c;
+        --slp-dorado: #d49724;
+        --slp-azul: #1e194f;
+        background: linear-gradient(160deg, #02423a 0%, #011f1a 55%, #01130f 100%);
+        border-radius: 1rem;
+        color: #e8efec;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slp-team::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: radial-gradient(rgba(212, 151, 36, 0.18) 0.6px, transparent 0.6px);
+        background-size: 24px 24px;
+        opacity: 0.55;
+      }
+
+      .slp-team__inner {
+        position: relative;
+        max-width: 80rem;
+        margin: 0 auto;
+        padding: 5rem 1.5rem;
+      }
+
+      .slp-team__eyebrow {
+        color: var(--slp-dorado);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 0.75rem;
+      }
+
+      .slp-team__title {
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 700;
+        line-height: 1.15;
+        text-align: center;
+        color: #fff;
+        margin: 0 0 1.25rem;
+        text-wrap: balance;
+      }
+
+      .slp-team__lead {
+        max-width: 52rem;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: #bcd2cb;
+      }
+
+      .slp-team__quote {
+        max-width: 56rem;
+        margin: 2.5rem auto 0;
+        padding: 1.25rem 1.5rem;
+        border-left: 3px solid var(--slp-dorado);
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 0 0.75rem 0.75rem 0;
+        font-size: 1.05rem;
+        font-style: italic;
+        line-height: 1.65;
+        color: #dceae5;
+      }
+
+      .slp-team__grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 3.5rem;
+        grid-template-columns: 1fr;
+      }
+
+      .slp-card {
+        display: flex;
+        flex-direction: column;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 1.25rem;
+        padding: 1.75rem;
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .slp-card:hover {
+        border-color: rgba(212, 151, 36, 0.65);
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.9);
+      }
+
+      .slp-card__head {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .slp-card__photo {
+        flex: none;
+        position: relative;
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 9999px;
+        padding: 3px;
+        background: linear-gradient(145deg, var(--slp-dorado) 0%, rgba(212, 151, 36, 0.25) 55%, rgba(212, 151, 36, 0.7) 100%);
+        box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.85);
+      }
+
+      .slp-card__photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+        object-fit: cover;
+        background: #0d1f1b;
+        filter: saturate(0.92) contrast(1.04);
+      }
+
+      /* Aro interior: separa el fondo claro de los retratos del lienzo oscuro */
+      .slp-card__photo::after {
+        content: "";
+        position: absolute;
+        inset: 3px;
+        border-radius: 9999px;
+        box-shadow: inset 0 0 0 1px rgba(1, 19, 15, 0.55), inset 0 -18px 26px -18px rgba(1, 19, 15, 0.8);
+        pointer-events: none;
+      }
+
+      .slp-duo__person {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin: 0 0 1rem;
+      }
+
+      .slp-duo__avatar {
+        flex: none;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 9999px;
+        object-fit: cover;
+        border: 2px solid rgba(212, 151, 36, 0.75);
+        background: #0d1f1b;
+        filter: saturate(0.92) contrast(1.04);
+      }
+
+      .slp-duo__person h4 {
+        margin: 0;
+      }
+
+      .slp-card__name {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+        line-height: 1.25;
+      }
+
+      .slp-card__role {
+        margin: 0.25rem 0 0;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--slp-dorado);
+      }
+
+      .slp-card__sub {
+        margin: 0.35rem 0 0;
+        font-size: 0.9rem;
+        color: #a9c2ba;
+        line-height: 1.5;
+      }
+
+      .slp-card__pitch {
+        margin: 1.25rem 0 0;
+        font-size: 1rem;
+        line-height: 1.65;
+        color: #cfe0da;
+      }
+
+      .slp-card__list {
+        list-style: none;
+        margin: 1.25rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .slp-card__list li {
+        position: relative;
+        padding-left: 1.5rem;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        color: #cfe0da;
+      }
+
+      .slp-card__list li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.55em;
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 2px;
+        background: var(--slp-dorado);
+        transform: rotate(45deg);
+      }
+
+      .slp-card__list strong {
+        color: #fff;
+        font-weight: 600;
+      }
+
+      .slp-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+      }
+
+      .slp-chip {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        padding: 0.35rem 0.7rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(212, 151, 36, 0.45);
+        color: #f0d9ab;
+        background: rgba(212, 151, 36, 0.08);
+      }
+
+      .slp-more {
+        margin-top: auto;
+        padding-top: 1.5rem;
+      }
+
+      .slp-more>summary {
+        cursor: pointer;
+        list-style: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--slp-dorado);
+        border-bottom: 1px solid rgba(212, 151, 36, 0.4);
+        padding-bottom: 0.15rem;
+      }
+
+      .slp-more>summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .slp-more>summary::after {
+        content: "+";
+        font-size: 1.1rem;
+        line-height: 1;
+      }
+
+      .slp-more[open]>summary::after {
+        content: "–";
+      }
+
+      .slp-more[open]>summary .slp-more__open {
+        display: none;
+      }
+
+      .slp-more__body {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #bcd2cb;
+      }
+
+      .slp-more__body p {
+        margin: 0 0 0.85rem;
+      }
+
+      .slp-more__body p:last-child {
+        margin-bottom: 0;
+      }
+
+      .slp-more__body h4 {
+        margin: 1.25rem 0 0.6rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--slp-dorado);
+      }
+
+      .slp-duo {
+        margin-top: 4rem;
+        border: 1px solid rgba(212, 151, 36, 0.35);
+        border-radius: 1.25rem;
+        overflow: hidden;
+      }
+
+      .slp-duo__head {
+        padding: 1.25rem 1.5rem;
+        text-align: center;
+        background: rgba(212, 151, 36, 0.12);
+        border-bottom: 1px solid rgba(212, 151, 36, 0.35);
+      }
+
+      .slp-duo__head h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+      }
+
+      .slp-duo__grid {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .slp-duo__col {
+        padding: 1.75rem 1.5rem;
+      }
+
+      .slp-duo__col+.slp-duo__col {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .slp-duo__col h4 {
+        margin: 0 0 1rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--slp-dorado);
+      }
+
+      .slp-duo__quote {
+        padding: 1.5rem;
+        text-align: center;
+        font-style: italic;
+        line-height: 1.7;
+        color: #dceae5;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.18);
+      }
+
+      .slp-matrix {
+        margin-top: 4rem;
+      }
+
+      .slp-matrix__title {
+        text-align: center;
+        font-size: clamp(1.35rem, 3vw, 1.85rem);
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 2rem;
+      }
+
+      .slp-matrix__grid {
+        display: grid;
+        gap: 1.25rem;
+        grid-template-columns: 1fr;
+      }
+
+      .slp-matrix__col {
+        border-radius: 1.25rem;
+        padding: 1.75rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .slp-matrix__col--slp {
+        border-color: rgba(212, 151, 36, 0.55);
+        background: rgba(212, 151, 36, 0.07);
+      }
+
+      .slp-matrix__col h4 {
+        margin: 0 0 1.25rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9fb6ae;
+      }
+
+      .slp-matrix__col--slp h4 {
+        color: var(--slp-dorado);
+      }
+
+      .slp-team__cta {
+        margin-top: 3.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .slp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 3rem;
+        padding: 0 2rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      .slp-btn:hover {
+        transform: scale(1.04);
+      }
+
+      .slp-btn--gold {
+        background: var(--slp-dorado);
+        color: #11220f;
+      }
+
+      .slp-btn--ghost {
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        color: #fff;
+      }
+
+      @media (min-width: 768px) {
+        .slp-team__inner {
+          padding: 6rem 3rem;
+        }
+
+        .slp-duo__grid,
+        .slp-matrix__grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .slp-duo__col+.slp-duo__col {
+          border-top: 0;
+          border-left: 1px solid rgba(255, 255, 255, 0.12);
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .slp-team__grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+
+        .slp-card,
+        .slp-btn {
+          transition: none;
+        }
+
+        .slp-card:hover,
+        .slp-btn:hover {
+          transform: none;
+        }
+      }
+    </style>
+    <section class="slp-team" id="equipo" aria-labelledby="equipo-titulo">
+      <div class="slp-team__inner">
+        <p class="slp-team__eyebrow">Socios Fundadores &amp; Alianza Legal</p>
+        <h2 class="slp-team__title" id="equipo-titulo">
+          Quién lidera Strategic Leverage Partners
+        </h2>
+        <p class="slp-team__lead">
+          Redefinimos la auditoría: de requisito normativo a palanca de crecimiento
+          estratégico. Nuestra dirección combina la perspectiva real de CEO y CFO,
+          el máximo rigor en fiscalización estatal y un blindaje jurídico integral.
+        </p>
+        <blockquote class="slp-team__quote">
+          «La mayoría de los Directorios ven la auditoría como un costo regulatorio
+          inevitable y aburrido. Las corporaciones de alto rendimiento la convierten
+          en su ventaja competitiva más rentable.»
+        </blockquote>
+
+        <div class="slp-team__grid">
+          <!-- CEO -->
+          <article class="slp-card">
+            <div class="slp-card__head">
+              <div class="slp-card__photo">
+                <img src="/images/equipo/ceo.webp"
+                  alt="Jonathan Francisco Durán Vega, CEO y Managing Partner de Strategic Leverage Partners" width="512"
+                  height="512" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <h3 class="slp-card__name">Jonathan Francisco Durán Vega</h3>
+                <p class="slp-card__role">CEO &amp; Managing Partner</p>
+                <p class="slp-card__sub">
+                  Socio Fundador · +25 años en alta dirección corporativa
+                </p>
+              </div>
+            </div>
+            <p class="slp-card__pitch">
+              Fundó la firma tras más de 25 años de trayectoria ejecutiva e industrial,
+              con una convicción clara: las empresas no crecen mirando el retrovisor,
+              crecen cuando convierten la información financiera en inteligencia
+              estratégica de negocios.
+            </p>
+            <ul class="slp-card__list">
+              <li>
+                <strong>Dirección General y Liderazgo Estratégico:</strong> Gerente
+                General de Skyline Construction y de Kionutri (2021–2025).
+              </li>
+              <li>
+                <strong>Gestión Financiera C-Level:</strong> CFO de Liga Deportiva
+                Universitaria (LDU) y ex CFO de Alpha Builders.
+              </li>
+              <li>
+                <strong>Visión multisectorial:</strong> ex Financial Manager en Grupo
+                Aymesa / Kia Motors, Acerocenter, Oxialfarm, Textilcardiz y Rulhermaq.
+              </li>
+            </ul>
+            <div class="slp-chips">
+              <span class="slp-chip">Doctor Honoris Causa</span>
+              <span class="slp-chip">MBA Data Analytics — Saint Leo University</span>
+              <span class="slp-chip">CPA</span>
+            </div>
+            <details class="slp-more">
+              <summary>Ver perfil completo</summary>
+              <div class="slp-more__body">
+                <p>
+                  Un dictamen financiero tradicional, limitado a revisar el pasado y
+                  validar normativas contables, se ha vuelto estéril. Las firmas
+                  auditoras globales de mayor escala se han vuelto distantes, rígidas y
+                  frías: cumplen requisitos desde un escritorio, desconectadas de la
+                  realidad operativa, la liquidez y las metas de la alta dirección.
+                </p>
+                <p>
+                  Haber liderado y supervisado auditorías de gran escala corporativa
+                  frente a esas firmas multinacionales —desde la perspectiva de cliente
+                  y directivo— permitió identificar con precisión dónde fallan y qué les
+                  falta: empatía corporativa, agilidad y un compromiso genuino con el
+                  crecimiento sustentable del cliente.
+                </p>
+                <h4>Los tres pilares diferenciadores</h4>
+                <ul class="slp-card__list">
+                  <li>
+                    <strong>Dirección de auditorías multidisciplinarias macro:</strong>
+                    integramos en un solo frente dinámico lo financiero, legal,
+                    operativo, tributario y de riesgos estratégicos.
+                  </li>
+                  <li>
+                    <strong>Optimización de recursos y crecimiento:</strong>
+                    transformamos los hallazgos de auditoría en hojas de ruta ejecutivas
+                    que detectan fugas de capital y liberan flujo de caja.
+                  </li>
+                  <li>
+                    <strong>Alianzas e inversión nacional e internacional:</strong>
+                    acompañamos a Directores, CEOs y Accionistas en evaluación de
+                    proyectos, estructura de capital, Due Diligence y M&amp;A.
+                  </li>
+                </ul>
+                <h4>Portafolio de soluciones de alto impacto</h4>
+                <ul class="slp-card__list">
+                  <li>Auditoría Financiera y Operativa Estratégica.</li>
+                  <li>Dirección macro de auditorías multidisciplinarias, M&amp;A y Due Diligence.</li>
+                  <li>Advisory &amp; consultoría de eficiencia empresarial.</li>
+                  <li>Data Analytics &amp; evaluación cuantitativa de riesgo.</li>
+                </ul>
+              </div>
+            </details>
+          </article>
+
+          <!-- COMERCIAL Y OPERACIONES -->
+          <article class="slp-card">
+            <div class="slp-card__head">
+              <div class="slp-card__photo">
+                <img src="/images/equipo/comercial.webp"
+                  alt="Wendy Alava, Socia Fundadora y Gerente Comercial y de Operaciones de Strategic Leverage Partners"
+                  width="512" height="512" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <h3 class="slp-card__name">Wendy Alava, Ing. MBA</h3>
+                <p class="slp-card__role">Gerente Comercial y de Operaciones</p>
+                <p class="slp-card__sub">
+                  Socia Fundadora &amp; Managing Partner · Auditoría Operativa,
+                  Control Regulatorio &amp; Reingeniería de Procesos
+                </p>
+              </div>
+            </div>
+            <p class="slp-card__pitch">
+              Es el puente estratégico entre la visión comercial y la ejecución
+              operativa: elimina la distancia histórica del sector consultor entre lo
+              que se vende y lo que se entrega.
+            </p>
+            <ul class="slp-card__list">
+              <li>
+                <strong>Rigidez normativa máxima:</strong> auditorías financieras y
+                operativas en instituciones públicas con presupuestos multimillonarios.
+              </li>
+              <li>
+                <strong>Blindaje ante organismos de control:</strong> dominio de la
+                normativa pública y la fiscalización estatal frente a la Contraloría
+                General del Estado y Superintendencias.
+              </li>
+              <li>
+                <strong>Pensamiento sistémico (sello politécnico):</strong> rigor
+                matemático y analítico aplicado a la optimización de estructuras
+                operativas y financieras.
+              </li>
+            </ul>
+            <div class="slp-chips">
+              <span class="slp-chip">MBA — PUCE</span>
+              <span class="slp-chip">Ing. Empresarial — EPN</span>
+              <span class="slp-chip">Contratación Pública &amp; Control Interno</span>
+            </div>
+            <details class="slp-more">
+              <summary>Ver perfil completo</summary>
+              <div class="slp-more__body">
+                <p>
+                  «En el ecosistema corporativo, la estrategia comercial abre puertas,
+                  pero la excelencia operativa y el blindaje normativo determinan la
+                  permanencia de un negocio. Si un informe de auditoría resiste la
+                  fiscalización de un presupuesto público de miles de millones de
+                  dólares, resiste cualquier nivel de exigencia en el mercado global.»
+                </p>
+                <h4>Competencias clave</h4>
+                <ul class="slp-card__list">
+                  <li>
+                    <strong>Dirección comercial y desarrollo de negocios:</strong>
+                    propuestas de valor B2B, negociación ejecutiva y alineación del
+                    requerimiento del cliente con la capacidad operativa.
+                  </li>
+                  <li>
+                    <strong>Auditoría de control interno y normativa estatal:</strong>
+                    fiscalización de contratos de gran escala y mitigación de
+                    contingencias legales y glosas ante entes de control.
+                  </li>
+                  <li>
+                    <strong>Reingeniería operativa:</strong> modelos de eficiencia,
+                    matrices de riesgo, diagnóstico de flujos de trabajo y control de
+                    calidad.
+                  </li>
+                  <li>
+                    <strong>Analytics financiero y control presupuestario:</strong>
+                    viabilidad financiera, auditoría de estados financieros, KPIs de
+                    rentabilidad y gobernanza corporativa.
+                  </li>
+                </ul>
+                <h4>Trayectoria relevante</h4>
+                <p>
+                  Directora / Coordinadora de Auditoría y Control de Gestión en el sector
+                  público: dirección operativa de equipos interdisciplinarios, supervisión
+                  técnica de procesos de contratación pública y defensa técnica de
+                  informes de auditoría para prevenir glosas y sanciones administrativas.
+                  Previamente, consultora sénior y analista de control operativo e interno
+                  en gestión comercial, analítica financiera y consultoría de negocios.
+                </p>
+              </div>
+            </details>
+          </article>
+
+          <!-- SOCIO ALIADO LEGAL -->
+          <article class="slp-card">
+            <div class="slp-card__head">
+              <div class="slp-card__photo">
+                <img src="/images/equipo/abogado.webp"
+                  alt="Dr. Jonathan Suárez Moreano, Socio Aliado Legal de Strategic Leverage Partners" width="512"
+                  height="512" loading="lazy" decoding="async" />
+              </div>
+              <div>
+                <h3 class="slp-card__name">Dr. Jonathan Suárez Moreano</h3>
+                <p class="slp-card__role">Socio Aliado Legal</p>
+                <p class="slp-card__sub">
+                  Estrategia Legal &amp; Blindaje Corporativo · +20 años de trayectoria
+                </p>
+              </div>
+            </div>
+            <p class="slp-card__pitch">
+              La intersección estratégica entre la inteligencia financiera y el blindaje
+              legal: unimos auditoría de clase mundial con el respaldo jurídico de más de
+              dos décadas de ejercicio profesional ininterrumpido.
+            </p>
+            <ul class="slp-card__list">
+              <li>
+                <strong>Enfoque pragmático y preventivo</strong> en la resolución de
+                desafíos corporativos complejos y protección patrimonial.
+              </li>
+              <li>
+                <strong>Certeza regulatoria:</strong> cada auditoría o consultoría
+                contable cuenta con un blindaje jurídico ante entidades públicas y
+                privadas.
+              </li>
+              <li>
+                <strong>Presencia comercial:</strong> Quito y Guayaquil (Ecuador), con
+                cobertura en Perú.
+              </li>
+            </ul>
+            <div class="slp-chips">
+              <span class="slp-chip">Societario</span>
+              <span class="slp-chip">Laboral</span>
+              <span class="slp-chip">Civil</span>
+              <span class="slp-chip">Notarial</span>
+              <span class="slp-chip">Familia</span>
+            </div>
+            <details class="slp-more">
+              <summary>Ver perfil completo</summary>
+              <div class="slp-more__body">
+                <h4>Pilares de práctica legal</h4>
+                <ul class="slp-card__list">
+                  <li>
+                    <strong>Derecho societario y gobierno:</strong> estructuración,
+                    reestructuración, fusiones y blindaje de órganos directivos.
+                  </li>
+                  <li>
+                    <strong>Derecho laboral preventivo:</strong> auditoría de contratos,
+                    mitigación de contingencias y relaciones patronales.
+                  </li>
+                  <li>
+                    <strong>Derecho civil y patrimonial:</strong> protección de activos
+                    corporativos, contratos de alta complejidad y sucesiones.
+                  </li>
+                  <li>
+                    <strong>Trámites notariales estratégicos:</strong> agilización,
+                    formalización y seguridad jurídica de instrumentos públicos.
+                  </li>
+                  <li>
+                    <strong>Derecho de familia &amp; family office:</strong>
+                    planificación sucesoria, gestión confidencial del patrimonio familiar
+                    y protección intergeneracional.
+                  </li>
+                </ul>
+                <h4>¿Por qué esta sinergia potencia su empresa?</h4>
+                <ul class="slp-card__list">
+                  <li>
+                    <strong>Auditoría con blindaje integral:</strong> auditamos sus
+                    estados financieros detectando y solucionando simultáneamente
+                    cualquier contingencia tributaria o legal.
+                  </li>
+                  <li>
+                    <strong>Apalancamiento operativo sólido:</strong> respaldamos
+                    legalmente los proyectos de factibilidad financiera y la búsqueda de
+                    capital ante banca nacional e internacional.
+                  </li>
+                  <li>
+                    <strong>Agilidad notarial y societaria:</strong> reducción efectiva
+                    de tiempos en trámites corporativos clave.
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </article>
+        </div>
+
+        <!-- DUPLA ESTRATÉGICA -->
+        <div class="slp-duo">
+          <div class="slp-duo__head">
+            <h3>La dupla estratégica de socios fundadores</h3>
+          </div>
+          <div class="slp-duo__grid">
+            <div class="slp-duo__col">
+              <div class="slp-duo__person">
+                <img src="/images/equipo/ceo.webp" alt="" aria-hidden="true" class="slp-duo__avatar" width="512"
+                  height="512" loading="lazy" decoding="async" />
+                <h4>Jonathan Durán — CEO &amp; Managing Partner</h4>
+              </div>
+              <ul class="slp-card__list">
+                <li>Perspectiva C-Suite (CEO / CFO).</li>
+                <li>Visión de negocios, liquidez y EBITDA.</li>
+                <li>Estrategia de inversión y expansión.</li>
+              </ul>
+            </div>
+            <div class="slp-duo__col">
+              <div class="slp-duo__person">
+                <img src="/images/equipo/comercial.webp" alt="" aria-hidden="true" class="slp-duo__avatar" width="512"
+                  height="512" loading="lazy" decoding="async" />
+                <h4>Wendy Alava — Ing. MBA &amp; Managing Partner</h4>
+              </div>
+              <ul class="slp-card__list">
+                <li>Gerencia comercial y de operaciones.</li>
+                <li>Máximo rigor en fiscalización estatal.</li>
+                <li>Reingeniería de procesos (Ing. EPN).</li>
+              </ul>
+            </div>
+          </div>
+          <p class="slp-duo__quote">
+            «Combinamos la visión financiera y de rentabilidad de un CEO/CFO con la
+            rigurosidad operacional y el blindaje normativo de una experta en
+            fiscalización de gran escala. Es el equilibrio perfecto entre hacer crecer un
+            negocio y proteger su patrimonio.»
+          </p>
+        </div>
+
+        <!-- MATRIZ COMPARATIVA -->
+        <div class="slp-matrix">
+          <h3 class="slp-matrix__title">Rompiendo el mercado tradicional</h3>
+          <div class="slp-matrix__grid">
+            <div class="slp-matrix__col">
+              <h4>Firmas tradicionales multinacionales</h4>
+              <ul class="slp-card__list">
+                <li>Lejanas, frías y burocráticas.</li>
+                <li>Enfoque plano de cumplimiento rígido.</li>
+                <li>Auditores técnicos sin visión de negocio.</li>
+                <li>Desconectadas de la estrategia real.</li>
+              </ul>
+            </div>
+            <div class="slp-matrix__col slp-matrix__col--slp">
+              <h4>Strategic Leverage Partners</h4>
+              <ul class="slp-card__list">
+                <li>Cercanía real, empatía directiva y visión C-Suite.</li>
+                <li>Enfoque dinámico, comercial y de rentabilidad (360°).</li>
+                <li>Equipo alineado a la mentalidad directiva CEO/CFO.</li>
+                <li>Auditoría vista como inteligencia de negocios.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="slp-team__cta">
+          <a href="/contactos" class="slp-btn slp-btn--gold">Hablar con un socio</a>
+          <a href="/servicios" class="slp-btn slp-btn--ghost">Ver nuestros servicios</a>
+        </div>
+      </div>
+    </section>
+    <!-- =================== FIN EQUIPO DIRECTIVO / PERFILES =================== -->
     <div class="absolute -z-10 w-full h-full contenedor" data-astro-cid-balv45lp></div>
     <div class="relative py-16" data-astro-cid-balv45lp>
       <div class="max-w-7xl mx-auto px-6 md:px-12">
@@ -887,6 +1774,9 @@
                   </li>
                   <li class="mb-4">
                     <a href="/nosotros" class="hover:underline">Nosotros</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="/nosotros#equipo" class="hover:underline">Equipo</a>
                   </li>
                   <li class="mb-4">
                     <a href="/servicios" class="hover:underline">Servicios</a>

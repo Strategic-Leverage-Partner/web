@@ -176,6 +176,642 @@
     html {
       scroll-snap-type: y mandatory;
     }
+
+    /* Estilos personalizados para Formulario Web3Forms y Contactos */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      margin-bottom: 5rem;
+      align-items: start;
+    }
+
+    @media (min-width: 1024px) {
+      .contact-layout {
+        grid-template-columns: 5fr 7fr;
+        gap: 3rem;
+      }
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1.5rem;
+      padding: 2.25rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+      position: relative;
+    }
+
+    .contact-card-header-bar {
+      border-top: 5px solid #015d4c;
+      border-radius: 1.5rem 1.5rem 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .contact-info-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
+    .contact-icon-box {
+      width: 3.25rem;
+      height: 3.25rem;
+      border-radius: 1rem;
+      background: rgba(1, 93, 76, 0.08);
+      color: #015d4c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+    .contact-info-item:hover .contact-icon-box {
+      background: #015d4c;
+      color: #ffffff;
+      transform: scale(1.05);
+    }
+
+    .contact-form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    @media (min-width: 640px) {
+      .contact-form-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .contact-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: #334155;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-input,
+    .contact-select,
+    .contact-textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: #1e293b;
+      background-color: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 0.85rem;
+      outline: none;
+      transition: all 0.2s ease-in-out;
+      box-sizing: border-box;
+    }
+
+    .contact-input:focus,
+    .contact-select:focus,
+    .contact-textarea:focus {
+      background-color: #ffffff;
+      border-color: #015d4c;
+      box-shadow: 0 0 0 4px rgba(1, 93, 76, 0.12);
+    }
+
+    .contact-input::placeholder,
+    .contact-textarea::placeholder {
+      color: #94a3b8;
+    }
+
+    .contact-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23015d4c'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1.25rem;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .contact-submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #015d4c 0%, #01473a 100%);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.05rem;
+      padding: 1rem 1.75rem;
+      border-radius: 0.85rem;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(1, 93, 76, 0.25);
+    }
+
+    .contact-submit-btn:hover {
+      background: linear-gradient(135deg, #027460 0%, #015d4c 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(1, 93, 76, 0.35);
+    }
+
+    .contact-submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .contact-submit-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(212, 151, 36, 0.12);
+      color: #b57d19;
+      font-weight: 700;
+      font-size: 0.75rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .contact-alert {
+      padding: 1rem 1.25rem;
+      border-radius: 0.85rem;
+      font-size: 0.925rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-top: 1.25rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .contact-alert-success {
+      background-color: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+    }
+
+    .contact-alert-error {
+      background-color: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #991b1b;
+    }
+
+    .contact-alert-warning {
+      background-color: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+
+    .contact-qr-img {
+      width: 11rem;
+      height: 11rem;
+      object-fit: contain;
+      border-radius: 1rem;
+      border: 1px solid #e2e8f0;
+      padding: 0.5rem;
+      background: #ffffff;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .contact-qr-img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-qr-btn {
+      margin-top: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.5rem;
+      border-radius: 9999px;
+      background-color: #015d4c;
+      color: #ffffff !important;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(1, 93, 76, 0.2);
+    }
+
+    .contact-qr-btn:hover {
+      background-color: #01473a;
+      color: #ffffff !important;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(1, 93, 76, 0.3);
+    }
+
+    .contact-qr-btn svg {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================================
+       ESTILOS DEL WIZARD MULTI-STEP Y DIAGNÓSTICO FINANCIERO
+       ========================================================================= */
+    .wizard-progress-container {
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .wizard-steps-indicator {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .wizard-step-track {
+      position: absolute;
+      top: 1.15rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      height: 3px;
+      background-color: #e2e8f0;
+      z-index: 1;
+    }
+
+    .wizard-step-track-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #015d4c 0%, #02856e 100%);
+      width: 0%;
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .wizard-step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      cursor: default;
+      user-select: none;
+      background: transparent;
+      z-index: 2;
+    }
+
+    .wizard-step-circle {
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: 2px solid #cbd5e1;
+      color: #64748b;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+    }
+
+    .wizard-step-item.active .wizard-step-circle {
+      border-color: #015d4c;
+      background-color: #015d4c;
+      color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(1, 93, 76, 0.18);
+      transform: scale(1.08);
+    }
+
+    .wizard-step-item.completed .wizard-step-circle {
+      border-color: #015d4c;
+      background-color: #015d4c;
+      color: #ffffff;
+    }
+
+    .wizard-step-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #94a3b8;
+      transition: color 0.3s ease;
+      text-align: center;
+    }
+
+    .wizard-step-item.active .wizard-step-label {
+      color: #015d4c;
+      font-weight: 700;
+    }
+
+    .wizard-step-item.completed .wizard-step-label {
+      color: #334155;
+    }
+
+    /* Paneles del Wizard */
+    .wizard-step-panel {
+      display: none;
+      animation: fadeInStep 0.35s ease-in-out;
+    }
+
+    .wizard-step-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeInStep {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Encabezado del Paso 2 */
+    .diag-header {
+      background: linear-gradient(135deg, rgba(1, 93, 76, 0.06) 0%, rgba(212, 151, 36, 0.06) 100%);
+      border: 1px solid rgba(1, 93, 76, 0.15);
+      border-radius: 1rem;
+      padding: 1.15rem 1.35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .diag-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.65rem;
+      background: rgba(1, 93, 76, 0.12);
+      color: #015d4c;
+      font-weight: 700;
+      font-size: 0.72rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Grupos de Preguntas y Tarjetas */
+    .diag-question-group {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      padding: 1.25rem;
+      margin-bottom: 1.25rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    .diag-question-group:focus-within,
+    .diag-question-group:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .diag-question-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #0f172a;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .diag-question-tag {
+      color: #015d4c;
+      font-size: 0.85rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .diag-options-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    /* Radio Card Estilizada */
+    .diag-option-label {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 0.75rem;
+      background-color: #f8fafc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .diag-option-label:hover {
+      background-color: #f1f5f9;
+      border-color: #94a3b8;
+    }
+
+    .diag-radio-input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .diag-custom-radio {
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      border: 2px solid #94a3b8;
+      background-color: #ffffff;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .diag-custom-radio::after {
+      content: "";
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 50%;
+      background-color: #015d4c;
+      transform: scale(0);
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .diag-radio-input:checked + .diag-option-label {
+      border-color: #015d4c;
+      background-color: rgba(1, 93, 76, 0.04);
+      box-shadow: 0 0 0 2px rgba(1, 93, 76, 0.1);
+    }
+
+    .diag-radio-input:checked + .diag-option-label .diag-custom-radio {
+      border-color: #015d4c;
+      background-color: #ffffff;
+    }
+
+    .diag-radio-input:checked + .diag-option-label .diag-custom-radio::after {
+      transform: scale(1);
+    }
+
+    .diag-radio-input:focus-visible + .diag-option-label {
+      outline: 2px solid #015d4c;
+      outline-offset: 2px;
+    }
+
+    .diag-option-text {
+      font-size: 0.88rem;
+      color: #334155;
+      line-height: 1.45;
+      flex: 1;
+    }
+
+    .diag-radio-input:checked + .diag-option-label .diag-option-text {
+      color: #0f172a;
+      font-weight: 500;
+    }
+
+    /* Botones de Navegación del Wizard */
+    .wizard-nav-buttons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .wizard-btn-prev {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.85rem 1.35rem;
+      border-radius: 0.85rem;
+      border: 1.5px solid #cbd5e1;
+      background-color: #ffffff;
+      color: #475569;
+      font-weight: 600;
+      font-size: 0.925rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .wizard-btn-prev:hover {
+      background-color: #f8fafc;
+      border-color: #94a3b8;
+      color: #1e293b;
+    }
+
+    .wizard-btn-next {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.65rem;
+      border-radius: 0.85rem;
+      border: none;
+      background: linear-gradient(135deg, #015d4c 0%, #01473a 100%);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(1, 93, 76, 0.2);
+    }
+
+    .wizard-btn-next:hover {
+      background: linear-gradient(135deg, #027460 0%, #015d4c 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(1, 93, 76, 0.3);
+    }
+
+    .wizard-skip-link {
+      display: block;
+      text-align: center;
+      margin-top: 0.85rem;
+      font-size: 0.82rem;
+      color: #64748b;
+      text-decoration: underline;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0.25rem;
+      width: 100%;
+      transition: color 0.2s ease;
+    }
+
+    .wizard-skip-link:hover {
+      color: #015d4c;
+    }
+
+    /* Caja de Resumen en Paso 3 */
+    .diag-summary-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #015d4c;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.15rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .diag-summary-info {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .diag-summary-text {
+      font-size: 0.875rem;
+      color: #334155;
+    }
+
+    .diag-summary-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: rgba(1, 93, 76, 0.12);
+      color: #015d4c;
+      white-space: nowrap;
+    }
   </style>
 </head>
 
@@ -421,7 +1057,9 @@
                 <a href="/" class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
                   <span data-astro-cid-qgrrgaau>Inicio</span> </a><a href="/nosotros"
                   class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
-                  <span data-astro-cid-qgrrgaau>Nosotros</span> </a><a href="/contactos"
+                  <span data-astro-cid-qgrrgaau>Nosotros</span> </a><a href="/nosotros#equipo"
+                  class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
+                  <span data-astro-cid-qgrrgaau>Equipo</span> </a><a href="/contactos"
                   class="block transition hover:text-white md:px-4" data-astro-cid-qgrrgaau>
                   <span data-astro-cid-qgrrgaau>Contactos</span>
                 </a>
@@ -433,11 +1071,10 @@
                     <a href="/servicios-financieros/" class="block px-4 py-2 hover:bg-verde rounded-lg"
                       data-astro-cid-qgrrgaau>
                       Servicios Financieros </a>
-                      <a href="/servicios-contables-auditoria/"
-                      class="block px-4 py-2 hover:bg-verde rounded-lg">
+                    <a href="/servicios-contables-auditoria/" class="block px-4 py-2 hover:bg-verde rounded-lg">
                       Servicios Contables y Auditoría </a>
-                      <a href="/servicios-de-consultoria-empresarial/"
-                      class="block px-4 py-2 hover:bg-verde rounded-lg" data-astro-cid-qgrrgaau>
+                    <a href="/servicios-de-consultoria-empresarial/" class="block px-4 py-2 hover:bg-verde rounded-lg"
+                      data-astro-cid-qgrrgaau>
                       Servicios de Consultoría Empresarial
                     </a>
                   </div>
@@ -478,7 +1115,7 @@
       });
     });
   </script>
-  <div class="absolute -z-10 w-full h-full">
+  <div class="absolute -z-10 w-full min-h-full inset-0">
     <div class="relative h-full w-full bg-neutral-200">
       <div
         class="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]">
@@ -486,79 +1123,361 @@
     </div>
   </div>
   <div class="max-w-7xl mx-auto px-6 md:px-12">
-    <div class="w-full h-full pt-25 text-neutral-800 flex flex-col items-center justify-center">
-      <h5 class="text-balance font-bold text-4xl md:text-5xl xl:text-6xl text-center mb-6">
-        Contactanos
-      </h5>
-      <p class="text-center w-1/2 mb-10">
+    <!-- Encabezado de la página -->
+    <div class="w-full pt-25 text-neutral-800 flex flex-col items-center justify-center">
+      <span class="contact-badge mb-3">Estamos listos para impulsarte</span>
+      <h1 class="text-balance font-bold text-4xl md:text-5xl xl:text-6xl text-center mb-4 text-azul">
+        Contáctanos
+      </h1>
+      <p class="text-center max-w-2xl px-4 text-gray-600 text-base md:text-lg mb-4">
         Utilizamos un enfoque ágil para validar estrategias y conectar de
         manera rápida y efectiva con las necesidades de tu negocio, asegurando
-        soluciones financieras innovadoras y alineadas con tus objetivos.
+        soluciones financieras y contables de alto impacto.
       </p>
     </div>
-    <div class="grid lg:grid-cols-3 md:grid-cols-1 my-20">
-      <div class="flex flex-col items-center justify-start text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" class="mb-4">
-          <g fill="none" fill-rule="evenodd">
-            <path
-              d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z">
-            </path>
-            <path fill="currentColor"
-              d="M10.753 2.197a2 2 0 0 0-1.662.182l-4.12 2.472A2 2 0 0 0 4 6.566V20H3a1 1 0 1 0 0 2h18a1 1 0 1 0 0-2h-1V6.72a2 2 0 0 0-1.367-1.896zM9 4.767l-3 1.8V20h3V4.766Z">
-            </path>
-          </g>
-        </svg>
-        <h6 class="text-balance font-bold mb-4 text-2xl">
-          Estamos Ubicados en:
-        </h6>
-        <p class="text-xl">
-          Edificio Francisco de Orellana / Oficina 601 <br />Avenida Orellana E2-30 y Avenida 10 de Agosto<br />
-          (Quito – Ecuador)
-        </p>
-      </div>
-      <div class="flex flex-col items-center justify-start text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" class="mb-4">
-          <path fill="currentColor"
-            d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28">
-          </path>
-        </svg>
-        <h6 class="text-balance font-bold mb-4 text-2xl">
-          Escribenos de forma directa:
-        </h6>
-        <p class="text-xl">+593 0995198875</p>
-      </div>
-      <div class="flex flex-col items-center justify-start text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 24 24" class="mb-4">
-          <path fill="currentColor"
-            d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7L4 8v10h16V8zm0-2l8-5H4zM4 8V6v12z">
-          </path>
-        </svg>
-        <h6 class="text-balance font-bold mb-4 text-2xl">
-          Envianos un mail por:
-        </h6>
-        <p class="text-xl">comercial@strategicleverage.partners</p>
-      </div>
-    </div>
-    <div class="flex justify-center items-center mb-20">
-      <div class="bg-white border border-gray-700 max-w-xs place-self-center rounded-lg shadow w-full">
-        <a href="https://linktr.ee/StrategicLeveragePartner" target="_blank"><img alt="Qr de redes sociales"
-            class="p-8 rounded-t-lg" src="https://i.imgur.com/i3XbtUs.png" /></a>
-        <div class="px-5 pb-5">
-          <a href="#https://linktr.ee/StrategicLeveragePartner" target="_blank">
-            <h5 class="text-xl font-semibold text-center text-gray-900 tracking-tight">
-              Escanea el código QR para ver nuestras redes
-            </h5>
-          </a>
-          <div class="items-center flex justify-center p-5">
-            <a href="https://linktr.ee/StrategicLeveragePartner"
-              class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-verde before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max text-white"
-              target="_blank"><span class="relative text-base font-semibold text-white">Ver nuestras redes</span></a>
+
+    <!-- Layout de 2 Columnas: Canales de Atención (Izq) y Formulario Web3Forms (Der) -->
+    <div class="contact-layout">
+
+      <!-- Columna Izquierda: Información Directa y QR -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Tarjeta de Canales Directos -->
+        <div class="contact-card">
+          <div class="contact-card-header-bar"></div>
+          <h2 class="text-xl font-bold text-azul mb-6 flex items-center gap-2">
+            Canales de Atención Directa
+          </h2>
+
+          <!-- Ubicación -->
+          <div class="contact-info-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 text-base">Ubicación Física</h3>
+              <p class="text-gray-600 text-sm mt-1 leading-relaxed">
+                Edificio Francisco de Orellana / Oficina 601<br />
+                Avenida Orellana E2-30 y Avenida 10 de Agosto<br />
+                <span class="text-gray-500 font-medium">Quito – Ecuador</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- WhatsApp / Celular -->
+          <div class="contact-info-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 text-base">Teléfono / WhatsApp</h3>
+              <a href="https://wa.me/593995728488" target="_blank" rel="noopener noreferrer"
+                class="text-verde font-bold text-lg hover:underline block mt-0.5">
+                +593 99 572 8488
+              </a>
+              <span class="text-xs text-gray-500">Atención rápida y personalizada</span>
+            </div>
+          </div>
+
+          <!-- Correo Corporativo -->
+          <div class="contact-info-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 text-base">Correo Electrónico</h3>
+              <a href="mailto:comercial@strategicleverage.partners"
+                class="text-verde font-semibold text-sm md:text-base hover:underline block mt-0.5 break-all">
+                comercial@strategicleverage.partners
+              </a>
+              <span class="text-xs text-gray-500">Respuestas corporativas y propuestas</span>
+            </div>
+          </div>
+
+          <!-- Horarios -->
+          <div class="contact-info-item">
+            <div class="contact-icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 text-base">Horario de Atención</h3>
+              <p class="text-gray-600 text-sm mt-0.5">
+                Lunes a Viernes: 8:30 AM – 6:00 PM
+              </p>
+            </div>
           </div>
         </div>
+
+        <!-- Tarjeta QR Redes Sociales -->
+        <div class="contact-card flex flex-col items-center text-center">
+          <h3 class="text-lg font-bold text-azul mb-2">Conéctate en Redes Sociales</h3>
+          <p class="text-xs text-gray-500 mb-4">Escanea el código QR o haz clic en el botón para conocer nuestras
+            novedades.</p>
+          <a href="https://linktr.ee/Strategic_Leverage_Partner" target="_blank" rel="noopener noreferrer" class="block">
+            <img alt="QR de redes sociales" class="contact-qr-img" src="../images/qr-redes.png"
+              onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/images/qr-redes.png';}" />
+          </a>
+          <a href="https://linktr.ee/Strategic_Leverage_Partner" target="_blank" rel="noopener noreferrer"
+            class="contact-qr-btn">
+            <span>Visitar Linktree</span>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Formulario Web3Forms -->
+      <div class="contact-card">
+        <div class="contact-card-header-bar"></div>
+
+        <div class="mb-5">
+          <span class="contact-badge">Formulario de Contacto</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-azul mt-2">Envíanos un mensaje</h2>
+          <p class="text-gray-600 text-sm mt-1">
+            Déjanos tus datos y requerimiento. Incluye una evaluación rápida de 1 minuto para un diagnóstico preliminar.
+          </p>
+        </div>
+
+        <!-- Indicador de Progreso del Formulario (Stepper) -->
+        <div class="wizard-progress-container" aria-label="Progreso del formulario">
+          <div class="wizard-step-track">
+            <div class="wizard-step-track-fill" id="wizard-progress-bar"></div>
+          </div>
+          <div class="wizard-steps-indicator">
+            <!-- Paso 1 -->
+            <div class="wizard-step-item active" id="step-indicator-1">
+              <div class="wizard-step-circle">
+                <span class="step-num" id="step-num-1">1</span>
+                <svg class="step-check w-4 h-4" id="step-check-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <span class="wizard-step-label">Contacto</span>
+            </div>
+            <!-- Paso 2 -->
+            <div class="wizard-step-item" id="step-indicator-2">
+              <div class="wizard-step-circle">
+                <span class="step-num" id="step-num-2">2</span>
+                <svg class="step-check w-4 h-4" id="step-check-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <span class="wizard-step-label">Diagnóstico</span>
+            </div>
+            <!-- Paso 3 -->
+            <div class="wizard-step-item" id="step-indicator-3">
+              <div class="wizard-step-circle">
+                <span class="step-num" id="step-num-3">3</span>
+                <svg class="step-check w-4 h-4" id="step-check-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </div>
+              <span class="wizard-step-label">Mensaje</span>
+            </div>
+          </div>
+        </div>
+
+        <form id="contact-form" novalidate>
+          <!-- Configuración Web3Forms -->
+          <!-- Marcador para tu Access Key: reemplaza en la variable WEB3FORMS_ACCESS_KEY del script o directamente aquí -->
+          <input type="hidden" name="access_key" id="web3forms-access-key" value="TU_ACCESS_KEY_AQUI" />
+          <input type="hidden" name="subject"
+            value="Nuevo contacto con Diagnóstico Financiero - Strategic Leverage Partner" />
+          <input type="hidden" name="from_name" value="Strategic Leverage Partner Web" />
+          <!-- Campo Honeypot para evitar spam sin captcha molesto -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+          <!-- ========================================== -->
+          <!-- PASO 1: DATOS DE CONTACTO Y SERVICIO -->
+          <!-- ========================================== -->
+          <div class="wizard-step-panel active" id="wizard-panel-1">
+            <div class="mb-4">
+              <h3 class="text-lg font-bold text-azul">Paso 1: Datos de Contacto</h3>
+              <p class="text-xs text-gray-500">Ingresa tus datos para identificarte y canalizar tu consulta adecuadamente.</p>
+            </div>
+
+            <!-- Fila 1: Nombre y Empresa -->
+            <div class="contact-form-row">
+              <div class="contact-form-group">
+                <label for="form-nombre" class="contact-label">Nombre y Apellido <span
+                    class="text-red-500">*</span></label>
+                <input type="text" id="form-nombre" name="nombre" required placeholder="Ej. Carlos Mendoza"
+                  class="contact-input" />
+              </div>
+              <div class="contact-form-group">
+                <label for="form-empresa" class="contact-label">Empresa / Razón Social</label>
+                <input type="text" id="form-empresa" name="empresa" placeholder="Ej. Corporación Andina S.A."
+                  class="contact-input" />
+              </div>
+            </div>
+
+            <!-- Fila 2: Correo y Teléfono -->
+            <div class="contact-form-row">
+              <div class="contact-form-group">
+                <label for="form-email" class="contact-label">Correo Electrónico <span
+                    class="text-red-500">*</span></label>
+                <input type="email" id="form-email" name="email" required placeholder="carlos@empresa.com"
+                  class="contact-input" />
+              </div>
+              <div class="contact-form-group">
+                <label for="form-telefono" class="contact-label">Teléfono / Celular <span
+                    class="text-red-500">*</span></label>
+                <input type="tel" id="form-telefono" name="telefono" required placeholder="Ej. +593 99 123 4567"
+                  class="contact-input" />
+              </div>
+            </div>
+
+            <!-- Fila 3: Servicio de Interés -->
+            <div class="contact-form-group">
+              <label for="form-servicio" class="contact-label">Servicio de tu Interés</label>
+              <select id="form-servicio" name="servicio" class="contact-select">
+                <option value="Consultoría Financiera">Consultoría Financiera</option>
+                <option value="Auditoría Financiera">Auditoría Financiera</option>
+                <option value="Outsourcing Contable">Outsourcing Contable y Tributario</option>
+                <option value="Consultoría Empresarial">Consultoría Empresarial</option>
+                <option value="Elaboración de Forecast">Elaboración de Forecast y Planificación</option>
+                <option value="Emisión de Garantías / Cartas de Crédito">Emisión de Garantías / Cartas de Crédito</option>
+                <option value="Otro">Otro requerimiento especializado</option>
+              </select>
+            </div>
+
+            <!-- Acciones Paso 1 -->
+            <div class="pt-2">
+              <button type="button" id="btn-goto-step-2" class="contact-submit-btn">
+                <span>Continuar a Evaluación de Diagnóstico</span>
+                <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+              <button type="button" id="btn-skip-to-step-3" class="wizard-skip-link">
+                O saltar directamente al mensaje sin evaluación previa
+              </button>
+            </div>
+          </div>
+
+          <!-- ========================================== -->
+          <!-- PASO 2: EVALUACIÓN DE DIAGNÓSTICO FINANCIERO (DINÁMICO POR SERVICIO) -->
+          <!-- ========================================== -->
+          <div class="wizard-step-panel" id="wizard-panel-2">
+            <!-- Encabezado Diagnóstico Dinámico -->
+            <div class="diag-header">
+              <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                <span class="diag-badge" id="diag-badge-service">Diagnóstico Especializado</span>
+                <span class="text-xs font-semibold text-gray-500">Respondidas: <strong id="diag-counter" class="text-verde">0</strong> de <span id="diag-total-questions">2</span></span>
+              </div>
+              <h3 class="text-base md:text-lg font-bold text-azul" id="diag-header-title">Diagnóstico para tu Servicio</h3>
+              <p class="text-xs text-gray-600 mt-1" id="diag-header-desc">
+                Responde estas breves preguntas clave para que el consultor especializado prepare una propuesta precisa para tu empresa.
+              </p>
+            </div>
+
+            <!-- Contenedor dinámico de 1 o 2 preguntas según el servicio -->
+            <div id="diag-questions-container">
+              <!-- Se inyectan dinámicamente según el servicio seleccionado en el Paso 1 -->
+            </div>
+
+            <!-- Botones de Navegación Paso 2 -->
+            <div class="wizard-nav-buttons">
+              <button type="button" id="btn-back-to-step-1" class="wizard-btn-prev">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span>Volver</span>
+              </button>
+              <button type="button" id="btn-goto-step-3" class="wizard-btn-next">
+                <span>Paso Final: Tu Consulta</span>
+                <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </button>
+            </div>
+            <button type="button" id="btn-skip-from-step-2" class="wizard-skip-link">
+              Continuar al mensaje final sin responder preguntas
+            </button>
+          </div>
+
+          <!-- ========================================== -->
+          <!-- PASO 3: MENSAJE FINAL Y ENVÍO -->
+          <!-- ========================================== -->
+          <div class="wizard-step-panel" id="wizard-panel-3">
+            <div class="mb-4">
+              <h3 class="text-lg font-bold text-azul">Paso 3: Detalle de tu Requerimiento</h3>
+              <p class="text-xs text-gray-500">Cuéntanos un poco más sobre lo que necesita tu empresa.</p>
+            </div>
+
+            <!-- Resumen del diagnóstico -->
+            <div class="diag-summary-card">
+              <div class="diag-summary-info">
+                <svg class="w-5 h-5 text-verde flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <span class="diag-summary-text" id="diag-summary-text">Diagnóstico listo para adjuntar al requerimiento.</span>
+              </div>
+              <span class="diag-summary-badge" id="diag-summary-badge">0 / 5 Respondidas</span>
+            </div>
+
+            <!-- Campo Mensaje -->
+            <div class="contact-form-group">
+              <label for="form-mensaje" class="contact-label">¿En qué podemos ayudarte? <span
+                  class="text-red-500">*</span></label>
+              <textarea id="form-mensaje" name="mensaje" rows="4" required
+                placeholder="Describe brevemente las necesidades de tu empresa o la consulta que deseas realizar..."
+                class="contact-textarea"></textarea>
+            </div>
+
+            <!-- Botones de Navegación y Envío Paso 3 -->
+            <div class="wizard-nav-buttons">
+              <button type="button" id="btn-back-to-step-2" class="wizard-btn-prev">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span>Revisar Diagnóstico</span>
+              </button>
+
+              <button type="submit" id="submit-btn" class="contact-submit-btn" style="width: auto; flex: 1; max-width: 260px;">
+                <span id="btn-text">Enviar Solicitud</span>
+                <svg id="btn-arrow" class="w-5 h-5 ml-1 transition-transform duration-200" fill="none"
+                  stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                  </path>
+                </svg>
+                <svg id="btn-spinner" class="animate-spin h-5 w-5 text-white" style="display: none;"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Banner de Feedback Dinámico -->
+          <div id="form-feedback" style="display: none;" class="contact-alert"></div>
+        </form>
       </div>
     </div>
   </div>
-  <a href="https://wa.link/w5r8ke" target="_blank" rel="noreferrer noopener"
+  <a href="https://wa.me/593995728488" target="_blank" rel="noreferrer noopener"
     class="fixed bottom-4 right-4 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full bg-[#25d366] m-0">
     <div class="absolute z-10 top-0 left-0 w-full h-full rounded-full bg-[#25d366] animate-ping"></div>
     <div class="relative z-20">
@@ -801,6 +1720,9 @@
                     <a href="/nosotros" class="hover:underline">Nosotros</a>
                   </li>
                   <li class="mb-4">
+                    <a href="/nosotros#equipo" class="hover:underline">Equipo</a>
+                  </li>
+                  <li class="mb-4">
                     <a href="/servicios" class="hover:underline">Servicios</a>
                   </li>
                   <li class="mb-4">
@@ -948,6 +1870,663 @@
         ]
       }
     </script>
+  <script>
+    // =========================================================================
+    // CONFIGURACIÓN DE WEB3FORMS (VARIABLE DE ENTORNO / MARCADOR DE CLAVE)
+    // =========================================================================
+    // 1. Obtén tu Access Key gratuita en: https://web3forms.com
+    // 2. Reemplaza el texto "TU_ACCESS_KEY_AQUI" por tu clave (UUID)
+    //    Ejemplo: const WEB3FORMS_ACCESS_KEY = "a1b2c3d4-e5f6-7890-abcd-ef1234567890";
+    // =========================================================================
+    const WEB3FORMS_ACCESS_KEY = "TU_ACCESS_KEY_AQUI";
+
+    function inicializarFormulario() {
+      const form = document.getElementById("contact-form");
+      if (!form) return;
+
+      const accessKeyInput = document.getElementById("web3forms-access-key");
+      const submitBtn = document.getElementById("submit-btn");
+      const btnText = document.getElementById("btn-text");
+      const btnArrow = document.getElementById("btn-arrow");
+      const btnSpinner = document.getElementById("btn-spinner");
+      const feedback = document.getElementById("form-feedback");
+
+      // Paneles de paso
+      const panel1 = document.getElementById("wizard-panel-1");
+      const panel2 = document.getElementById("wizard-panel-2");
+      const panel3 = document.getElementById("wizard-panel-3");
+
+      // Indicadores y barra de progreso
+      const progressBar = document.getElementById("wizard-progress-bar");
+      const stepInd1 = document.getElementById("step-indicator-1");
+      const stepInd2 = document.getElementById("step-indicator-2");
+      const stepInd3 = document.getElementById("step-indicator-3");
+
+      const stepNum1 = document.getElementById("step-num-1");
+      const stepCheck1 = document.getElementById("step-check-1");
+      const stepNum2 = document.getElementById("step-num-2");
+      const stepCheck2 = document.getElementById("step-check-2");
+      const stepNum3 = document.getElementById("step-num-3");
+      const stepCheck3 = document.getElementById("step-check-3");
+
+      // Botones de navegación
+      const btnGotoStep2 = document.getElementById("btn-goto-step-2");
+      const btnSkipToStep3 = document.getElementById("btn-skip-to-step-3");
+      const btnBackToStep1 = document.getElementById("btn-back-to-step-1");
+      const btnGotoStep3 = document.getElementById("btn-goto-step-3");
+      const btnSkipFromStep2 = document.getElementById("btn-skip-from-step-2");
+      const btnBackToStep2 = document.getElementById("btn-back-to-step-2");
+
+      // Elementos del diagnóstico
+      const diagCounter = document.getElementById("diag-counter");
+      const diagTotalQuestions = document.getElementById("diag-total-questions");
+      const diagHeaderTitle = document.getElementById("diag-header-title");
+      const diagHeaderDesc = document.getElementById("diag-header-desc");
+      const diagBadgeService = document.getElementById("diag-badge-service");
+      const diagQuestionsContainer = document.getElementById("diag-questions-container");
+      const diagSummaryBadge = document.getElementById("diag-summary-badge");
+      const diagSummaryText = document.getElementById("diag-summary-text");
+      const selectServicio = document.getElementById("form-servicio");
+
+      // =======================================================================
+      // BASE DE PREGUNTAS DIAGNÓSTICAS ESPECÍFICAS POR SERVICIO (1 A 2 PREGUNTAS)
+      // =======================================================================
+      const PREGUNTAS_POR_SERVICIO = {
+        "Consultoría Financiera": [
+          {
+            id: "cf_1",
+            name: "diag_cf_apalancamiento",
+            titulo: "Capacidad de Apalancamiento e Inversión:",
+            opciones: [
+              {
+                valor: "Modelo técnico listo (TIR, VAN, ROI, Flujo Proyectado)",
+                texto: "Contamos con un modelo financiero técnico (TIR, VAN, ROI, Flujo de Caja proyectado) listo para presentar a banca o fondos de inversión."
+              },
+              {
+                valor: "Estados contables tradicionales para evaluación bancaria",
+                texto: "Presentaríamos los estados contables tradicionales preparados por el contador, a la espera del análisis del banco."
+              }
+            ]
+          },
+          {
+            id: "cf_2",
+            name: "diag_cf_liquidez",
+            titulo: "Gestión de Liquidez y Proyección de Flujo:",
+            opciones: [
+              {
+                valor: "Flujo proyectado técnico anticipado",
+                texto: "Contamos con proyecciones de flujo de caja estructuradas que anticipan requerimientos de capital y cierres bancarios."
+              },
+              {
+                valor: "Gestión del día a día y cumplimiento fiscal/legal",
+                texto: "Gestionamos la liquidez en el día a día y preparamos reportes principalmente para cumplimiento legal o bancario."
+              }
+            ]
+          }
+        ],
+        "Auditoría Financiera": [
+          {
+            id: "af_1",
+            name: "diag_af_objetivo",
+            titulo: "Objetivo Principal de la Auditoría:",
+            opciones: [
+              {
+                valor: "Cumplimiento legal obligatorio o exigencia bancaria",
+                texto: "Requerimiento estatutario obligatorio por disposición legal (Superintendencia de Compañías) o exigencia bancaria."
+              },
+              {
+                valor: "Diagnóstico preventivo interno y control de procesos",
+                texto: "Evaluación voluntaria preventiva para detectar riesgos de fraude, optimizar procesos y certificar cifras."
+              }
+            ]
+          },
+          {
+            id: "af_2",
+            name: "diag_af_control",
+            titulo: "Estado de la Información y Control Interno:",
+            opciones: [
+              {
+                valor: "Software ERP con conciliaciones al día",
+                texto: "Contamos con sistema contable/ERP centralizado y conciliaciones bancarias/tributarias mensuales al día."
+              },
+              {
+                valor: "Hojas de cálculo u oportunidad de depuración contable",
+                texto: "Nuestros procesos se apoyan en hojas de cálculo o requerimos depuración previa de cuentas contables."
+              }
+            ]
+          }
+        ],
+        "Outsourcing Contable": [
+          {
+            id: "oc_1",
+            name: "diag_oc_situacion",
+            titulo: "Situación Tributaria y Patronal Actual:",
+            opciones: [
+              {
+                valor: "Al día sin observaciones de SRI ni IESS",
+                texto: "Obligaciones y declaraciones al día sin observaciones pendientes ni contingencias fiscales/laborales."
+              },
+              {
+                valor: "Observaciones pendientes o requerimientos por atender",
+                texto: "Hemos tenido declaraciones extemporáneas, notificaciones del SRI o requerimos regularización contable."
+              }
+            ]
+          },
+          {
+            id: "oc_2",
+            name: "diag_oc_alcance",
+            titulo: "Modalidad y Alcance Requerido:",
+            opciones: [
+              {
+                valor: "Tercerización integral (Contabilidad, Nómina e Impuestos)",
+                texto: "Buscamos tercerizar completamente el departamento contable, nómina y declaraciones mensuales."
+              },
+              {
+                valor: "Supervisión contable y asesoría tributaria especializada",
+                texto: "Contamos con equipo interno y requerimos supervisión periódica, cierres y planificación tributaria."
+              }
+            ]
+          }
+        ],
+        "Consultoría Empresarial": [
+          {
+            id: "ce_1",
+            name: "diag_ce_prioridad",
+            titulo: "Prioridad Estratégica del Negocio:",
+            opciones: [
+              {
+                valor: "Optimización de procesos, costos y rentabilidad",
+                texto: "Reducción de costos ocultos, mejora de márgenes operativos y eficiencia en líneas de producto/servicio."
+              },
+              {
+                valor: "Reestructuración organizacional y gobierno corporativo",
+                texto: "Institucionalización de la empresa, manuales de funciones y preparación para escalamiento o sucesión."
+              }
+            ]
+          },
+          {
+            id: "ce_2",
+            name: "diag_ce_kpis",
+            titulo: "Seguimiento y Medición de Resultados:",
+            opciones: [
+              {
+                valor: "Contamos con metas pero falta alineación operativa",
+                texto: "Tenemos objetivos comerciales pero requerimos un tablero de control (KPIs) y seguimiento de gestión."
+              },
+              {
+                valor: "Toma de decisiones intuitiva sin indicadores formales",
+                texto: "Actualmente la toma de decisiones no cuenta con métricas formales periódicas de desempeño."
+              }
+            ]
+          }
+        ],
+        "Elaboración de Forecast": [
+          {
+            id: "ef_1",
+            name: "diag_ef_horizonte",
+            titulo: "Alcance y Horizonte de Planificación:",
+            opciones: [
+              {
+                valor: "Presupuesto anual y forecast móvil con múltiples escenarios",
+                texto: "Requerimos modelo de proyección financiera a 12 o 24 meses con análisis de sensibilidad (optimista/pesimista)."
+              },
+              {
+                valor: "Flujo de caja proyectado a corto/mediano plazo",
+                texto: "Requerimos proyección de ingresos y egresos a corto plazo para control estricto de liquidez y tesorería."
+              }
+            ]
+          },
+          {
+            id: "ef_2",
+            name: "diag_ef_data",
+            titulo: "Calidad de Datos Históricos Disponibles:",
+            opciones: [
+              {
+                valor: "Históricos consolidados listos para modelar",
+                texto: "Disponemos de registros de ventas, costos y gastos de los últimos 2-3 años listos para análisis de tendencias."
+              },
+              {
+                valor: "Datos dispersos en proceso de estructuración",
+                texto: "Nuestros datos históricos requieren consolidación y definición de variables clave de proyección."
+              }
+            ]
+          }
+        ],
+        "Emisión de Garantías / Cartas de Crédito": [
+          {
+            id: "eg_1",
+            name: "diag_eg_instrumento",
+            titulo: "Tipo de Instrumento o Garantía Necesaria:",
+            opciones: [
+              {
+                valor: "Garantía de Fiel Cumplimiento o Buen Uso de Anticipo",
+                texto: "Requerimos respaldo para contratos de obra, servicios, licitaciones públicas o contratos con privados."
+              },
+              {
+                valor: "Carta de Crédito Comercial / Standby para importaciones",
+                texto: "Requerimos instrumento para garantizar operaciones de importación, comercio exterior o líneas con proveedores."
+              }
+            ]
+          },
+          {
+            id: "eg_2",
+            name: "diag_eg_cupo",
+            titulo: "Líneas de Crédito y Cupos Disponibles:",
+            opciones: [
+              {
+                valor: "Contamos con línea activa y buscamos mejores condiciones/plazos",
+                texto: "Tenemos cupo disponible en el sistema financiero y buscamos agilidad, mejores tasas o menor colateral."
+              },
+              {
+                valor: "Requerimos estructuración técnica para apertura de cupo",
+                texto: "Requerimos preparar el dossier financiero técnico para solicitar la aprobación de un nuevo cupo."
+              }
+            ]
+          }
+        ],
+        "Otro": [
+          {
+            id: "ot_1",
+            name: "diag_ot_enfoque",
+            titulo: "Enfoque Principal de tu Requerimiento:",
+            opciones: [
+              {
+                valor: "Asesoría o diagnóstico financiero/tributario integral",
+                texto: "Necesitamos una evaluación integral de la situación económico-financiera de nuestra empresa."
+              },
+              {
+                valor: "Proyecto especial, peritaje o valoración corporativa",
+                texto: "Requerimos un servicio pericial especializado, valoración de empresa o reestructuración puntual."
+              }
+            ]
+          }
+        ]
+      };
+
+      // Si se especificó una clave en la variable de configuración, asignarla al input
+      if (WEB3FORMS_ACCESS_KEY && WEB3FORMS_ACCESS_KEY !== "TU_ACCESS_KEY_AQUI") {
+        accessKeyInput.value = WEB3FORMS_ACCESS_KEY;
+      }
+
+      // -----------------------------------------------------------------------
+      // RENDERIZAR PREGUNTAS DINÁMICAS SEGÚN EL SERVICIO ELEGIDO
+      // -----------------------------------------------------------------------
+      function obtenerServicioSeleccionado() {
+        return selectServicio ? selectServicio.value : "Consultoría Financiera";
+      }
+
+      function obtenerPreguntasActuales() {
+        const servicio = obtenerServicioSeleccionado();
+        return PREGUNTAS_POR_SERVICIO[servicio] || PREGUNTAS_POR_SERVICIO["Consultoría Financiera"];
+      }
+
+      function renderizarPreguntasParaServicio() {
+        if (!diagQuestionsContainer) return;
+
+        const servicio = obtenerServicioSeleccionado();
+        const preguntas = obtenerPreguntasActuales();
+        const total = preguntas.length;
+
+        // Actualizar textos del encabezado del Paso 2
+        if (diagBadgeService) diagBadgeService.textContent = `${total} ${total === 1 ? 'Pregunta Clave' : 'Preguntas Clave'}`;
+        if (diagHeaderTitle) diagHeaderTitle.textContent = `Diagnóstico: ${servicio}`;
+        if (diagTotalQuestions) diagTotalQuestions.textContent = total;
+        if (diagHeaderDesc) {
+          diagHeaderDesc.textContent = total === 1
+            ? "Responde esta pregunta clave para que el especialista analice tu caso antes del contacto."
+            : "Responde estas 2 breves preguntas clave para que el especialista analice tu caso antes del contacto.";
+        }
+
+        // Construir HTML de las tarjetas
+        let html = "";
+        preguntas.forEach((q, idx) => {
+          html += `
+            <div class="diag-question-group">
+              <div class="diag-question-title">
+                <span class="diag-question-tag">${idx + 1}.</span>
+                <span>${q.titulo}</span>
+              </div>
+              <div class="diag-options-container">
+          `;
+
+          q.opciones.forEach((opt, optIdx) => {
+            const inputId = `${q.id}_opt_${optIdx}`;
+            html += `
+              <input type="radio" name="${q.name}" id="${inputId}" value="${opt.valor}" class="diag-radio-input" />
+              <label for="${inputId}" class="diag-option-label">
+                <span class="diag-custom-radio"></span>
+                <span class="diag-option-text">${opt.texto}</span>
+              </label>
+            `;
+          });
+
+          html += `
+              </div>
+            </div>
+          `;
+        });
+
+        diagQuestionsContainer.innerHTML = html;
+
+        // Escuchar cambios en los nuevos radios inyectados
+        const nuevosRadios = diagQuestionsContainer.querySelectorAll('input[type="radio"]');
+        nuevosRadios.forEach(radio => {
+          radio.addEventListener("change", function () {
+            actualizarResumenDiagnostico();
+          });
+        });
+
+        actualizarResumenDiagnostico();
+      }
+
+      // Escuchar cambios en el selector de servicio
+      if (selectServicio) {
+        selectServicio.addEventListener("change", function () {
+          renderizarPreguntasParaServicio();
+        });
+      }
+
+      // Render inicial
+      renderizarPreguntasParaServicio();
+
+      // -----------------------------------------------------------------------
+      // FUNCIÓN PARA CAMBIAR DE PASO CON ANIMACIÓN E INDICADORES
+      // -----------------------------------------------------------------------
+      function irAPaso(paso) {
+        // Ocultar feedback al cambiar de paso
+        feedback.style.display = "none";
+
+        // Si entramos al Paso 2, asegurar que las preguntas coincidan con el servicio
+        if (paso === 2) {
+          renderizarPreguntasParaServicio();
+        }
+
+        // Actualizar paneles visibles
+        panel1.classList.toggle("active", paso === 1);
+        panel2.classList.toggle("active", paso === 2);
+        panel3.classList.toggle("active", paso === 3);
+
+        // Actualizar barra y pasos
+        if (paso === 1) {
+          if (progressBar) progressBar.style.width = "0%";
+          actualizarEstadoIndicador(stepInd1, stepNum1, stepCheck1, "active");
+          actualizarEstadoIndicador(stepInd2, stepNum2, stepCheck2, "inactive");
+          actualizarEstadoIndicador(stepInd3, stepNum3, stepCheck3, "inactive");
+        } else if (paso === 2) {
+          if (progressBar) progressBar.style.width = "50%";
+          actualizarEstadoIndicador(stepInd1, stepNum1, stepCheck1, "completed");
+          actualizarEstadoIndicador(stepInd2, stepNum2, stepCheck2, "active");
+          actualizarEstadoIndicador(stepInd3, stepNum3, stepCheck3, "inactive");
+        } else if (paso === 3) {
+          if (progressBar) progressBar.style.width = "100%";
+          actualizarEstadoIndicador(stepInd1, stepNum1, stepCheck1, "completed");
+          actualizarEstadoIndicador(stepInd2, stepNum2, stepCheck2, "completed");
+          actualizarEstadoIndicador(stepInd3, stepNum3, stepCheck3, "active");
+          actualizarResumenDiagnostico();
+        }
+
+        // Scroll suave al inicio del formulario para facilitar lectura en móvil
+        const contactCard = form.closest(".contact-card");
+        if (contactCard) {
+          const rect = contactCard.getBoundingClientRect();
+          if (rect.top < 0 || rect.top > 200) {
+            contactCard.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      }
+
+      function actualizarEstadoIndicador(item, numEl, checkEl, estado) {
+        if (!item) return;
+        item.classList.remove("active", "completed");
+        if (estado === "active") {
+          item.classList.add("active");
+          if (numEl) numEl.style.display = "inline";
+          if (checkEl) checkEl.style.display = "none";
+        } else if (estado === "completed") {
+          item.classList.add("completed");
+          if (numEl) numEl.style.display = "none";
+          if (checkEl) checkEl.style.display = "inline";
+        } else {
+          if (numEl) numEl.style.display = "inline";
+          if (checkEl) checkEl.style.display = "none";
+        }
+      }
+
+      // -----------------------------------------------------------------------
+      // VALIDACIONES DEL PASO 1 (DATOS DE CONTACTO)
+      // -----------------------------------------------------------------------
+      function validarPaso1() {
+        const nombreInput = document.getElementById("form-nombre");
+        const emailInput = document.getElementById("form-email");
+        const telefonoInput = document.getElementById("form-telefono");
+
+        const nombre = nombreInput ? nombreInput.value.trim() : "";
+        const email = emailInput ? emailInput.value.trim() : "";
+        const telefono = telefonoInput ? telefonoInput.value.trim() : "";
+
+        if (!nombre) {
+          mostrarFeedback("Por favor ingresa tu <strong>Nombre y Apellido</strong> para continuar.", "error");
+          if (nombreInput) nombreInput.focus();
+          return false;
+        }
+
+        if (!email) {
+          mostrarFeedback("Por favor ingresa tu <strong>Correo Electrónico</strong> para continuar.", "error");
+          if (emailInput) emailInput.focus();
+          return false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          mostrarFeedback("Por favor ingresa un correo electrónico con formato válido (ej. nombre@empresa.com).", "error");
+          if (emailInput) emailInput.focus();
+          return false;
+        }
+
+        if (!telefono) {
+          mostrarFeedback("Por favor ingresa un <strong>Teléfono o Celular</strong> para contactarte.", "error");
+          if (telefonoInput) telefonoInput.focus();
+          return false;
+        }
+
+        return true;
+      }
+
+      // -----------------------------------------------------------------------
+      // CONTEO Y RESUMEN DEL DIAGNÓSTICO FINANCIERO
+      // -----------------------------------------------------------------------
+      function contarPreguntasRespondidas() {
+        const preguntas = obtenerPreguntasActuales();
+        let respondidas = 0;
+        preguntas.forEach(q => {
+          if (form.querySelector(`input[name="${q.name}"]:checked`)) {
+            respondidas++;
+          }
+        });
+        return { respondidas, total: preguntas.length };
+      }
+
+      function actualizarResumenDiagnostico() {
+        const { respondidas, total } = contarPreguntasRespondidas();
+        const servicio = obtenerServicioSeleccionado();
+
+        if (diagCounter) diagCounter.textContent = respondidas;
+        if (diagTotalQuestions) diagTotalQuestions.textContent = total;
+        if (diagSummaryBadge) diagSummaryBadge.textContent = `${respondidas} / ${total} Respondidas`;
+
+        if (diagSummaryText) {
+          if (respondidas === total && total > 0) {
+            diagSummaryText.innerHTML = `<strong>¡Diagnóstico completo para ${servicio}!</strong> Se adjuntará a tu consulta.`;
+          } else if (respondidas > 0) {
+            diagSummaryText.innerHTML = `<strong>Diagnóstico preliminar:</strong> ${respondidas} de ${total} respuestas para ${servicio}.`;
+          } else {
+            diagSummaryText.innerHTML = `<strong>Consulta directa:</strong> Puedes enviar tu mensaje para ${servicio} sin evaluación previa.`;
+          }
+        }
+      }
+
+      // -----------------------------------------------------------------------
+      // EVENT LISTENERS DE NAVEGACIÓN
+      // -----------------------------------------------------------------------
+      if (btnGotoStep2) {
+        btnGotoStep2.addEventListener("click", function () {
+          if (validarPaso1()) {
+            irAPaso(2);
+          }
+        });
+      }
+
+      if (btnSkipToStep3) {
+        btnSkipToStep3.addEventListener("click", function () {
+          if (validarPaso1()) {
+            irAPaso(3);
+          }
+        });
+      }
+
+      if (btnBackToStep1) {
+        btnBackToStep1.addEventListener("click", function () {
+          irAPaso(1);
+        });
+      }
+
+      if (btnGotoStep3) {
+        btnGotoStep3.addEventListener("click", function () {
+          irAPaso(3);
+        });
+      }
+
+      if (btnSkipFromStep2) {
+        btnSkipFromStep2.addEventListener("click", function () {
+          irAPaso(3);
+        });
+      }
+
+      if (btnBackToStep2) {
+        btnBackToStep2.addEventListener("click", function () {
+          irAPaso(2);
+        });
+      }
+
+      // -----------------------------------------------------------------------
+      // ENVÍO DEL FORMULARIO (PASO 3 A WEB3FORMS)
+      // -----------------------------------------------------------------------
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        // Validar Paso 1 nuevamente por seguridad
+        if (!validarPaso1()) {
+          irAPaso(1);
+          return;
+        }
+
+        // Validar campo de mensaje del Paso 3
+        const mensajeInput = document.getElementById("form-mensaje");
+        const mensaje = mensajeInput ? mensajeInput.value.trim() : "";
+
+        if (!mensaje) {
+          mostrarFeedback("Por favor describe brevemente tu requerimiento o consulta en el cuadro de texto.", "error");
+          if (mensajeInput) mensajeInput.focus();
+          return;
+        }
+
+        // Estado visual de carga
+        submitBtn.disabled = true;
+        btnText.textContent = "Enviando solicitud...";
+        btnArrow.style.display = "none";
+        btnSpinner.style.display = "inline-block";
+        feedback.style.display = "none";
+
+        // Comprobación de marcador de clave Web3Forms
+        const activeKey = accessKeyInput.value;
+        if (!activeKey || activeKey === "TU_ACCESS_KEY_AQUI") {
+          // Modo demostración interactivo con validación completa
+          setTimeout(() => {
+            submitBtn.disabled = false;
+            btnText.textContent = "Enviar Solicitud";
+            btnArrow.style.display = "inline-block";
+            btnSpinner.style.display = "none";
+
+            const { respondidas, total } = contarPreguntasRespondidas();
+            const servicio = obtenerServicioSeleccionado();
+            mostrarFeedback(
+              `<strong>¡Validación de diseño y diagnóstico exitosa!</strong> El formulario multi-step recopiló tus datos de contacto, ${respondidas}/${total} respuestas de diagnóstico para el servicio <em>"${servicio}"</em> y tu mensaje con éxito. Para recibir los datos en tu correo real, ingresa tu clave gratuita de <a href='https://web3forms.com' target='_blank' style='text-decoration: underline; font-weight: bold; color: inherit;'>web3forms.com</a> en la variable <code>WEB3FORMS_ACCESS_KEY</code>.`,
+              "warning"
+            );
+          }, 600);
+          return;
+        }
+
+        // Envío real a la API de Web3Forms
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+          });
+
+          const data = await response.json();
+
+          if (response.status === 200 && data.success) {
+            form.reset();
+            actualizarResumenDiagnostico();
+            irAPaso(1);
+            mostrarFeedback(
+              "<strong>¡Solicitud enviada con éxito!</strong> Muchas gracias por contactarnos. Un consultor especializado de Strategic Leverage Partner revisará tus datos y respuestas de diagnóstico para comunicarse contigo en menos de 24 horas.",
+              "success"
+            );
+          } else {
+            mostrarFeedback(
+              data.message || "Ocurrió un inconveniente al procesar tu solicitud. Por favor intenta de nuevo o escríbenos directamente por WhatsApp.",
+              "error"
+            );
+          }
+        } catch (error) {
+          console.error("Error al enviar formulario:", error);
+          mostrarFeedback(
+            "Hubo un error de conexión al enviar el mensaje. Por favor verifica tu conexión a internet o contáctanos por WhatsApp.",
+            "error"
+          );
+        } finally {
+          submitBtn.disabled = false;
+          btnText.textContent = "Enviar Solicitud";
+          btnArrow.style.display = "inline-block";
+          btnSpinner.style.display = "none";
+        }
+      });
+
+      function mostrarFeedback(mensajeHtml, tipo) {
+        feedback.className = "contact-alert";
+        feedback.classList.add(
+          tipo === "success"
+            ? "contact-alert-success"
+            : tipo === "warning"
+              ? "contact-alert-warning"
+              : "contact-alert-error"
+        );
+        feedback.innerHTML = `
+          <svg style="width: 1.25rem; height: 1.25rem; flex-shrink: 0; margin-top: 0.15rem;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            ${tipo === "success"
+            ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>'
+            : tipo === "warning"
+              ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>'
+              : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>'
+          }
+          </svg>
+          <div>${mensajeHtml}</div>
+        `;
+        feedback.style.display = "flex";
+        feedback.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", inicializarFormulario);
+    } else {
+      inicializarFormulario();
+    }
+  </script>
 </body>
 
 </html>
