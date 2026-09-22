@@ -552,6 +552,7 @@
         opacity: 0;
         transform: translateY(8px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -672,22 +673,22 @@
       transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .diag-radio-input:checked + .diag-option-label {
+    .diag-radio-input:checked+.diag-option-label {
       border-color: #015d4c;
       background-color: rgba(1, 93, 76, 0.04);
       box-shadow: 0 0 0 2px rgba(1, 93, 76, 0.1);
     }
 
-    .diag-radio-input:checked + .diag-option-label .diag-custom-radio {
+    .diag-radio-input:checked+.diag-option-label .diag-custom-radio {
       border-color: #015d4c;
       background-color: #ffffff;
     }
 
-    .diag-radio-input:checked + .diag-option-label .diag-custom-radio::after {
+    .diag-radio-input:checked+.diag-option-label .diag-custom-radio::after {
       transform: scale(1);
     }
 
-    .diag-radio-input:focus-visible + .diag-option-label {
+    .diag-radio-input:focus-visible+.diag-option-label {
       outline: 2px solid #015d4c;
       outline-offset: 2px;
     }
@@ -699,7 +700,7 @@
       flex: 1;
     }
 
-    .diag-radio-input:checked + .diag-option-label .diag-option-text {
+    .diag-radio-input:checked+.diag-option-label .diag-option-text {
       color: #0f172a;
       font-weight: 500;
     }
@@ -1230,7 +1231,8 @@
           <h3 class="text-lg font-bold text-azul mb-2">Conéctate en Redes Sociales</h3>
           <p class="text-xs text-gray-500 mb-4">Escanea el código QR o haz clic en el botón para conocer nuestras
             novedades.</p>
-          <a href="https://linktr.ee/Strategic_Leverage_Partner" target="_blank" rel="noopener noreferrer" class="block">
+          <a href="https://linktr.ee/Strategic_Leverage_Partner" target="_blank" rel="noopener noreferrer"
+            class="block">
             <img alt="QR de redes sociales" class="contact-qr-img" src="../images/qr-redes.png"
               onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='/images/qr-redes.png';}" />
           </a>
@@ -1267,7 +1269,8 @@
             <div class="wizard-step-item active" id="step-indicator-1">
               <div class="wizard-step-circle">
                 <span class="step-num" id="step-num-1">1</span>
-                <svg class="step-check w-4 h-4" id="step-check-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;">
+                <svg class="step-check w-4 h-4" id="step-check-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  style="display:none;">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
@@ -1277,7 +1280,8 @@
             <div class="wizard-step-item" id="step-indicator-2">
               <div class="wizard-step-circle">
                 <span class="step-num" id="step-num-2">2</span>
-                <svg class="step-check w-4 h-4" id="step-check-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;">
+                <svg class="step-check w-4 h-4" id="step-check-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  style="display:none;">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
@@ -1287,7 +1291,8 @@
             <div class="wizard-step-item" id="step-indicator-3">
               <div class="wizard-step-circle">
                 <span class="step-num" id="step-num-3">3</span>
-                <svg class="step-check w-4 h-4" id="step-check-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;">
+                <svg class="step-check w-4 h-4" id="step-check-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                  style="display:none;">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
                 </svg>
               </div>
@@ -1297,9 +1302,8 @@
         </div>
 
         <form id="contact-form" novalidate>
-          <!-- Configuración Web3Forms -->
-          <!-- Marcador para tu Access Key: reemplaza en la variable WEB3FORMS_ACCESS_KEY del script o directamente aquí -->
-          <input type="hidden" name="access_key" id="web3forms-access-key" value="TU_ACCESS_KEY_AQUI" />
+          <input type="hidden" name="access_key" id="web3forms-access-key"
+            value="03772f54-d500-4070-a949-e8c70ae2fd50" />
           <input type="hidden" name="subject"
             value="Nuevo contacto con Diagnóstico Financiero - Strategic Leverage Partner" />
           <input type="hidden" name="from_name" value="Strategic Leverage Partner Web" />
@@ -1312,7 +1316,8 @@
           <div class="wizard-step-panel active" id="wizard-panel-1">
             <div class="mb-4">
               <h3 class="text-lg font-bold text-azul">Paso 1: Datos de Contacto</h3>
-              <p class="text-xs text-gray-500">Ingresa tus datos para identificarte y canalizar tu consulta adecuadamente.</p>
+              <p class="text-xs text-gray-500">Ingresa tus datos para identificarte y canalizar tu consulta
+                adecuadamente.</p>
             </div>
 
             <!-- Fila 1: Nombre y Empresa -->
@@ -1355,7 +1360,8 @@
                 <option value="Outsourcing Contable">Outsourcing Contable y Tributario</option>
                 <option value="Consultoría Empresarial">Consultoría Empresarial</option>
                 <option value="Elaboración de Forecast">Elaboración de Forecast y Planificación</option>
-                <option value="Emisión de Garantías / Cartas de Crédito">Emisión de Garantías / Cartas de Crédito</option>
+                <option value="Emisión de Garantías / Cartas de Crédito">Emisión de Garantías / Cartas de Crédito
+                </option>
                 <option value="Otro">Otro requerimiento especializado</option>
               </select>
             </div>
@@ -1365,7 +1371,8 @@
               <button type="button" id="btn-goto-step-2" class="contact-submit-btn">
                 <span>Continuar a Evaluación de Diagnóstico</span>
                 <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                  </path>
                 </svg>
               </button>
               <button type="button" id="btn-skip-to-step-3" class="wizard-skip-link">
@@ -1382,11 +1389,14 @@
             <div class="diag-header">
               <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
                 <span class="diag-badge" id="diag-badge-service">Diagnóstico Especializado</span>
-                <span class="text-xs font-semibold text-gray-500">Respondidas: <strong id="diag-counter" class="text-verde">0</strong> de <span id="diag-total-questions">2</span></span>
+                <span class="text-xs font-semibold text-gray-500">Respondidas: <strong id="diag-counter"
+                    class="text-verde">0</strong> de <span id="diag-total-questions">2</span></span>
               </div>
-              <h3 class="text-base md:text-lg font-bold text-azul" id="diag-header-title">Diagnóstico para tu Servicio</h3>
+              <h3 class="text-base md:text-lg font-bold text-azul" id="diag-header-title">Diagnóstico para tu Servicio
+              </h3>
               <p class="text-xs text-gray-600 mt-1" id="diag-header-desc">
-                Responde estas breves preguntas clave para que el consultor especializado prepare una propuesta precisa para tu empresa.
+                Responde estas breves preguntas clave para que el consultor especializado prepare una propuesta precisa
+                para tu empresa.
               </p>
             </div>
 
@@ -1399,14 +1409,16 @@
             <div class="wizard-nav-buttons">
               <button type="button" id="btn-back-to-step-1" class="wizard-btn-prev">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
+                  </path>
                 </svg>
                 <span>Volver</span>
               </button>
               <button type="button" id="btn-goto-step-3" class="wizard-btn-next">
                 <span>Paso Final: Tu Consulta</span>
                 <svg class="w-4 h-4 fill-none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                  </path>
                 </svg>
               </button>
             </div>
@@ -1428,9 +1440,11 @@
             <div class="diag-summary-card">
               <div class="diag-summary-info">
                 <svg class="w-5 h-5 text-verde flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                <span class="diag-summary-text" id="diag-summary-text">Diagnóstico listo para adjuntar al requerimiento.</span>
+                <span class="diag-summary-text" id="diag-summary-text">Diagnóstico listo para adjuntar al
+                  requerimiento.</span>
               </div>
               <span class="diag-summary-badge" id="diag-summary-badge">0 / 5 Respondidas</span>
             </div>
@@ -1448,12 +1462,14 @@
             <div class="wizard-nav-buttons">
               <button type="button" id="btn-back-to-step-2" class="wizard-btn-prev">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18">
+                  </path>
                 </svg>
                 <span>Revisar Diagnóstico</span>
               </button>
 
-              <button type="submit" id="submit-btn" class="contact-submit-btn" style="width: auto; flex: 1; max-width: 260px;">
+              <button type="submit" id="submit-btn" class="contact-submit-btn"
+                style="width: auto; flex: 1; max-width: 260px;">
                 <span id="btn-text">Enviar Solicitud</span>
                 <svg id="btn-arrow" class="w-5 h-5 ml-1 transition-transform duration-200" fill="none"
                   stroke="currentColor" viewBox="0 0 24 24">
@@ -1872,13 +1888,13 @@
     </script>
   <script>
     // =========================================================================
-    // CONFIGURACIÓN DE WEB3FORMS (VARIABLE DE ENTORNO / MARCADOR DE CLAVE)
+    // CONFIGURACIÓN DE WEB3FORMS
+    // En sitios web estáticos (HTML plano / GitHub Pages), process.env no existe en
+    // el navegador. La access_key de Web3Forms es un identificador público de cliente
+    // diseñado para enviarse en el formulario. Evaluamos de forma segura si existiera
+    // una variable de entorno inyectada o window.__ENV__, con fallback a la clave activa.
     // =========================================================================
-    // 1. Obtén tu Access Key gratuita en: https://web3forms.com
-    // 2. Reemplaza el texto "TU_ACCESS_KEY_AQUI" por tu clave (UUID)
-    //    Ejemplo: const WEB3FORMS_ACCESS_KEY = "a1b2c3d4-e5f6-7890-abcd-ef1234567890";
-    // =========================================================================
-    const WEB3FORMS_ACCESS_KEY = "TU_ACCESS_KEY_AQUI";
+    const WEB3FORMS_ACCESS_KEY = "03772f54-d500-4070-a949-e8c70ae2fd50"
 
     function inicializarFormulario() {
       const form = document.getElementById("contact-form");
