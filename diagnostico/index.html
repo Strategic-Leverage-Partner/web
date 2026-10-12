@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico de riesgo empresarial gratis | Strategic Leverage Partner</title>
+<meta name="description" content="Mide en 2 minutos el riesgo financiero, contable y de cumplimiento de tu empresa: 5 preguntas, puntaje y semáforo. Herramienta gratuita de SLP, Ecuador.">
+<link rel="canonical" href="https://www.strategicleverage.partners/diagnostico/">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" /><link rel="icon" href="/favicon.ico" sizes="any" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<meta property="og:title" content="Diagnóstico de riesgo empresarial gratis | Strategic Leverage Partner"><meta property="og:description" content="Mide en 2 minutos el riesgo financiero, contable y de cumplimiento de tu empresa: 5 preguntas, puntaje y semáforo. Herramienta gratuita de SLP, Ecuador.">
+<meta property="og:image" content="https://www.strategicleverage.partners/images/og-slp.jpg"><meta property="og:url" content="https://www.strategicleverage.partners/diagnostico/">
+<meta property="og:type" content="website"><meta property="og:locale" content="es_EC"><meta property="og:site_name" content="Strategic Leverage Partner">
+<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#013C31">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JZL370WFN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5JZL370WFN');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="/recursos/slp-paginas.css">
+<style>
+/* Layout: una columna tipo asistente paso a paso; semáforo como hilo visual del resultado */
+:root{
+  --bg:#F4F7F6; --surface:#FFFFFF; --ink:#1F2A27; --muted:#5C6B66; --line:#D6E0DC;
+  --brand:#015D4C; --brand-deep:#013C31; --gold:#D49724; --gold-soft:#F2C66D; --on-brand:#FFFFFF;
+  --ok:#2E8B57; --warn:#D49724; --bad:#B5473A; --sel:#E6EFEC;
+  --serif:"Libre Baskerville", Georgia, "Times New Roman", serif;
+  --sans:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1A17; --surface:#14241F; --ink:#E8EFEC; --muted:#9DB0AA; --line:#28403A;
+  --brand:#0B7A64; --brand-deep:#08362C; --gold:#E3AC45; --gold-soft:#F2C66D; --on-brand:#FFFFFF;
+  --ok:#4FB37D; --warn:#E3AC45; --bad:#D9695A; --sel:#1C3530; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1A17; --surface:#14241F; --ink:#E8EFEC; --muted:#9DB0AA; --line:#28403A;
+  --brand:#0B7A64; --brand-deep:#08362C; --gold:#E3AC45; --gold-soft:#F2C66D; --on-brand:#FFFFFF;
+  --ok:#4FB37D; --warn:#E3AC45; --bad:#D9695A; --sel:#1C3530; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;margin:0}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:24px 48px}
+header.top{background:var(--brand-deep);color:var(--on-brand);border-radius:6px;padding:22px 22px 20px;display:grid;gap:8px}
+.eyebrow{font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(24px,5vw,32px);line-height:1.2;margin:0;text-wrap:balance}
+.lede{margin:0;color:#D9E6E1;max-width:60ch}
+.progress{margin-top:20px;display:grid;gap:6px}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar>i{display:block;height:100%;width:20%;background:var(--gold);transition:width .3s ease}
+.progress small{color:var(--muted);font-variant-numeric:tabular-nums}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;margin-top:14px;display:grid;gap:16px}
+.qnum{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+h2{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.35;margin:0;text-wrap:balance}
+.opts{display:grid;gap:10px;margin:0;padding:0;border:0}
+.opt{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:12px 14px;cursor:pointer;background:var(--surface)}
+.opt:hover{border-color:var(--brand)}
+.opt input{margin:3px 0 0;accent-color:var(--brand);width:18px;height:18px}
+.opt:has(input:checked){border-color:var(--brand);background:var(--sel)}
+.opt span{min-width:0}
+.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+button,.btn{font:600 16px/1 var(--sans);border-radius:6px;padding:13px 18px;cursor:pointer;border:1px solid var(--brand);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.primary{background:var(--brand);color:var(--on-brand)}
+.ghost{background:transparent;color:var(--brand)}
+:root[data-theme="dark"] .ghost{color:var(--gold-soft);border-color:var(--gold-soft)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ghost{color:var(--gold-soft);border-color:var(--gold-soft)}}
+.gold{background:var(--gold);border-color:var(--gold);color:#1F2A27}
+button:disabled{opacity:.45;cursor:not-allowed}
+button:focus-visible,.btn:focus-visible,.opt:focus-within,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.result{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.light{display:grid;gap:10px;background:#0B2620;padding:14px 12px;border-radius:28px}
+.light b{width:34px;height:34px;border-radius:50%;opacity:.22;display:block}
+.light .r{background:#E5604F}.light .y{background:#F2C14E}.light .g{background:#4FB37D}
+.light b.on{opacity:1;box-shadow:0 0 14px currentColor}
+.score{font-family:var(--serif);font-size:48px;line-height:1;font-variant-numeric:tabular-nums}
+.score small{font-family:var(--sans);font-size:16px;color:var(--muted)}
+.zone{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;color:#fff}
+.z-ok{background:var(--ok)}.z-warn{background:var(--warn);color:#1F2A27}.z-bad{background:var(--bad)}
+.recs{margin:0;padding-left:20px;display:grid;gap:6px}
+.recs li{min-width:0}
+label.f{display:grid;gap:6px;font-weight:600}
+select{font:16px var(--sans);padding:10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
+.phone{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.phone code{font:600 17px var(--sans);user-select:all}
+.legal{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:0}
+.scale{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.scale span{display:inline-flex;gap:6px;align-items:center}
+.scale i{width:10px;height:10px;border-radius:50%;display:inline-block}
+@media (max-width:480px){.result{grid-template-columns:1fr}.light{grid-auto-flow:column;justify-content:start;border-radius:28px}}
+@media (prefers-reduced-motion: reduce){.bar>i{transition:none}}
+</style>
+</head>
+<body>
+<header class="slp-top"><div class="in">
+<a class="logo" href="/" aria-label="Strategic Leverage Partner, inicio"><img src="/images/marca/02_logo_negativo_blanco_dorado.webp" alt="Strategic Leverage Partner" width="122" height="52"></a>
+<nav aria-label="Principal"><a href="/">Inicio</a><a href="/nosotros">Nosotros</a><a href="/servicios">Servicios</a><a href="/recursos-gratuitos/">Recursos gratuitos</a><a href="/diagnostico/" aria-current="page">Diagnóstico</a><a href="/contactos">Contacto</a></nav>
+</div></header>
+<main>
+
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Diagnóstico SLP · 5 preguntas · 2 minutos</div>
+    <h1>¿Tu empresa está en verde, amarillo o rojo?</h1>
+    <p class="lede">Evalúa el riesgo fiscal y financiero de tu empresa con el mismo criterio que usan nuestros consultores. No pedimos datos personales para ver tu resultado.</p>
+  </header>
+
+  <div class="progress" aria-live="polite">
+    <div class="bar" aria-hidden="true"><i id="barfill"></i></div>
+    <small id="ptext">Pregunta 1 de 5</small>
+  </div>
+
+  <form id="quiz" class="card" novalidate>
+    <div class="qnum" id="qnum">Pregunta 1 · Gestión contable y proyección de caja</div>
+    <h2 id="qtext"></h2>
+    <fieldset class="opts" id="opts"><legend class="sr" hidden>Opciones</legend></fieldset>
+    <div class="nav">
+      <button type="button" class="ghost" id="back">Anterior</button>
+      <button type="submit" class="primary" id="next" disabled>Siguiente</button>
+    </div>
+  </form>
+
+  <section id="res" class="card" hidden aria-live="polite">
+    <div class="result">
+      <div class="light" aria-hidden="true"><b class="r" id="lr"></b><b class="y" id="ly"></b><b class="g" id="lg"></b></div>
+      <div style="display:grid;gap:8px;min-width:0">
+        <div class="score"><span id="sc">0</span> <small>/ 100 puntos de riesgo</small></div>
+        <div><span class="zone" id="zone">Zona</span></div>
+        <p id="zmsg" style="margin:0"></p>
+      </div>
+    </div>
+    <div class="scale"><span><i style="background:var(--ok)"></i>0–35 verde</span><span><i style="background:var(--warn)"></i>36–65 amarillo</span><span><i style="background:var(--bad)"></i>66–100 rojo</span></div>
+    <div>
+      <h2 style="font-size:18px;margin-bottom:8px">Dónde está tu mayor riesgo</h2>
+      <ol class="recs" id="recs"></ol>
+    </div>
+    <label class="f" for="city">¿Dónde está tu empresa?
+      <select id="city"><option>Quito</option><option>Guayaquil</option><option>Cuenca</option><option>Otra ciudad del Ecuador</option></select>
+    </label>
+    <div style="display:grid;gap:10px">
+      <a class="btn gold" id="wa" href="#" target="_blank" rel="noopener">Recibir mi hoja de ruta por WhatsApp</a>
+      <div class="phone">Si el botón no abre WhatsApp, escríbenos al <code id="tel">+593 99 572 8488</code> <button type="button" class="ghost" id="copy">Copiar número</button></div>
+      <button type="button" class="ghost" id="again" style="justify-self:start">Volver a hacer la prueba</button>
+    </div>
+    <p class="legal">Tu resultado se calcula en este navegador y no se guarda. Si nos escribes por WhatsApp, usaremos tus datos solo para responder tu consulta y agendar el diagnóstico, conforme a la Ley Orgánica de Protección de Datos Personales del Ecuador; puedes pedir su eliminación cuando quieras. Esta prueba es orientativa y no reemplaza una revisión profesional.</p>
+  </section>
+
+  <p class="legal" style="border:0;margin-top:18px">Strategic Leverage Partner · más de 20 años de experiencia directiva de nuestros socios · Quito · Guayaquil · Cuenca · strategicleverage.partners</p>
+</div>
+
+<script>
+const Q=[
+ {t:'Gestión contable y proyección de caja',q:'¿Cómo toma decisiones la gerencia sobre la liquidez y las inversiones del próximo trimestre?',o:[
+  ['Recibimos cada mes una proyección de flujo de caja de 3 a 6 meses con escenarios.',0],
+  ['Revisamos el balance que entrega el contador entre el 15 y el 20 del mes siguiente.',10],
+  ['Decidimos mirando el saldo del banco día a día y lo que hay que pagar de impuestos a fin de mes.',20]],
+  r:'Proyecta tu flujo de caja a 13 semanas: verás el mes en que faltará liquidez antes de que ocurra.'},
+ {t:'Auditoría externa y cumplimiento',q:'¿Cómo evalúa la relación con su auditoría o sus controles internos ante la Superintendencia de Compañías y el SRI?',o:[
+  ['Nuestra auditoría detecta errores de forma preventiva y el informe nos sirve para gestionar crédito bancario.',0],
+  ['Auditamos solo para entregar el informe que exige la ley dentro del plazo.',10],
+  ['Llevamos más de 3 años con la misma firma sin cambios en las observaciones, o tenemos dudas sobre contingencias fiscales.',20]],
+  r:'Pide una auditoría preventiva: hallazgos antes del cierre y una carta de control interno que se pueda ejecutar.'},
+ {t:'Control operativo y facturación electrónica',q:'¿Su sistema contable permite a la gerencia ver ventas, cobranza y márgenes en tiempo real desde cualquier lugar?',o:[
+  ['Sí, usamos un sistema en la nube integrado con facturación electrónica.',0],
+  ['Tenemos un programa instalado en la oficina y sacamos reportes a mano.',10],
+  ['El proceso es manual o dependemos de los archivos que nos envía el contador externo.',20]],
+  r:'Migra a un sistema contable en la nube con reportes gerenciales: decidir con datos de hace 45 días es decidir a ciegas.'},
+ {t:'Estructuración y financiamiento',q:'Si su empresa necesitara USD 200.000 o más para capital de trabajo, maquinaria o expansión en los próximos 30 días, ¿cómo está su carpeta de crédito?',o:[
+  ['Tenemos un modelo financiero (TIR, VAN, flujo proyectado) listo para presentar a bancos o fondos.',0],
+  ['Presentaríamos los estados financieros del contador y esperaríamos la evaluación del banco.',10],
+  ['Nos han negado crédito o las tasas y plazos que nos ofrecen no caben en nuestro flujo.',20]],
+  r:'Arma tu carpeta de crédito antes de necesitarla: flujo proyectado, uso de fondos, fuente de pago y sensibilidad.'},
+ {t:'Historial de sanciones y requerimientos',q:'En los últimos 24 meses, ¿su empresa recibió notificaciones, requerimientos, reliquidaciones o multas del SRI, el IESS o la Superintendencia de Compañías?',o:[
+  ['Ninguna. Revisamos riesgos antes de cada declaración y cierre.',0],
+  ['Requerimientos menores o multas por atraso que se solucionaron.',10],
+  ['Hemos tenido auditorías de campo, observaciones del IESS o ajustes tributarios importantes.',20]],
+  r:'Haz una revisión tributaria y laboral preventiva: cada contingencia detectada a tiempo cuesta menos que una sanción.'}
+];
+const A=Array(Q.length).fill(null); let i=0;
+const $=id=>document.getElementById(id);
+function draw(){
+  const q=Q[i]; $('qnum').textContent=`Pregunta ${i+1} · ${q.t}`; $('qtext').textContent=q.q;
+  const f=$('opts'); f.querySelectorAll('label').forEach(n=>n.remove());
+  q.o.forEach(([txt,p],k)=>{const l=document.createElement('label');l.className='opt';
+    l.innerHTML=`<input type="radio" name="q${i}" id="q${i}o${k}" value="${k}"><span></span>`;l.querySelector('span').textContent=txt;
+    const inp=l.querySelector('input'); if(A[i]===k) inp.checked=true;
+    inp.addEventListener('change',()=>{A[i]=k;$('next').disabled=false}); f.appendChild(l)});
+  $('next').disabled=A[i]===null; $('next').textContent=i===Q.length-1?'Ver mi resultado':'Siguiente';
+  $('back').disabled=i===0; $('barfill').style.width=((i+1)/Q.length*100)+'%'; $('ptext').textContent=`Pregunta ${i+1} de ${Q.length}`;
+}
+function score(){return A.reduce((s,k,j)=>s+Q[j].o[k][1],0)}
+function zoneOf(s){return s<=35?['Zona verde','z-ok','Operación saludable. Mantén la disciplina y usa la información para crecer con menos riesgo.','g']:
+  s<=65?['Zona amarilla','z-warn','Riesgo moderado: hay ineficiencias que hoy cuestan dinero y mañana pueden ser sanciones o falta de caja.','y']:
+  ['Zona roja','z-bad','Riesgo alto de sanciones, iliquidez o decisiones a ciegas. Conviene actuar antes del cierre del año.','r']}
+function show(){
+  const s=score(), [zn,cls,msg,l]=zoneOf(s);
+  $('quiz').hidden=true; $('res').hidden=false; $('sc').textContent=s; $('zone').textContent=zn; $('zone').className='zone '+cls; $('zmsg').textContent=msg;
+  ['r','y','g'].forEach(x=>$('l'+x).classList.toggle('on',x===l));
+  const order=A.map((k,j)=>[Q[j].o[k][1],j]).filter(x=>x[0]>0).sort((a,b)=>b[0]-a[0]);
+  const recs=$('recs'); recs.innerHTML='';
+  (order.length?order:[[0,-1]]).forEach(([p,j])=>{const li=document.createElement('li');
+    li.textContent=j<0?'No encontramos alertas en tus respuestas. Un diagnóstico anual mantiene la empresa en verde.':`${Q[j].t}: ${Q[j].r}`;recs.appendChild(li)});
+  $('barfill').style.width='100%'; $('ptext').textContent='Resultado listo'; link();
+}
+function link(){const s=score(), zn=zoneOf(s)[0], c=$('city').value;
+  const t=`Hola, hice la Calculadora de Riesgo SLP. Resultado: ${s}/100 (${zn}). Mi empresa está en ${c}. Quisiera agendar el diagnóstico sin costo.`;
+  $('wa').href='https://wa.me/593995728488?text='+encodeURIComponent(t)}
+$('city').addEventListener('change',link);
+$('quiz').addEventListener('submit',e=>{e.preventDefault(); if(A[i]===null) return; if(i<Q.length-1){i++;draw()} else show()});
+$('back').addEventListener('click',()=>{if(i>0){i--;draw()}});
+$('again').addEventListener('click',()=>{A.fill(null);i=0;$('res').hidden=true;$('quiz').hidden=false;draw()});
+$('copy').addEventListener('click',()=>{const t='+593995728488';
+  navigator.clipboard?.writeText(t).then(()=>{$('copy').textContent='Número copiado'}).catch(()=>{const r=document.createRange();r.selectNodeContents($('tel'));const s=getSelection();s.removeAllRanges();s.addRange(r)})});
+draw();
+</script>
+</main>
+<footer class="slp-foot"><div class="in">
+<span>© 2026 Strategic Leverage Partner for Profitable Businesses S.A.S. · Quito, Ecuador</span>
+<span>WhatsApp <a href="https://wa.me/593995728488">+593 99 572 8488</a> · <a href="mailto:comercial@strategicleverage.partners">comercial@strategicleverage.partners</a></span>
+</div></footer>
+</body></html>
