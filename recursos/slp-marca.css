@@ -42,3 +42,9 @@ html,body{max-width:100%;overflow-x:clip}
 .contact-card{max-width:100%}
 .contact-card a,.contact-card p{overflow-wrap:anywhere}
 @media (max-width:640px){.contact-card{padding:1.5rem 1.25rem}}
+/* Portada en tablet y celular: el carrusel queda detrás del texto, se usa fondo de marca sin titulares */
+@media (max-width:1023px){
+  .contenedor-slider .slide{background-image:url(/images/hero-fondo.webp)!important}
+}
+@media (max-width:1023px){.fondo-pr{top:calc(50% + 70px)!important}}
+@media (max-width:639px){.fondo-pr{top:calc(50% + 110px)!important}}
