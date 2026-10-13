@@ -398,3 +398,174 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0;t
 .nl .msg.ok{display:block;background:rgba(242,198,109,.14);color:var(--gold-2)}
 .nl .msg.err{display:block;background:#FBEAE7;color:#8A2F24}
 @media (max-width:860px){.nl{grid-template-columns:1fr}}
+
+/* ==========================================================================
+   CAPA DE MARCA 2026b · el isotipo SLP como sistema visual
+   - Isotipo (4 triángulos concéntricos) como marca de sección, viñeta y sello de tarjeta
+   - "Líneas gráficas": contornos del isotipo en ondas + rayado diagonal del manual
+   - Oro solo como acento de precisión; verde bosque para la voz institucional
+   ========================================================================== */
+:root{--iso:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='18 20 422 366'%3E%3Cpath fill-rule='evenodd' d='M229.0 21.0L18.8 385.0L439.2 385.0ZM229.0 55.0L47.7 369.0L410.3 369.0ZM229.0 80.0L69.7 356.0L388.3 356.0ZM229.0 115.0L99.1 340.0L358.9 340.0ZM229.0 137.0L117.6 330.0L340.4 330.0ZM229.0 171.0L147.0 313.0L311.0 313.0ZM229.0 197.0L169.0 301.0L289.0 301.0Z'/%3E%3C/svg%3E");--tri:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8.66'%3E%3Cpath d='M5 0 10 8.66H0z'/%3E%3C/svg%3E");--hatch:repeating-linear-gradient(135deg,rgba(242,198,109,.16) 0 1px,transparent 1px 9px)}
+.only-m{display:none!important}
+@media (max-width:1080px){.only-m{display:flex!important}}
+
+/* Marca en cabecera */
+.brand-logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff;min-width:0}
+.brand-logo img{height:36px;width:auto}
+.bl-txt{display:grid;gap:3px;padding-left:14px;border-left:1px solid rgba(242,198,109,.45);line-height:1}
+.bl-txt b{font-weight:600;font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:#fff;white-space:nowrap}
+.bl-txt small{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-2);white-space:nowrap}
+.nav{gap:2px}
+.nav>a,.nav .dd>button{font-size:14.5px;padding:10px 11px}
+.site-head .in{max-width:1380px}
+.nav>a,.nav .dd>button{white-space:nowrap}
+@media (max-width:1399px) and (min-width:1081px){.bl-txt{display:none}}
+@media (max-width:420px){.bl-txt b{font-size:10.5px;letter-spacing:.16em}.bl-txt small{font-size:8.5px;letter-spacing:.2em}.brand-logo img{height:30px}.brand-logo{gap:10px}.bl-txt{padding-left:10px}}
+@media (max-width:350px){.bl-txt{display:none}}
+
+/* Eyebrow con isotipo */
+.eyebrow::before{width:17px;height:15px;background:currentColor;-webkit-mask:var(--iso) center/contain no-repeat;mask:var(--iso) center/contain no-repeat}
+.eyebrow::after{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
+
+/* Líneas gráficas */
+.hero-lines,.ph-lines,.cta-lines,.foot-lines{position:absolute;pointer-events:none;z-index:-1;color:var(--gold)}
+.hatch-corner{position:absolute;left:0;bottom:0;width:min(520px,60vw);height:180px;background:var(--hatch);z-index:-1;pointer-events:none;-webkit-mask:linear-gradient(35deg,#000 0%,transparent 65%);mask:linear-gradient(35deg,#000 0%,transparent 65%);opacity:.7}
+.hatch-band{height:10px;background:linear-gradient(90deg,var(--brand),var(--gold) 50%,var(--brand));position:relative}
+.hatch-band::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(6,32,27,.55) 0 2px,transparent 2px 8px)}
+
+/* ---------- Hero de portada ---------- */
+.brand-hero{min-height:min(100svh,980px);flex-direction:column;justify-content:center;padding-top:112px;padding-bottom:36px}
+.brand-hero .grid{grid-template-columns:1.08fr .92fr;width:100%}
+.brand-hero .hero-chart{opacity:.45;height:48%}
+.hero-lines{width:min(1080px,92vw);right:-14%;top:50%;transform:translateY(-52%);opacity:.22}
+.brand-hero h1{margin:22px 0 22px;display:grid;gap:18px}
+.brand-hero .wm{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:clamp(22px,3vw,42px);line-height:1.08;color:#fff;padding-bottom:18px;position:relative}
+.brand-hero .wm span{color:var(--gold-2)}
+.brand-hero .wm::after{content:"";position:absolute;left:0;bottom:0;width:120px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+.brand-hero .tg{font-family:var(--serif);font-size:clamp(32px,3.7vw,54px);line-height:1.08;color:#fff;letter-spacing:-.01em}
+.brand-hero .tg em{font-style:italic;color:var(--gold-2)}
+.brand-hero .btn.ghost svg{width:18px;height:18px}
+.assure{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14.5px;color:var(--on-dark)}
+.assure li{display:flex;align-items:center;gap:8px}
+.assure li::before,.panel li::before{content:"";flex:none;width:10px;height:9px;border-radius:0;margin:0;background:var(--gold);-webkit-mask:var(--tri) center/contain no-repeat;mask:var(--tri) center/contain no-repeat}
+.panel li::before{margin-top:7px}
+.hero-visual{position:relative;display:grid;place-items:center;min-height:420px}
+.hero-visual .glow{position:absolute;width:88%;aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(242,198,109,.30),rgba(212,151,36,.10) 55%,transparent 72%);filter:blur(6px)}
+.hero-visual .iso3d{position:relative;width:min(560px,100%);height:auto;filter:drop-shadow(0 40px 50px rgba(0,0,0,.55));animation:float 7s ease-in-out infinite}
+.hero-visual .floor{position:absolute;bottom:4%;width:58%;height:34px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent);animation:shadow 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(-.6deg)}}
+@keyframes shadow{0%,100%{transform:scaleX(1);opacity:.9}50%{transform:scaleX(.88);opacity:.6}}
+@media (prefers-reduced-motion:reduce){.hero-visual .iso3d,.hero-visual .floor{animation:none}}
+.frames{display:flex;flex-wrap:wrap;align-items:center;gap:10px 26px;margin-top:56px;padding-top:22px;border-top:1px solid var(--line-dark);font-size:13px;color:var(--on-dark-muted)}
+.frames span{font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:11.5px;color:var(--gold-2)}
+.frames b{font-weight:600;letter-spacing:.08em;color:var(--on-dark)}
+@media (max-width:960px){
+  .brand-hero .grid{grid-template-columns:1fr}
+  .hero-visual{order:-1;min-height:0;max-width:300px;margin:0 auto -6px}
+  .hero-lines{width:150vw;right:-25vw;top:24%;opacity:.18}
+}
+@media (max-width:560px){.hero-visual{max-width:220px}.frames{margin-top:36px;gap:8px 16px}}
+
+/* Diagnóstico en franja */
+.diag-strip{margin-top:44px;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:28px 32px;border-radius:20px;background:linear-gradient(110deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border:1px solid rgba(242,198,109,.28);box-shadow:0 40px 80px -40px rgba(0,0,0,.6)}
+.ds-iso{width:64px;height:auto;color:var(--gold)}
+.diag-strip h2{font-size:clamp(22px,2.4vw,30px);margin:10px 0 6px}
+.diag-strip p{color:var(--on-dark-muted);font-size:15.5px}
+.ds-act{display:grid;gap:12px;min-width:280px}
+.ds-act .signal{margin:0}
+@media (max-width:960px){.diag-strip{grid-template-columns:1fr;padding:24px}.ds-iso{width:44px}.ds-act{min-width:0}}
+
+/* Vencimientos */
+.dues-sec{background:linear-gradient(180deg,#E9EFED,var(--paper))}
+.dues{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.due{position:relative;display:flex;flex-direction:column;gap:10px;padding:26px 24px;border-radius:18px;background:var(--surface);border:1px solid var(--line);text-decoration:none;color:inherit;overflow:hidden;transition:transform var(--t-fast),box-shadow var(--t-fast)}
+.due:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.due .k{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
+.due .d{display:flex;align-items:baseline;gap:8px}
+.due .d b{font-family:var(--serif);font-weight:400;font-size:46px;line-height:1;color:var(--forest)}
+.due .d small{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.due.hot .d b{color:#A4472F}
+.due h3{font-size:19px;color:var(--forest)}
+.due p{font-size:14.5px;color:var(--muted)}
+.due .when{margin-top:auto;font-size:13.5px;font-weight:700;color:var(--gold)}
+.note-s{font-size:13.5px;color:var(--muted)}
+@media (max-width:1080px){.dues{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.dues{grid-template-columns:1fr}}
+
+/* Sello del isotipo en tarjetas */
+.unit::before,.case::before,.news::before,.due::before,.doc::before,.svc::before,.ch::before{content:"";position:absolute;top:18px;right:18px;width:22px;height:19px;background:var(--brand);opacity:.12;-webkit-mask:var(--iso) center/contain no-repeat;mask:var(--iso) center/contain no-repeat;transition:opacity var(--t-fast),background var(--t-fast),transform var(--t-fast);pointer-events:none}
+.unit:hover::before,.case:hover::before,.news:hover::before,.due:hover::before,.doc:hover::before,.svc:hover::before{opacity:1;background:var(--gold);transform:translateY(-2px)}
+.news::before{background:var(--gold-2);opacity:.2}
+.news-grid.light .news::before,.lead-news::before{background:var(--brand);opacity:.12}
+.case,.news,.doc,.svc,.ch{position:relative}
+.ch::before{top:14px;right:14px;width:16px;height:14px}
+
+/* Viñetas triangulares */
+.svc ul,.art ul:not(.src){list-style:none;padding-left:0}
+.svc ul li,.art ul:not(.src) li{position:relative;padding-left:20px}
+.svc ul li::before,.art ul:not(.src) li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:8px;background:var(--gold);-webkit-mask:var(--tri) center/contain no-repeat;mask:var(--tri) center/contain no-repeat}
+.src{list-style:none;padding-left:0}
+.src li{position:relative;padding-left:20px}
+.src li::before{content:"";position:absolute;left:0;top:.6em;width:9px;height:8px;background:var(--gold);-webkit-mask:var(--tri) center/contain no-repeat;mask:var(--tri) center/contain no-repeat}
+
+/* Pilares y pasos: numeral con triángulo */
+.pillar .k::before{content:"";display:inline-block;width:12px;height:10px;margin-right:8px;background:var(--gold);-webkit-mask:var(--tri) center/contain no-repeat;mask:var(--tri) center/contain no-repeat}
+.step{overflow:hidden}
+.step::after{content:"";position:absolute;right:-26px;bottom:-30px;width:120px;height:104px;background:var(--gold);opacity:.06;-webkit-mask:var(--iso) center/contain no-repeat;mask:var(--iso) center/contain no-repeat}
+
+/* Secciones oscuras: sello del isotipo de fondo */
+.section.dark.texture>.wrap{position:relative}
+.section.dark.texture::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.section.dark.texture .wrap::before{content:"";position:absolute;right:-6%;top:-40px;width:min(440px,46vw);aspect-ratio:422/366;background:var(--gold);opacity:.045;-webkit-mask:var(--iso) center/contain no-repeat;mask:var(--iso) center/contain no-repeat;pointer-events:none;z-index:-1}
+
+/* Encabezados de páginas internas */
+.page-hero{position:relative;padding-top:160px;padding-bottom:88px}
+.ph-lines{width:min(820px,80vw);right:-10%;top:50%;transform:translateY(-46%);opacity:.2}
+.ph-iso{position:absolute;right:max(4vw,calc((100vw - var(--wrap)) / 2 + 20px));top:54%;transform:translateY(-50%);width:clamp(200px,24vw,340px);z-index:-1;pointer-events:none}
+.ph-iso::before{content:"";position:absolute;inset:-12%;border-radius:50%;background:radial-gradient(closest-side,rgba(242,198,109,.24),transparent 70%)}
+.ph-iso img{position:relative;width:100%;height:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.5));animation:float 8s ease-in-out infinite}
+.page-hero .wrap>*{max-width:min(760px,100%)}
+@media (max-width:960px){.ph-iso{opacity:.28;right:-40px;width:240px}.ph-lines{opacity:.14}}
+@media (max-width:560px){.ph-iso{top:40%;width:190px;right:-50px;opacity:.22}}
+
+/* CTA */
+.cta-lines{width:560px;right:-120px;top:50%;transform:translateY(-50%);opacity:.22}
+.cta-band::after{content:"";position:absolute;left:0;top:0;width:6px;height:100%;background:linear-gradient(180deg,var(--gold),var(--brand))}
+.assure-s{flex-basis:100%;text-align:right;font-size:13px;color:var(--on-dark-muted);margin-top:4px}
+@media (max-width:860px){.assure-s{text-align:left}}
+
+/* Pie */
+.site-foot{overflow:hidden}
+.foot-lines{width:900px;left:-280px;bottom:-280px;opacity:.12}
+.foot-top img{height:75px}
+.foot-wm{margin:0;padding-block:36px 8px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:clamp(14px,3.7vw,52px);line-height:1;white-space:nowrap;text-align:center;color:transparent;-webkit-text-stroke:1px rgba(242,198,109,.32);user-select:none;overflow:hidden}
+@media (max-width:520px){.foot-wm{-webkit-text-stroke:.6px rgba(242,198,109,.4);letter-spacing:.06em}}
+
+/* Contacto: qué pasa después */
+.next{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:n}
+.next li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;display:grid;gap:8px;align-content:start}
+.next li+li::after{content:"";position:absolute;left:-14px;top:50%;width:10px;height:9px;background:var(--gold);transform:translateY(-50%) rotate(90deg);-webkit-mask:var(--tri) center/contain no-repeat;mask:var(--tri) center/contain no-repeat}
+.next .n{font-family:var(--serif);font-size:34px;line-height:1;color:var(--gold)}
+.next h3{font-size:21px;color:var(--forest)}
+.next p{color:var(--muted);font-size:15.5px}
+@media (max-width:860px){.next{grid-template-columns:1fr}.next li+li::after{left:50%;top:-14px;transform:translateX(-50%) rotate(180deg)}}
+
+/* Barra móvil de contacto */
+.mbar{display:none}
+@media (max-width:760px){
+  .mbar{position:fixed;left:0;right:0;bottom:0;z-index:45;display:grid;grid-template-columns:1fr 1.3fr;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:rgba(6,32,27,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid rgba(242,198,109,.3)}
+  .mbar a{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 10px;border-radius:999px;font-weight:700;font-size:14.5px;text-decoration:none}
+  .mb-wa{background:#25D366;color:#06201B}
+  .mb-wa svg{width:18px;height:18px}
+  .mb-cta{background:var(--gold);color:var(--ink)}
+  .wa{display:none}
+  body{padding-bottom:74px}
+  .site-head[data-menu="open"]~.mbar{display:none}
+}
+.brand-hero>.wrap{width:100%}
+.page-hero .ph-img img{opacity:.22;filter:saturate(.6)}
+@media (max-width:560px){.eyebrow::after{display:none}}
+.ph-iso{width:auto;height:min(72%,330px);top:calc(50% + 38px)}
+.ph-iso img{height:100%;width:auto}
+@media (max-width:960px){.ph-iso{height:220px;width:auto}}
+@media (max-width:560px){.ph-iso{height:170px}}

@@ -66,6 +66,21 @@
     });
   });
 
+  // Vencimientos: días que faltan (zona horaria de Ecuador)
+  var MES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+  var hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+  document.querySelectorAll('[data-due]').forEach(function (el) {
+    var v = el.getAttribute('data-due'), f;
+    if (v.indexOf('mensual-') === 0) { var d = +v.split('-')[1]; f = new Date(hoy.getFullYear(), hoy.getMonth(), d); if (f < hoy) f = new Date(hoy.getFullYear(), hoy.getMonth() + 1, d); }
+    else { var p = v.split('-'); f = new Date(+p[0], +p[1] - 1, +p[2]); }
+    var n = Math.round((f - hoy) / 86400000);
+    if (n < 0) { el.hidden = true; return; }
+    el.querySelector('[data-days]').textContent = n;
+    if (n === 1) el.querySelector('.d small').textContent = 'día';
+    if (n <= 30) el.classList.add('hot');
+    el.querySelector('[data-when]').textContent = (n === 0 ? 'Vence hoy · ' : 'Vence el ') + f.getDate() + ' de ' + MES[f.getMonth()] + ' de ' + f.getFullYear();
+  });
+
   // Medición de clics a WhatsApp
   document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) { a.addEventListener('click', function () { try { gtag('event', 'contact_whatsapp', { link_url: a.href }); } catch (e) {} }); });
 })();
