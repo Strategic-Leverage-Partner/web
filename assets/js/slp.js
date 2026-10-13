@@ -46,22 +46,24 @@
     });
   });
 
-  // Formulario de contacto (Web3Forms)
-  var form = document.getElementById('form-contacto');
-  if (form) form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var msg = form.querySelector('.msg'), btn = form.querySelector('button[type=submit]');
-    msg.className = 'msg';
-    if (!form.checkValidity()) { msg.className = 'msg err'; msg.textContent = 'Revisa los campos obligatorios: nombre, correo, teléfono, mensaje y la autorización de datos.'; form.reportValidity(); return; }
-    btn.disabled = true; btn.firstChild.textContent = 'Enviando… ';
-    fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d.success) { msg.className = 'msg ok'; msg.textContent = 'Gracias. Recibimos tu solicitud y un consultor te contactará en horario laboral.'; form.reset(); try { gtag('event', 'generate_lead', { method: 'formulario' }); } catch (e) {} }
-        else { throw new Error(d.message || 'error'); }
-      })
-      .catch(function () { msg.className = 'msg err'; msg.innerHTML = 'No pudimos enviar el formulario. Escríbenos por <a href="https://wa.me/593995728488">WhatsApp +593 99 572 8488</a> o a comercial@strategicleverage.partners.'; })
-      .finally(function () { btn.disabled = false; btn.firstChild.textContent = 'Enviar solicitud '; });
+  // Formularios Web3Forms: contacto y alerta tributaria
+  document.querySelectorAll('form.js-w3f').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var msg = form.querySelector('.msg'), btn = form.querySelector('button[type=submit]'), label = btn.firstChild.textContent;
+      msg.className = 'msg';
+      if (!form.checkValidity()) { msg.className = 'msg err'; msg.textContent = 'Revisa los campos obligatorios y la autorización de datos.'; form.reportValidity(); return; }
+      btn.disabled = true; btn.firstChild.textContent = 'Enviando… ';
+      fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (!d.success) throw new Error(d.message || 'error');
+          msg.className = 'msg ok'; msg.textContent = form.getAttribute('data-ok') || 'Gracias, recibimos tus datos.'; form.reset();
+          try { gtag('event', form.getAttribute('data-ev') === 'suscripcion' ? 'sign_up' : 'generate_lead', { method: form.getAttribute('data-ev') || 'formulario' }); } catch (e) {}
+        })
+        .catch(function () { msg.className = 'msg err'; msg.innerHTML = 'No pudimos enviar el formulario. Escríbenos por <a href="https://wa.me/593995728488">WhatsApp +593 99 572 8488</a> o a comercial@strategicleverage.partners.'; })
+        .finally(function () { btn.disabled = false; btn.firstChild.textContent = label; });
+    });
   });
 
   // Medición de clics a WhatsApp

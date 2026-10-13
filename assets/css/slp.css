@@ -320,3 +320,81 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0;t
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 35%,#000 75%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 35%,#000 75%)}
 .page-hero .ph-img img{width:100%;height:100%;object-fit:cover;opacity:.55;filter:saturate(.9)}
 @media (max-width:860px){.page-hero .ph-img{width:100%;-webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 85%);mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 85%)}.page-hero .ph-img img{opacity:.35}}
+
+/* ---------- Redes sociales ---------- */
+.social{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.social a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-dark);color:var(--on-dark);transition:all var(--t-fast)}
+.social a:hover{border-color:var(--gold-2);color:var(--gold-2);transform:translateY(-2px)}
+.social svg{width:18px;height:18px}
+.social.on-light a{border-color:var(--line);color:var(--brand);background:var(--surface)}
+.social.on-light a:hover{border-color:var(--gold);color:var(--forest)}
+.redes{display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px}
+.redes img{border-radius:10px;border:1px solid var(--line);width:132px;height:132px}
+.redes b{color:var(--forest);font-size:17px}
+.redes p{color:var(--muted);font-size:15px;margin-top:4px}
+.redes .social{margin:12px 0 14px}
+@media (max-width:520px){.redes{grid-template-columns:1fr}.redes img{width:150px;height:150px}}
+
+/* ---------- Casos tipo ---------- */
+.cases{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:12px}
+.case-top{display:flex;align-items:center;gap:10px;color:var(--brand);font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.case-top svg{width:26px;height:26px;color:var(--gold)}
+.case h3{font-size:21px;color:var(--forest)}
+.case>p{color:var(--muted);font-size:15.5px}
+.case dl{display:grid;gap:0;margin:6px 0 0;border-top:1px solid var(--line)}
+.case dl div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px}
+.case dt{color:var(--muted)}
+.case dd{margin:0;font-weight:700;color:var(--forest);font-variant-numeric:tabular-nums;text-align:right}
+.case .case-why{font-size:14.5px;color:var(--text);margin-top:auto;padding-top:6px}
+@media (max-width:980px){.cases{grid-template-columns:1fr}}
+
+/* ---------- Actualidad ---------- */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.news{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;padding:28px;border-radius:18px;border:1px solid var(--line-dark);background:rgba(255,255,255,.03);transition:border-color var(--t-fast),transform var(--t-fast)}
+.news:hover{border-color:var(--gold);transform:translateY(-3px)}
+.news .k{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-2)}
+.news h3{font-size:21px;color:#fff}
+.news p{color:var(--on-dark-muted);font-size:15.5px}
+.news .meta{margin-top:auto;font-size:14px;font-weight:700;color:var(--gold-2)}
+.news-grid.light .news,.news.lead-news{background:var(--surface);border-color:var(--line)}
+.news-grid.light .news h3,.lead-news h2{color:var(--forest)}
+.news-grid.light .news p,.lead-news p{color:var(--muted)}
+.news-grid.light .news .k,.lead-news .k{color:var(--gold)}
+.news-grid.light .news .meta,.lead-news .meta{color:var(--brand)}
+.lead-news{padding:clamp(28px,4vw,48px);border-left:4px solid var(--gold)}
+.lead-news h2{font-size:clamp(26px,3.2vw,40px)}
+.lead-news p{font-size:18px;max-width:70ch}
+@media (max-width:980px){.news-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.news-grid{grid-template-columns:1fr}}
+.art-layout{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:clamp(28px,5vw,64px);align-items:start}
+.art{max-width:760px;min-width:0}
+.art-meta{font-size:14px;color:var(--muted);font-weight:600;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.art h2{font-size:clamp(22px,2.4vw,28px);color:var(--forest);margin:38px 0 12px}
+.art p{font-size:18px;line-height:1.75}
+.art .note{margin-top:28px;font-size:14px;line-height:1.6}
+.tip{margin:40px 0 8px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:24px 26px}
+.tip p{margin-top:10px;font-size:17px}
+.src{padding-left:20px;display:grid;gap:8px;font-size:15.5px}
+.src a{color:var(--brand);word-break:break-word}
+.art-side{position:sticky;top:100px}
+.side-card{position:relative;overflow:hidden;isolation:isolate;border-radius:18px;padding:28px;display:grid;gap:14px}
+.side-card h3{font-size:22px;color:#fff}
+.side-card p{color:var(--on-dark-muted);font-size:15.5px}
+.side-card .btn{justify-content:center}
+@media (max-width:980px){.art-layout{grid-template-columns:1fr}.art-side{position:static}}
+
+/* ---------- Boletín ---------- */
+.nl{position:relative;overflow:hidden;isolation:isolate;border-radius:22px;padding:clamp(28px,4vw,56px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.nl-form{display:grid;gap:14px}
+.nl .field label{color:var(--on-dark)}
+.nl .field input,.nl .field select{background:rgba(255,255,255,.06);border-color:var(--line-dark);color:#fff}
+.nl .field input:focus,.nl .field select:focus{background:rgba(255,255,255,.1);border-color:var(--gold-2);box-shadow:none}
+.nl .field select option{color:var(--text)}
+.nl .check{color:var(--on-dark-muted)}
+.nl .check a{color:var(--gold-2)}
+.nl .btn{justify-self:start}
+.nl .msg{font-size:15px;border-radius:10px;padding:12px 14px;display:none}
+.nl .msg.ok{display:block;background:rgba(242,198,109,.14);color:var(--gold-2)}
+.nl .msg.err{display:block;background:#FBEAE7;color:#8A2F24}
+@media (max-width:860px){.nl{grid-template-columns:1fr}}
