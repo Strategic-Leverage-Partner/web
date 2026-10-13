@@ -1,95 +1,116 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Diagnóstico de riesgo empresarial gratis | Strategic Leverage Partner</title>
 <meta name="description" content="Mide en 2 minutos el riesgo financiero, contable y de cumplimiento de tu empresa: 5 preguntas, puntaje y semáforo. Herramienta gratuita de SLP, Ecuador.">
 <link rel="canonical" href="https://www.strategicleverage.partners/diagnostico/">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png" /><link rel="icon" href="/favicon.ico" sizes="any" /><link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-<meta property="og:title" content="Diagnóstico de riesgo empresarial gratis | Strategic Leverage Partner"><meta property="og:description" content="Mide en 2 minutos el riesgo financiero, contable y de cumplimiento de tu empresa: 5 preguntas, puntaje y semáforo. Herramienta gratuita de SLP, Ecuador.">
-<meta property="og:image" content="https://www.strategicleverage.partners/images/og-slp.jpg"><meta property="og:url" content="https://www.strategicleverage.partners/diagnostico/">
+<meta name="theme-color" content="#06201B">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website"><meta property="og:locale" content="es_EC"><meta property="og:site_name" content="Strategic Leverage Partner">
-<meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#013C31">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JZL370WFN"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5JZL370WFN');</script>
+<meta property="og:title" content="Diagnóstico de riesgo empresarial gratis | Strategic Leverage Partner"><meta property="og:description" content="Mide en 2 minutos el riesgo financiero, contable y de cumplimiento de tu empresa: 5 preguntas, puntaje y semáforo. Herramienta gratuita de SLP, Ecuador."><meta property="og:url" content="https://www.strategicleverage.partners/diagnostico/">
+<meta property="og:image" content="https://www.strategicleverage.partners/images/og-slp.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Diagnóstico de riesgo empresarial gratis | Strategic Leverage Partner"><meta name="twitter:description" content="Mide en 2 minutos el riesgo financiero, contable y de cumplimiento de tu empresa: 5 preguntas, puntaje y semáforo. Herramienta gratuita de SLP, Ecuador."><meta name="twitter:image" content="https://www.strategicleverage.partners/images/og-slp.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;600;700&display=swap">
-<link rel="stylesheet" href="/recursos/slp-paginas.css">
+<link rel="stylesheet" href="/assets/css/slp.css?v=2026a">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5JZL370WFN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-5JZL370WFN');</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Strategic Leverage Partner", "legalName": "Strategic Leverage Partner for Profitable Businesses S.A.S.", "alternateName": "SLP", "url": "https://www.strategicleverage.partners/", "logo": "https://www.strategicleverage.partners/assets/img/logo-color.webp", "image": "https://www.strategicleverage.partners/images/og-slp.jpg", "description": "Firma ecuatoriana de auditoría externa preventiva, contabilidad, financiamiento corporativo y consultoría empresarial.", "telephone": "+593995728488", "email": "comercial@strategicleverage.partners", "address": {"@type": "PostalAddress", "streetAddress": "Edificio Francisco de Orellana, Of. 601, Av. Francisco de Orellana E2-30 y Av. 10 de Agosto", "addressLocality": "Quito", "addressRegion": "Pichincha", "addressCountry": "EC"}, "areaServed": "EC", "openingHours": "Mo-Fr 08:30-18:00", "sameAs": ["https://www.instagram.com/strategic.lp/", "https://linktr.ee/Strategic_Leverage_Partner"]}</script>
 <style>
-/* Layout: una columna tipo asistente paso a paso; semáforo como hilo visual del resultado */
-:root{
+#calc /* Layout: una columna tipo asistente paso a paso; semáforo como hilo visual del resultado */{
   --bg:#F4F7F6; --surface:#FFFFFF; --ink:#1F2A27; --muted:#5C6B66; --line:#D6E0DC;
   --brand:#015D4C; --brand-deep:#013C31; --gold:#D49724; --gold-soft:#F2C66D; --on-brand:#FFFFFF;
   --ok:#2E8B57; --warn:#D49724; --bad:#B5473A; --sel:#E6EFEC;
   --serif:"Libre Baskerville", Georgia, "Times New Roman", serif;
   --sans:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+@media (prefers-color-scheme: dark){#calc{
   --bg:#0E1A17; --surface:#14241F; --ink:#E8EFEC; --muted:#9DB0AA; --line:#28403A;
   --brand:#0B7A64; --brand-deep:#08362C; --gold:#E3AC45; --gold-soft:#F2C66D; --on-brand:#FFFFFF;
   --ok:#4FB37D; --warn:#E3AC45; --bad:#D9695A; --sel:#1C3530; color-scheme:dark}}
-:root[data-theme="dark"]{
+#calc{
   --bg:#0E1A17; --surface:#14241F; --ink:#E8EFEC; --muted:#9DB0AA; --line:#28403A;
   --brand:#0B7A64; --brand-deep:#08362C; --gold:#E3AC45; --gold-soft:#F2C66D; --on-brand:#FFFFFF;
   --ok:#4FB37D; --warn:#E3AC45; --bad:#D9695A; --sel:#1C3530; color-scheme:dark}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;margin:0}
-.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:24px 48px}
-header.top{background:var(--brand-deep);color:var(--on-brand);border-radius:6px;padding:22px 22px 20px;display:grid;gap:8px}
-.eyebrow{font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(24px,5vw,32px);line-height:1.2;margin:0;text-wrap:balance}
-.lede{margin:0;color:#D9E6E1;max-width:60ch}
-.progress{margin-top:20px;display:grid;gap:6px}
-.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
-.bar>i{display:block;height:100%;width:20%;background:var(--gold);transition:width .3s ease}
-.progress small{color:var(--muted);font-variant-numeric:tabular-nums}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;margin-top:14px;display:grid;gap:16px}
-.qnum{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
-h2{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.35;margin:0;text-wrap:balance}
-.opts{display:grid;gap:10px;margin:0;padding:0;border:0}
-.opt{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:12px 14px;cursor:pointer;background:var(--surface)}
-.opt:hover{border-color:var(--brand)}
-.opt input{margin:3px 0 0;accent-color:var(--brand);width:18px;height:18px}
-.opt:has(input:checked){border-color:var(--brand);background:var(--sel)}
-.opt span{min-width:0}
-.nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
-button,.btn{font:600 16px/1 var(--sans);border-radius:6px;padding:13px 18px;cursor:pointer;border:1px solid var(--brand);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
-.primary{background:var(--brand);color:var(--on-brand)}
-.ghost{background:transparent;color:var(--brand)}
-:root[data-theme="dark"] .ghost{color:var(--gold-soft);border-color:var(--gold-soft)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .ghost{color:var(--gold-soft);border-color:var(--gold-soft)}}
-.gold{background:var(--gold);border-color:var(--gold);color:#1F2A27}
-button:disabled{opacity:.45;cursor:not-allowed}
-button:focus-visible,.btn:focus-visible,.opt:focus-within,select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-.result{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
-.light{display:grid;gap:10px;background:#0B2620;padding:14px 12px;border-radius:28px}
-.light b{width:34px;height:34px;border-radius:50%;opacity:.22;display:block}
-.light .r{background:#E5604F}.light .y{background:#F2C14E}.light .g{background:#4FB37D}
-.light b.on{opacity:1;box-shadow:0 0 14px currentColor}
-.score{font-family:var(--serif);font-size:48px;line-height:1;font-variant-numeric:tabular-nums}
-.score small{font-family:var(--sans);font-size:16px;color:var(--muted)}
-.zone{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;color:#fff}
-.z-ok{background:var(--ok)}.z-warn{background:var(--warn);color:#1F2A27}.z-bad{background:var(--bad)}
-.recs{margin:0;padding-left:20px;display:grid;gap:6px}
-.recs li{min-width:0}
-label.f{display:grid;gap:6px;font-weight:600}
-select{font:16px var(--sans);padding:10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
-.phone{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-variant-numeric:tabular-nums}
-.phone code{font:600 17px var(--sans);user-select:all}
-.legal{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:0}
-.scale{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.scale span{display:inline-flex;gap:6px;align-items:center}
-.scale i{width:10px;height:10px;border-radius:50%;display:inline-block}
-@media (max-width:480px){.result{grid-template-columns:1fr}.light{grid-auto-flow:column;justify-content:start;border-radius:28px}}
-@media (prefers-reduced-motion: reduce){.bar>i{transition:none}}
-</style>
+#calc,#calc *{box-sizing:border-box}
+#calc{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;margin:0}
+#calc .wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:24px 48px}
+#calc header.top{background:var(--brand-deep);color:var(--on-brand);border-radius:6px;padding:22px 22px 20px;display:grid;gap:8px}
+#calc .eyebrow{font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-soft)}
+#calc h1{font-family:var(--serif);font-weight:400;font-size:clamp(24px,5vw,32px);line-height:1.2;margin:0;text-wrap:balance}
+#calc .lede{margin:0;color:#D9E6E1;max-width:60ch}
+#calc .progress{margin-top:20px;display:grid;gap:6px}
+#calc .bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+#calc .bar>i{display:block;height:100%;width:20%;background:var(--gold);transition:width .3s ease}
+#calc .progress small{color:var(--muted);font-variant-numeric:tabular-nums}
+#calc .card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px;margin-top:14px;display:grid;gap:16px}
+#calc .qnum{font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+#calc h2{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.35;margin:0;text-wrap:balance}
+#calc .opts{display:grid;gap:10px;margin:0;padding:0;border:0}
+#calc .opt{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:12px 14px;cursor:pointer;background:var(--surface)}
+#calc .opt:hover{border-color:var(--brand)}
+#calc .opt input{margin:3px 0 0;accent-color:var(--brand);width:18px;height:18px}
+#calc .opt:has(input:checked){border-color:var(--brand);background:var(--sel)}
+#calc .opt span{min-width:0}
+#calc .nav{display:flex;gap:10px;justify-content:space-between;flex-wrap:wrap}
+#calc button,#calc .btn{font:600 16px/1 var(--sans);border-radius:6px;padding:13px 18px;cursor:pointer;border:1px solid var(--brand);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+#calc .primary{background:var(--brand);color:var(--on-brand)}
+#calc .ghost{background:transparent;color:var(--brand)}
+#calc .ghost{color:var(--gold-soft);border-color:var(--gold-soft)}
+@media (prefers-color-scheme: dark){#calc .ghost{color:var(--gold-soft);border-color:var(--gold-soft)}}
+#calc .gold{background:var(--gold);border-color:var(--gold);color:#1F2A27}
+#calc button:disabled{opacity:.45;cursor:not-allowed}
+#calc button:focus-visible,#calc .btn:focus-visible,#calc .opt:focus-within,#calc select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+#calc .result{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+#calc .light{display:grid;gap:10px;background:#0B2620;padding:14px 12px;border-radius:28px}
+#calc .light b{width:34px;height:34px;border-radius:50%;opacity:.22;display:block}
+#calc .light .r{background:#E5604F}#calc .light .y{background:#F2C14E}#calc .light .g{background:#4FB37D}
+#calc .light b.on{opacity:1;box-shadow:0 0 14px currentColor}
+#calc .score{font-family:var(--serif);font-size:48px;line-height:1;font-variant-numeric:tabular-nums}
+#calc .score small{font-family:var(--sans);font-size:16px;color:var(--muted)}
+#calc .zone{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:4px;color:#fff}
+#calc .z-ok{background:var(--ok)}#calc .z-warn{background:var(--warn);color:#1F2A27}#calc .z-bad{background:var(--bad)}
+#calc .recs{margin:0;padding-left:20px;display:grid;gap:6px}
+#calc .recs li{min-width:0}
+#calc label.f{display:grid;gap:6px;font-weight:600}
+#calc select{font:16px var(--sans);padding:10px;border-radius:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);max-width:100%}
+#calc .phone{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+#calc .phone code{font:600 17px var(--sans);user-select:all}
+#calc .legal{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px;margin:0}
+#calc .scale{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+#calc .scale span{display:inline-flex;gap:6px;align-items:center}
+#calc .scale i{width:10px;height:10px;border-radius:50%;display:inline-block}
+@media (max-width:480px){#calc .result{grid-template-columns:1fr}#calc .light{grid-auto-flow:column;justify-content:start;border-radius:28px}}
+@media (prefers-reduced-motion: reduce){#calc .bar>i{transition:none}}
+
+#calc{background:transparent;padding-block:0}#calc .wrap{padding-block:0}</style>
 </head>
 <body>
-<header class="slp-top"><div class="in">
-<a class="logo" href="/" aria-label="Strategic Leverage Partner, inicio"><img src="/images/marca/02_logo_negativo_blanco_dorado.webp" alt="Strategic Leverage Partner" width="122" height="52"></a>
-<nav aria-label="Principal"><a href="/">Inicio</a><a href="/nosotros">Nosotros</a><a href="/servicios">Servicios</a><a href="/recursos-gratuitos/">Recursos gratuitos</a><a href="/diagnostico/" aria-current="page">Diagnóstico</a><a href="/contactos">Contacto</a></nav>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-head always" data-menu="closed">
+<div class="in">
+<a class="brand-logo" href="/" aria-label="Strategic Leverage Partner, inicio"><img src="/assets/img/logo-negativo.webp" alt="Strategic Leverage Partner" width="108" height="46"></a>
+<nav class="nav" aria-label="Principal">
+<a href="/">Inicio</a>
+<a href="/nosotros/">La firma</a>
+<div class="dd" data-open="false"><button type="button" aria-expanded="false" aria-haspopup="true">Servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+<div class="dd-menu"><a href="/servicios-contables-auditoria/"><b>Auditoría y contabilidad</b><span>Auditoría externa preventiva, outsourcing contable y NIIF</span></a><a href="/servicios-financieros/"><b>Capital y financiamiento</b><span>Banca local, fondos e instrumentos internacionales</span></a><a href="/servicios-de-consultoria-empresarial/"><b>Consultoría empresarial</b><span>Forecast, estrategia, constitución de compañías</span></a><a href="/cumplimiento-normativo/"><b>Cumplimiento normativo</b><span>SRI, Superintendencia, UAFE y alianza legal</span></a><a class="all" href="/servicios/"><b>Ver todas las unidades de negocio</b><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+<a href="/recursos-gratuitos/">Recursos</a>
+<a href="/diagnostico/" aria-current="page">Diagnóstico</a>
+<a href="/contactos/">Contacto</a>
+</nav>
+<div class="head-cta"><a class="btn" href="/contactos/">Agendar diagnóstico <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+<button class="burger" type="button" aria-label="Abrir menú" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button></div>
 </div></header>
-<main>
+<main id="contenido">
+<section class="page-hero dark texture"><svg class="tri-bg" viewBox="0 0 400 350" fill="none" aria-hidden="true"><g stroke="#fff" stroke-width="1.2">
+<path d="M200 10 390 340H10z"/><path d="M200 60 347 315H53z"/><path d="M200 110 304 290H96z"/><path d="M200 160 261 265H139z"/></g></svg><div class="wrap">
+<nav class="crumbs" aria-label="Ruta"><a href="/">Inicio</a> <span aria-hidden="true">/</span> <span>Diagnóstico</span></nav>
+<div style="margin-top:28px"><span class="eyebrow">Herramienta gratuita</span></div>
+<h1>Diagnóstico de riesgo en 2 minutos</h1><p class="lead">Responde cinco preguntas y obtén tu puntaje, tu semáforo y las áreas que conviene revisar primero. No guardamos tus respuestas.</p>
+</div></section><section class="section" style="padding-top:48px"><div id="calc">
 
 <div class="wrap">
   <header class="top">
@@ -206,9 +227,33 @@ $('copy').addEventListener('click',()=>{const t='+593995728488';
   navigator.clipboard?.writeText(t).then(()=>{$('copy').textContent='Número copiado'}).catch(()=>{const r=document.createRange();r.selectNodeContents($('tel'));const s=getSelection();s.removeAllRanges();s.addRange(r)})});
 draw();
 </script>
-</main>
-<footer class="slp-foot"><div class="in">
-<span>© 2026 Strategic Leverage Partner for Profitable Businesses S.A.S. · Quito, Ecuador · <a href="/privacidad/">Política de privacidad</a></span>
-<span>WhatsApp <a href="https://wa.me/593995728488">+593 99 572 8488</a> · <a href="mailto:comercial@strategicleverage.partners">comercial@strategicleverage.partners</a></span>
+</div></section></main>
+<footer class="site-foot texture">
+<div class="wrap">
+<div class="foot-top">
+<div><img src="/assets/img/logo-negativo.webp" alt="Strategic Leverage Partner" width="131" height="56" loading="lazy">
+<p style="max-width:34ch">Auditoría, contabilidad, financiamiento y consultoría para empresas que deciden con números, no con intuición.</p></div>
+<div><h4>Servicios</h4><ul>
+<li><a href="/servicios-contables-auditoria/">Auditoría y contabilidad</a></li>
+<li><a href="/servicios-financieros/">Capital y financiamiento</a></li>
+<li><a href="/servicios-de-consultoria-empresarial/">Consultoría empresarial</a></li>
+<li><a href="/cumplimiento-normativo/">Cumplimiento normativo</a></li></ul></div>
+<div><h4>La firma</h4><ul>
+<li><a href="/nosotros/">Quiénes somos</a></li>
+<li><a href="/nosotros/#liderazgo">Liderazgo</a></li>
+<li><a href="/recursos-gratuitos/">Recursos gratuitos</a></li>
+<li><a href="/diagnostico/">Diagnóstico de riesgo</a></li>
+<li><a href="https://www.skylineconstructions.build/" rel="noopener" target="_blank">Skyline Constructions</a></li>
+<li><a href="https://www.trividaseguros.com/" rel="noopener" target="_blank">TriVida Seguros</a></li></ul></div>
+<div><h4>Contacto</h4><ul>
+<li><a href="https://wa.me/593995728488?text=Hola%2C%20Strategic%20Leverage%20Partner.%20Estoy%20interesado%20en%20sus%20servicios%20y%20quiero%20agendar%20un%20diagn%C3%B3stico%20sin%20costo.%20%C2%BFMe%20ayudan%20con%20m%C3%A1s%20informaci%C3%B3n%3F">WhatsApp +593 99 572 8488</a></li>
+<li><a href="mailto:comercial@strategicleverage.partners">comercial@strategicleverage.partners</a></li>
+<li><a href="https://maps.app.goo.gl/UTH5JxtHrq5ycvDr9" target="_blank" rel="noopener">Edificio Francisco de Orellana, Of. 601 · Quito</a></li>
+<li><a href="https://www.instagram.com/strategic.lp/" target="_blank" rel="noopener">Instagram @strategic.lp</a></li></ul></div>
+</div>
+<div class="foot-bot"><span>© 2026 Strategic Leverage Partner for Profitable Businesses S.A.S. Todos los derechos reservados.</span>
+<span><a href="/privacidad/">Política de privacidad</a> · Lunes a viernes, 8:30 a 18:00</span></div>
 </div></footer>
+<a class="wa" href="https://wa.me/593995728488?text=Hola%2C%20Strategic%20Leverage%20Partner.%20Estoy%20interesado%20en%20sus%20servicios%20y%20quiero%20agendar%20un%20diagn%C3%B3stico%20sin%20costo.%20%C2%BFMe%20ayudan%20con%20m%C3%A1s%20informaci%C3%B3n%3F" aria-label="Escribir por WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg></a>
+<script src="/assets/js/slp.js?v=2026a" defer></script>
 </body></html>
