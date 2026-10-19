@@ -81,6 +81,39 @@
     el.querySelector('[data-when]').textContent = (n === 0 ? 'Vence hoy · ' : 'Vence el ') + f.getDate() + ' de ' + MES[f.getMonth()] + ' de ' + f.getFullYear();
   });
 
+  // Asesor SLP: botón interactivo de 3 pasos que arma el mensaje de WhatsApp
+  (function () {
+    var box = document.querySelector('.asesor'); if (!box) return;
+    var panel = box.querySelector('.as-panel'), fab = box.querySelector('.as-fab'), tip = box.querySelector('.as-tip');
+    var form = box.querySelector('.as-body'), steps = box.querySelectorAll('.as-step'), prog = box.querySelector('.as-prog span');
+    var go = box.querySelector('.as-go'), sum = box.querySelector('.as-sum');
+    function ev(n, p) { try { gtag('event', n, p || {}); } catch (e) {} }
+    function show(n) { steps.forEach(function (f) { f.hidden = +f.dataset.step !== n; }); prog.style.width = (n / 3 * 100) + '%'; var f = box.querySelector('[data-step="' + n + '"] input'); if (f) setTimeout(function () { f.focus({ preventScroll: true }); }, 60); }
+    function open() { panel.hidden = false; box.dataset.state = 'open'; fab.setAttribute('aria-expanded', 'true'); if (tip) tip.hidden = true; show(1); ev('asesor_open'); }
+    function close() { panel.hidden = true; box.dataset.state = 'closed'; fab.setAttribute('aria-expanded', 'false'); }
+    document.querySelectorAll('[data-asesor]').forEach(function (b) { b.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); panel.hidden ? open() : close(); }); });
+    box.querySelector('.as-close').addEventListener('click', close);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) close(); });
+    function msg() {
+      var d = new FormData(form), need = d.get('need') || 'información', urg = d.get('urg') || '', n = (d.get('nombre') || '').trim(), em = (d.get('empresa') || '').trim();
+      var t = 'Hola, Strategic Leverage Partner.' + (n ? ' Soy ' + n + (em ? ', de ' + em : '') + '.' : (em ? ' Escribo de ' + em + '.' : '')) + ' Necesito ayuda con: ' + need + '.' + (urg ? ' Situación: ' + urg + '.' : '') + ' ¿Me pueden dar información?';
+      go.href = 'https://wa.me/593995728488?text=' + encodeURIComponent(t);
+      sum.textContent = 'Tu consulta: ' + need + (urg ? ' · ' + urg.toLowerCase() : '');
+    }
+    form.addEventListener('change', function (e) {
+      if (e.target.name === 'need') { msg(); show(2); ev('asesor_paso', { paso: 1, valor: e.target.value }); }
+      else if (e.target.name === 'urg') { msg(); show(3); ev('asesor_paso', { paso: 2, valor: e.target.value }); }
+    });
+    form.addEventListener('input', msg);
+    box.querySelectorAll('.as-back').forEach(function (b) { b.addEventListener('click', function () { var cur = +b.closest('.as-step').dataset.step; show(cur - 1); }); });
+    go.addEventListener('click', function () { msg(); ev('generate_lead', { method: 'asesor_whatsapp' }); });
+    // Mensaje de apoyo una sola vez por sesión, tras 14 s de lectura
+    var seen = false; try { seen = sessionStorage.getItem('slp_tip') === '1'; } catch (e) {}
+    if (tip && !seen) setTimeout(function () { if (panel.hidden) { tip.hidden = false; try { sessionStorage.setItem('slp_tip', '1'); } catch (e) {} } }, 14000);
+    if (tip) { tip.querySelector('.as-x').addEventListener('click', function () { tip.hidden = true; }); tip.addEventListener('click', function (e) { if (!e.target.closest('.as-x')) open(); }); }
+  })();
+  document.querySelectorAll('[data-cta]').forEach(function (a) { a.addEventListener('click', function () { try { gtag('event', 'cta_click', { ubicacion: a.dataset.cta }); } catch (e) {} }); });
+
   // Medición de clics a WhatsApp
   document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) { a.addEventListener('click', function () { try { gtag('event', 'contact_whatsapp', { link_url: a.href }); } catch (e) {} }); });
 })();
