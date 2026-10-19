@@ -666,3 +666,98 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0;t
 @media (max-width:760px){.as-panel{max-height:calc(100svh - 110px)}.as-chips span{padding:10px}}
 .as-step[hidden]{display:none}
 .as-panel{order:-1}.as-tip{order:-2}
+
+/* ==========================================================================
+   2026e · Versión clara de la marca (botón sol/luna en la cabecera)
+   Mantiene verde bosque + oro; las superficies pasan a papel frío.
+   Bloques de acento (CTA, boletín, asesor) conservan el verde profundo.
+   ========================================================================== */
+.on-lt{display:none!important}
+html[data-theme="light"] .on-lt{display:block!important}
+html[data-theme="light"] .on-dk{display:none!important}
+html[data-theme="light"] .page-hero img.sub.on-lt{display:block!important}
+.theme-t{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:50%;border:1px solid rgba(242,198,109,.45);background:transparent;color:var(--gold-2);cursor:pointer;transition:all var(--t-fast)}
+.theme-t:hover{background:rgba(242,198,109,.12);transform:rotate(-12deg)}
+.theme-t svg{width:20px;height:20px}
+.theme-t .ic-moon{display:none}
+html[data-theme="light"] .theme-t .ic-sun{display:none}
+html[data-theme="light"] .theme-t .ic-moon{display:block}
+
+html[data-theme="light"] :is(.hero,.page-hero,section.dark,.site-foot,.site-head,.mbar,.nav){
+  --on-dark:#14231F;--on-dark-muted:#4E605A;--line-dark:rgba(1,60,49,.14);--gold-2:#A8740F}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark){background:var(--paper);color:var(--text)}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark) :is(h1,h2,h3){color:var(--forest)}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark,.site-foot).texture::before{background:
+  radial-gradient(900px 520px at 85% 10%,rgba(1,93,76,.10),transparent 60%),
+  radial-gradient(700px 500px at 10% 100%,rgba(212,151,36,.10),transparent 60%),
+  linear-gradient(180deg,#F8FBFA 0%,#EAF1EE 100%)}
+html[data-theme="light"] .texture::after{opacity:.25}
+html[data-theme="light"] .brand-hero .wm,html[data-theme="light"] .brand-hero .tg{color:var(--forest)}
+html[data-theme="light"] .hero-lines,html[data-theme="light"] .ph-lines{opacity:.35;color:var(--brand)}
+html[data-theme="light"] .hero-chart .g3{stroke:rgba(1,60,49,.08)}
+html[data-theme="light"] .hatch-corner{--hatch:repeating-linear-gradient(135deg,rgba(1,93,76,.14) 0 1px,transparent 1px 9px)}
+html[data-theme="light"] .hero-visual .glow{background:radial-gradient(closest-side,rgba(212,151,36,.22),rgba(212,151,36,.06) 55%,transparent 72%)}
+html[data-theme="light"] .hero-visual .iso3d,html[data-theme="light"] .ph-iso img{filter:drop-shadow(0 30px 36px rgba(1,40,32,.28))}
+html[data-theme="light"] .hero-visual .floor{background:radial-gradient(closest-side,rgba(1,40,32,.25),transparent)}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark) .btn.ghost{--fg:var(--forest);border-color:rgba(1,60,49,.3)}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark) .btn.ghost:hover{border-color:var(--gold)}
+html[data-theme="light"] .stats b{color:var(--forest)}
+html[data-theme="light"] :is(.panel,.step,.diag-strip){background:#fff;border-color:var(--line);box-shadow:0 24px 50px -30px rgba(1,40,32,.35)}
+html[data-theme="light"] .step::after{opacity:.08}
+html[data-theme="light"] section.dark .news{background:#fff;border-color:var(--line)}
+html[data-theme="light"] section.dark .news h3{color:var(--forest)}
+html[data-theme="light"] section.dark .news::before{background:var(--brand);opacity:.12}
+html[data-theme="light"] .page-hero .ph-img img{opacity:.14;filter:saturate(.4) brightness(1.15)}
+html[data-theme="light"] .page-hero .ph-img{mix-blend-mode:multiply}
+html[data-theme="light"] .svc-banner::before{background:linear-gradient(90deg,rgba(243,246,245,.97) 0%,rgba(243,246,245,.9) 45%,rgba(243,246,245,.35) 100%)}
+@media (max-width:760px){html[data-theme="light"] .svc-banner::before{background:linear-gradient(180deg,rgba(243,246,245,.9),rgba(243,246,245,.97))}}
+html[data-theme="light"] .section.dark.texture .wrap::before{background:var(--brand);opacity:.05}
+/* cabecera */
+html[data-theme="light"] .site-head.solid,html[data-theme="light"] .site-head.always,html[data-theme="light"] .site-head{background:rgba(248,251,250,.9);box-shadow:0 1px 0 rgba(1,60,49,.12)}
+html[data-theme="light"] .brand-logo,html[data-theme="light"] .bl-txt b{color:var(--forest)}
+html[data-theme="light"] .bl-txt{border-left-color:rgba(1,60,49,.25)}
+html[data-theme="light"] .nav>a,html[data-theme="light"] .nav .dd>button{color:var(--forest)}
+html[data-theme="light"] .nav>a:hover,html[data-theme="light"] .nav>a[aria-current="page"],html[data-theme="light"] .nav .dd>button:hover{color:var(--gold)}
+html[data-theme="light"] .burger{color:var(--forest)}
+html[data-theme="light"] .theme-t{color:var(--forest);border-color:rgba(1,60,49,.25)}
+@media (max-width:1080px){html[data-theme="light"] .nav{background:#F8FBFA}html[data-theme="light"] .dd-menu a b{color:var(--brand)}html[data-theme="light"] .dd-menu a,html[data-theme="light"] .dd-menu a.all{background:rgba(1,60,49,.04)}}
+/* pie */
+html[data-theme="light"] .site-foot{background:#EEF3F1;color:var(--muted)}
+html[data-theme="light"] .site-foot .social a{color:var(--brand);border-color:rgba(1,60,49,.2)}
+html[data-theme="light"] .foot-wm{-webkit-text-stroke-color:rgba(1,93,76,.28)}
+html[data-theme="light"] .foot-lines{color:var(--brand);opacity:.12}
+/* barra móvil */
+html[data-theme="light"] .mbar{background:rgba(248,251,250,.95);border-top-color:rgba(1,60,49,.15)}
+@media (max-width:1080px){.theme-t{width:40px;height:40px}}
+html[data-theme="light"] :is(.hero,section.dark) .signal .v{background:#E3F3EA;color:#1C6B41;border-color:#9ED2B3}
+html[data-theme="light"] :is(.hero,section.dark) .signal .a{background:#FBF0D9;color:#8A5C08;border-color:#E9C77E}
+html[data-theme="light"] :is(.hero,section.dark) .signal .r{background:#FBE7E3;color:#9A3626;border-color:#EBB0A6}
+.theme-m{display:none}
+@media (max-width:1080px){
+  .head-cta>.theme-t{display:none}
+  .nav .theme-m{display:flex;width:100%;height:auto;border-radius:12px;justify-content:flex-start;gap:12px;padding:14px 12px;margin-top:14px;font:600 16px var(--sans);color:var(--gold-2)}
+  .nav .theme-m .tm-d{display:none}
+  html[data-theme="light"] .nav .theme-m .tm-l{display:none}
+  html[data-theme="light"] .nav .theme-m .tm-d{display:inline}
+  html[data-theme="light"] .nav .theme-m{color:var(--forest)}
+}
+@media (min-width:1081px){.nav .theme-m{display:none}}
+
+/* ---------- Empresas del grupo ---------- */
+.grupo-sec{background:linear-gradient(180deg,#EEF3F1,var(--paper))}
+.grupo{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.gcard{position:relative;display:flex;flex-direction:column;gap:10px;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:4px 4px 16px 16px;padding:26px 24px;text-decoration:none;color:inherit;transition:transform var(--t-fast),box-shadow var(--t-fast)}
+a.gcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.gcard.is-here{border-top-color:var(--brand);background:linear-gradient(180deg,#fff,#F4F8F6)}
+.g-tag{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
+.g-logo{height:96px;display:flex;align-items:center;margin:4px 0 6px}
+.g-logo img{max-height:72px;max-width:100%;width:auto;object-fit:contain}
+.gcard h3{font-size:21px;color:var(--forest)}
+.gcard p{font-size:15px;color:var(--muted)}
+.g-go,.g-here{margin-top:auto;padding-top:8px;font-size:14.5px;font-weight:700;color:var(--gold)}
+.g-here{color:var(--brand)}
+.g-here::before{content:"";display:inline-block;width:10px;height:9px;margin-right:8px;background:var(--brand);-webkit-mask:var(--tri) center/contain no-repeat;mask:var(--tri) center/contain no-repeat}
+.g-note{margin-top:24px;font-size:13.5px;color:var(--muted)}
+@media (max-width:1080px){.grupo{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.grupo{grid-template-columns:1fr}}
+.g-logo img[src*="wmd"]{max-height:40px}

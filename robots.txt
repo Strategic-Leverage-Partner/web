@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /campana/
 
 Sitemap: https://www.strategicleverage.partners/sitemap.xml

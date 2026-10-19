@@ -5,6 +5,20 @@
   function onScroll() { if (head && !head.classList.contains('always')) head.classList.toggle('solid', window.scrollY > 24); }
   onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
 
+  // Versión clara / oscura de la marca
+  var root = document.documentElement, tts = document.querySelectorAll('.theme-t'), tt = tts[0], meta = document.querySelector('meta[name="theme-color"]');
+  function setTheme(t) {
+    if (t === 'light') root.setAttribute('data-theme', 'light'); else root.removeAttribute('data-theme');
+    if (meta) meta.setAttribute('content', t === 'light' ? '#F3F6F5' : '#06201B');
+    tts.forEach(function (b) { b.setAttribute('aria-label', t === 'light' ? 'Cambiar a versión oscura de la marca' : 'Cambiar a versión clara de la marca'); });
+  }
+  setTheme(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+  tts.forEach(function (b) { b.addEventListener('click', function () {
+    var t = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    setTheme(t); try { localStorage.setItem('slp_theme', t); } catch (e) {}
+    try { gtag('event', 'cambio_tema', { tema: t }); } catch (e) {}
+  }); });
+
   var burger = document.querySelector('.burger');
   if (burger) burger.addEventListener('click', function () {
     var open = head.getAttribute('data-menu') === 'open';
