@@ -131,3 +131,7 @@
   // Medición de clics a WhatsApp
   document.querySelectorAll('a[href*="wa.me"]').forEach(function (a) { a.addEventListener('click', function () { try { gtag('event', 'contact_whatsapp', { link_url: a.href }); } catch (e) {} }); });
 })();
+/* 2026g: burbuja de WhatsApp: se presenta sola a los 6 s y al hacer scroll profundo */
+(function(){var f=document.querySelector('.wa-float');if(!f)return;var t;function peek(){f.classList.add('peek');clearTimeout(t);t=setTimeout(function(){f.classList.remove('peek')},4200)}
+setTimeout(peek,6000);var done=false;window.addEventListener('scroll',function(){if(!done&&window.scrollY>window.innerHeight*1.6){done=true;peek()}},{passive:true});
+f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whatsapp',{ubicacion:'flotante'})}catch(e){}})})();
