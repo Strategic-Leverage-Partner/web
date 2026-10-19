@@ -135,3 +135,31 @@
 (function(){var f=document.querySelector('.wa-float');if(!f)return;var t;function peek(){f.classList.add('peek');clearTimeout(t);t=setTimeout(function(){f.classList.remove('peek')},4200)}
 setTimeout(peek,6000);var done=false;window.addEventListener('scroll',function(){if(!done&&window.scrollY>window.innerHeight*1.6){done=true;peek()}},{passive:true});
 f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whatsapp',{ubicacion:'flotante'})}catch(e){}})})();
+/* 2026i: atribución de leads (UTM / gclid / fbclid) + píxeles de pauta */
+(function(){
+  var K='slp_src', now=Date.now(), q=new URLSearchParams(location.search), keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','fbclid','li_fat_id','ttclid'];
+  var cur={}, has=false; keys.forEach(function(k){var v=q.get(k); if(v){cur[k]=v.slice(0,120); has=true;}});
+  var st={}; try{st=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+  if(st.t && now-st.t>90*864e5) st={};
+  if(has){ cur.landing=location.pathname; cur.t=now; if(!st.first) st.first=cur; st.last=cur; st.t=now; }
+  else if(!st.first && document.referrer && document.referrer.indexOf(location.hostname)<0){ var r={utm_source:new URL(document.referrer).hostname,utm_medium:'referral',landing:location.pathname,t:now}; st.first=st.last=r; st.t=now; }
+  try{localStorage.setItem(K,JSON.stringify(st))}catch(e){}
+  var L=st.last||{}, F=st.first||{};
+  function canal(o){ if(!o||!o.utm_source) return ''; if(o.gclid) return 'google/cpc'; if(o.fbclid) return (o.utm_source||'meta')+'/'+(o.utm_medium||'paid'); return o.utm_source+'/'+(o.utm_medium||''); }
+  var ref = canal(L) ? (canal(L)+(L.utm_campaign?' · '+L.utm_campaign:'')) : '';
+  // Campos ocultos en todos los formularios
+  document.querySelectorAll('form.js-w3f').forEach(function(f){
+    var add=function(n,v){ if(!v) return; var i=f.querySelector('input[name="'+n+'"]'); if(!i){i=document.createElement('input');i.type='hidden';i.name=n;f.appendChild(i);} i.value=v; };
+    keys.forEach(function(k){ add(k, L[k]); }); add('origen_primer_contacto', canal(F)+(F.utm_campaign?' · '+F.utm_campaign:'')); add('pagina', location.pathname);
+  });
+  // Referencia corta en el mensaje de WhatsApp para saber qué anuncio trajo el lead
+  if(ref){ document.addEventListener('click', function(e){ var a=e.target.closest && e.target.closest('a[href*="wa.me"]'); if(!a||a.dataset.refd) return;
+    try{ var u=new URL(a.href), t=u.searchParams.get('text')||'Hola, Strategic Leverage Partner.'; a.href=u.origin+u.pathname+'?text='+encodeURIComponent(t+' (Ref: '+ref+')'); a.dataset.refd='1'; }catch(err){} }, true); }
+  // Píxeles: se activan solo cuando se configuran los ID (pendiente de SLP)
+  var PX={ meta:'', linkedin:'', tiktok:'' };
+  if(PX.meta){ !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init',PX.meta); fbq('track','PageView'); }
+  if(PX.linkedin){ window._linkedin_partner_id=PX.linkedin; window._linkedin_data_partner_ids=[PX.linkedin]; var s=document.createElement('script'); s.async=true; s.src='https://snap.licdn.com/li.lms-analytics/insight.min.js'; document.head.appendChild(s); }
+  function conv(tipo){ try{ window.fbq && fbq('track', tipo==='wa'?'Contact':'Lead'); }catch(e){} try{ window.lintrk && lintrk('track'); }catch(e){} }
+  document.addEventListener('click', function(e){ var a=e.target.closest && e.target.closest('a[href*="wa.me"]'); if(a) conv('wa'); }, true);
+  document.querySelectorAll('form.js-w3f').forEach(function(f){ f.addEventListener('submit', function(){ if(f.checkValidity()) conv('form'); }); });
+})();
