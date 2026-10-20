@@ -1173,3 +1173,4 @@ html[data-theme="light"] .glow-x{opacity:.5}
 .iso3d-x{margin:14px 0 0 -10px!important;width:70%}
 html body .hs .btn.wa-cta:not(.ghost){--bg:var(--dorado-c)!important;--fg:#13201C!important;background:var(--dorado-c)!important;color:#13201C!important}
 html body :is(.page-hero,.lp-hero,.cta-band,.svc-banner) .btn.wa-cta:not(.ghost){background:var(--dorado-c)!important;color:#13201C!important}
+.glow-x{background:radial-gradient(circle,rgba(242,198,109,.30),rgba(1,93,76,.25) 45%,transparent 70%)!important}
