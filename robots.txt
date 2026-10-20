@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /campana/
+Disallow: /recursos-gratuitos/d/
+Disallow: /lp/
+
+Sitemap: https://www.strategicleverage.partners/sitemap.xml
