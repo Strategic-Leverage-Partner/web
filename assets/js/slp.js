@@ -157,7 +157,7 @@ f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whats
   if(ref){ document.addEventListener('click', function(e){ var a=e.target.closest && e.target.closest('a[href*="wa.me"]'); if(!a||a.dataset.refd) return;
     try{ var u=new URL(a.href), t=u.searchParams.get('text')||'Hola, Strategic Leverage Partner.'; a.href=u.origin+u.pathname+'?text='+encodeURIComponent(t+' (Ref: '+ref+')'); a.dataset.refd='1'; }catch(err){} }, true); }
   // Píxeles: se activan solo cuando se configuran los ID (pendiente de SLP)
-  var PX={ meta:'', linkedin:'', tiktok:'' };
+  var PX={ meta:'', linkedin:'', tiktok:'' }; var CK=false; try{CK=localStorage.getItem('slp_ck')==='ok'}catch(e){} if(!CK){PX.meta='';PX.linkedin='';}
   if(PX.meta){ !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init',PX.meta); fbq('track','PageView'); }
   if(PX.linkedin){ window._linkedin_partner_id=PX.linkedin; window._linkedin_data_partner_ids=[PX.linkedin]; var s=document.createElement('script'); s.async=true; s.src='https://snap.licdn.com/li.lms-analytics/insight.min.js'; document.head.appendChild(s); }
   function conv(tipo){ try{ window.fbq && fbq('track', tipo==='wa'?'Contact':'Lead'); }catch(e){} try{ window.lintrk && lintrk('track'); }catch(e){} }
@@ -199,4 +199,20 @@ f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whats
     var a=document.createElement('a'); a.href=base+b.dataset.f; a.download=b.dataset.f; document.body.appendChild(a); a.click(); a.remove();
     try{gtag('event','file_download',{file_name:b.dataset.recurso})}catch(e){}
   }); });
+})();
+
+/* 2026o: aviso de cookies (LOPDP) con Consent Mode v2 */
+(function(){
+  var K='slp_ck', v=null; try{v=localStorage.getItem(K)}catch(e){}
+  function upd(ok){ try{gtag('consent','update',{ad_storage:ok?'granted':'denied',analytics_storage:ok?'granted':'denied',ad_user_data:ok?'granted':'denied',ad_personalization:ok?'granted':'denied'})}catch(e){} }
+  function bar(){
+    if(document.getElementById('ck-bar')) return;
+    var d=document.createElement('div'); d.id='ck-bar'; d.setAttribute('role','dialog'); d.setAttribute('aria-live','polite'); d.setAttribute('aria-label','Preferencias de cookies');
+    d.innerHTML='<p><b>Tu privacidad importa.</b> Usamos almacenamiento necesario para que el sitio funcione y, solo si lo aceptas, cookies analíticas y de medición publicitaria. Puedes cambiar tu decisión cuando quieras. <a href="/privacidad/#cookies">Más información</a></p><div class="ck-acts"><button type="button" class="btn ghost ck-no">Solo necesarias</button><button type="button" class="btn ck-yes">Aceptar</button></div>';
+    document.body.appendChild(d);
+    d.querySelector('.ck-yes').onclick=function(){ try{localStorage.setItem(K,'ok')}catch(e){} upd(true); d.remove(); };
+    d.querySelector('.ck-no').onclick=function(){ try{localStorage.setItem(K,'no')}catch(e){} upd(false); d.remove(); };
+  }
+  if(v!=='ok'&&v!=='no') setTimeout(bar,900);
+  document.querySelectorAll('.ck-open').forEach(function(b){ b.addEventListener('click',function(){ try{localStorage.removeItem(K)}catch(e){} bar(); }); });
 })();

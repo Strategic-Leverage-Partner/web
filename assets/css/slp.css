@@ -934,3 +934,24 @@ html[data-theme="light"] .site-head .head-cta .btn{--bg:#015D4C;--fg:#FFFFFF}
 html[data-theme="light"] :is(.hero,.page-hero,section.dark) .eyebrow{color:#5E7A71}
 .mb-cta{background:#FFFFFF!important;color:#06201B!important}
 html[data-theme="light"] .mb-cta{background:#015D4C!important;color:#fff!important}
+.leader .ini svg{width:46px;height:46px;color:#D7E3DF}
+@media (max-width:640px){.leader .ini svg{width:36px;height:36px}}
+/* 2026o: seguridad, legales y cookies */
+.form-sec{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.5}
+.form-sec a{color:var(--brand);text-decoration:underline}
+.dark .form-sec{color:rgba(255,255,255,.7)}.dark .form-sec a{color:#fff}
+.legal .svc p+p,.legal .svc p+table,.legal .svc ul+p,.legal .svc ol+p{margin-top:12px}
+.legal .svc p,.legal .svc li{font-size:15.5px;line-height:1.7}
+.tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:15px}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid #E2E9E6}
+.tbl th{width:28%;color:var(--forest);font-weight:700;background:#F3F6F5}
+.steps-ol{margin:14px 0 0;padding-left:22px;display:grid;gap:10px}
+.site-foot .ck-open{background:none;border:0;padding:0;color:inherit;font:inherit;text-decoration:underline;cursor:pointer}
+#ck-bar{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;width:min(760px,calc(100% - 24px));display:flex;gap:18px;align-items:center;justify-content:space-between;background:#0A2620;color:#E6EEEB;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 18px;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+#ck-bar p{font-size:13.5px;line-height:1.5;margin:0}#ck-bar a{color:#fff;text-decoration:underline}
+#ck-bar .ck-acts{display:flex;gap:8px;flex:none}#ck-bar .btn{padding:10px 16px;font-size:14px}
+@media (max-width:640px){#ck-bar{flex-direction:column;align-items:stretch;bottom:calc(80px + env(safe-area-inset-bottom,0px))}#ck-bar .ck-acts .btn{flex:1;justify-content:center}}
+@media (max-width:640px){.tbl th{width:36%}}
+.legal .lp-pain li{padding-left:42px}
+.legal .lp-pain li::before{content:"✓"!important;left:14px!important;top:14px!important;width:18px!important;height:18px!important;border-radius:50%!important;font-size:11px!important;display:grid!important;place-items:center;background:#015D4C!important;color:#fff!important;-webkit-mask:none!important;mask:none!important}
+.legal #nunca .lp-pain li::before{content:"✕"!important;background:#8A2E2E!important}

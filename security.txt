@@ -1,0 +1,6 @@
+Contact: mailto:comercial@strategicleverage.partners
+Contact: https://www.strategicleverage.partners/seguridad/#reporte
+Expires: 2027-10-20T00:00:00.000Z
+Preferred-Languages: es, en
+Canonical: https://www.strategicleverage.partners/.well-known/security.txt
+Policy: https://www.strategicleverage.partners/seguridad/
