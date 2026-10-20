@@ -91,9 +91,9 @@
     var n = Math.round((f - hoy) / 86400000);
     if (n < 0) { el.hidden = true; return; }
     el.querySelector('[data-days]').textContent = n;
-    if (n === 1) el.querySelector('.d small').textContent = 'día';
+    var ds = el.querySelector('.d small'); if (n === 1 && ds) ds.textContent = 'día';
     if (n <= 30) el.classList.add('hot');
-    el.querySelector('[data-when]').textContent = (n === 0 ? 'Vence hoy · ' : 'Vence el ') + f.getDate() + ' de ' + MES[f.getMonth()] + ' de ' + f.getFullYear();
+    var wh = el.querySelector('[data-when]'); if (wh) wh.textContent = (n === 0 ? 'Vence hoy · ' : 'Vence el ') + f.getDate() + ' de ' + MES[f.getMonth()] + ' de ' + f.getFullYear();
   });
 
   // Asesor SLP: botón interactivo de 3 pasos que arma el mensaje de WhatsApp
@@ -215,4 +215,29 @@ f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whats
   }
   if(v!=='ok'&&v!=='no') setTimeout(bar,900);
   document.querySelectorAll('.ck-open').forEach(function(b){ b.addEventListener('click',function(){ try{localStorage.removeItem(K)}catch(e){} bar(); }); });
+})();
+/* 2026s: banners rotativos de portada (accesibles, con pausa, swipe y sin animación si el usuario lo prefiere) */
+(function(){
+  var hs=document.querySelector('[data-hs]'); if(!hs) return;
+  var S=[].slice.call(hs.querySelectorAll('.hs-slide')), dots=hs.querySelector('.hs-dots'), bar=hs.querySelector('.hs-bar span'), pb=hs.querySelector('.hs-pause');
+  var i=0, T=8000, t0=0, raf=0, paused=false, hover=false;
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches; if(RM) paused=true;
+  S.forEach(function(s,k){ var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab'); b.setAttribute('aria-label','Ver banner '+(k+1)); b.onclick=function(){go(k,true)}; dots.appendChild(b); });
+  var D=[].slice.call(dots.children);
+  function focusables(s,on){ s.querySelectorAll('a,button').forEach(function(a){ if(on) a.removeAttribute('tabindex'); else a.setAttribute('tabindex','-1'); }); }
+  function go(n,user){ S[i].classList.remove('on'); S[i].setAttribute('aria-hidden','true'); focusables(S[i],false); D[i].removeAttribute('aria-selected');
+    i=(n+S.length)%S.length; S[i].classList.add('on'); S[i].removeAttribute('aria-hidden'); focusables(S[i],true); D[i].setAttribute('aria-selected','true');
+    hs.setAttribute('data-tone',S[i].getAttribute('data-tone')); t0=performance.now();
+    if(user){ try{gtag('event','banner_click',{banner:S[i].getAttribute('data-tone')})}catch(e){} } }
+  function loop(now){ if(!paused&&!hover&&!document.hidden){ var p=Math.min(1,(now-t0)/T); bar.style.transform='scaleX('+p+')'; if(p>=1) go(i+1); } else { t0=now-(parseFloat((bar.style.transform.match(/[\d.]+/)||[0])[0])*T); } raf=requestAnimationFrame(loop); }
+  S.slice(1).forEach(function(s){focusables(s,false)}); D[0].setAttribute('aria-selected','true'); hs.setAttribute('data-tone','marca'); t0=performance.now();
+  hs.querySelector('.hs-prev').onclick=function(){go(i-1,true)}; hs.querySelector('.hs-next').onclick=function(){go(i+1,true)};
+  pb.onclick=function(){ paused=!paused; pb.textContent=paused?'▶':'❚❚'; pb.setAttribute('aria-label',paused?'Reproducir':'Pausar'); };
+  if(paused){ pb.textContent='▶'; pb.setAttribute('aria-label','Reproducir'); }
+  hs.addEventListener('mouseenter',function(){hover=true}); hs.addEventListener('mouseleave',function(){hover=false});
+  hs.addEventListener('focusin',function(){hover=true}); hs.addEventListener('focusout',function(){hover=false});
+  var x0=null; hs.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  hs.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>50) go(i+(dx<0?1:-1),true); x0=null; },{passive:true});
+  hs.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') go(i+1,true); if(e.key==='ArrowLeft') go(i-1,true); });
+  raf=requestAnimationFrame(loop);
 })();
