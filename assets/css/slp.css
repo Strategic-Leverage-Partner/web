@@ -846,3 +846,25 @@ a.gcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
 .faq-wrap>*{min-width:0}
 @media (max-width:540px){.btn.wa-cta{white-space:normal;text-align:left;line-height:1.3}}
 .foot-top>*{min-width:0}.foot-top a{overflow-wrap:anywhere}
+/* 2026j: socios sin foto, avisos legales */
+.leader.no-ph{grid-template-columns:auto 1fr}
+.leader .ini{position:relative;display:grid;place-items:center;width:112px;height:112px;border-radius:20px;background:linear-gradient(150deg,#06201B,#014537);border:1px solid rgba(242,198,109,.45);margin:24px 0 0 24px}
+.leader .ini .ini-iso{position:absolute;width:70%;opacity:.18;fill:var(--gold-2)}
+.leader .ini b{position:relative;font-family:var(--serif);font-size:34px;color:var(--gold-2);letter-spacing:.04em}
+.lead-note{grid-column:1/-1;margin-top:8px;font-size:14px;color:var(--muted);border-left:3px solid var(--gold);padding:10px 14px;background:var(--paper);border-radius:0 10px 10px 0}
+.brand-frame{display:grid;place-items:center;background:radial-gradient(circle at 50% 60%,rgba(212,151,36,.25),transparent 60%),linear-gradient(150deg,#06201B,#014537);border-radius:22px;min-height:320px}
+.brand-frame img{width:70%;height:auto}
+.foot-legal{font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.62);margin:26px 0 0;max-width:110ch}
+.aviso-fin{border:1px solid rgba(212,151,36,.5);background:#fffaf0;border-radius:16px;padding:20px 22px;display:grid;gap:6px}
+.aviso-fin b{color:var(--forest);font-size:15px;text-transform:uppercase;letter-spacing:.08em}
+.aviso-fin p{font-size:15px;line-height:1.6;color:var(--text,#1c2b27)}
+html[data-theme="light"] .foot-legal{color:rgba(255,255,255,.62)}
+@media (max-width:640px){.leader.no-ph{grid-template-columns:1fr}.leader .ini{margin:20px 0 0 20px;width:84px;height:84px}.leader .ini b{font-size:26px}}
+/* 2026k: acceso protegido */
+.gate-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:start}
+.gate-wrap>*{min-width:0}
+.gate-form{border-top:4px solid var(--gold)}
+.gate-btn::before{content:"🔒";margin-right:2px}
+.gate-btn.open::before{content:""}
+.rec-ok .gate-sec .gate-form{opacity:.6}
+@media (max-width:900px){.gate-wrap{grid-template-columns:1fr}}

@@ -67,12 +67,13 @@
       var msg = form.querySelector('.msg'), btn = form.querySelector('button[type=submit]'), label = btn.firstChild.textContent;
       msg.className = 'msg';
       if (!form.checkValidity()) { msg.className = 'msg err'; msg.textContent = 'Revisa los campos obligatorios y la autorización de datos.'; form.reportValidity(); return; }
+      var gerr = window.slpGuard ? window.slpGuard(form) : ''; if (gerr) { msg.className = 'msg err'; msg.textContent = gerr; return; }
       btn.disabled = true; btn.firstChild.textContent = 'Enviando… ';
       fetch('https://api.web3forms.com/submit', { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
         .then(function (r) { return r.json(); })
         .then(function (d) {
           if (!d.success) throw new Error(d.message || 'error');
-          msg.className = 'msg ok'; msg.textContent = form.getAttribute('data-ok') || 'Gracias, recibimos tus datos.'; form.reset();
+          msg.className = 'msg ok'; msg.textContent = form.getAttribute('data-ok') || 'Gracias, recibimos tus datos.'; form.reset(); try { form.dispatchEvent(new CustomEvent('slp:ok')); } catch (e) {}
           try { gtag('event', form.getAttribute('data-ev') === 'suscripcion' ? 'sign_up' : 'generate_lead', { method: form.getAttribute('data-ev') || 'formulario' }); } catch (e) {}
         })
         .catch(function () { msg.className = 'msg err'; msg.innerHTML = 'No pudimos enviar el formulario. Escríbenos por <a href="https://wa.me/593995728488">WhatsApp +593 99 572 8488</a> o a comercial@strategicleverage.partners.'; })
@@ -162,4 +163,40 @@ f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whats
   function conv(tipo){ try{ window.fbq && fbq('track', tipo==='wa'?'Contact':'Lead'); }catch(e){} try{ window.lintrk && lintrk('track'); }catch(e){} }
   document.addEventListener('click', function(e){ var a=e.target.closest && e.target.closest('a[href*="wa.me"]'); if(a) conv('wa'); }, true);
   document.querySelectorAll('form.js-w3f').forEach(function(f){ f.addEventListener('submit', function(){ if(f.checkValidity()) conv('form'); }); });
+})();
+
+/* 2026k: seguridad de formularios y acceso protegido a descargas */
+(function(){
+  var T0=Date.now();
+  var DISP=/@(mailinator|guerrillamail|10minutemail|tempmail|temp-mail|yopmail|trashmail|sharklasers|getnada|dispostable|maildrop|fakeinbox|throwawaymail|mohmal|emailondeck|mintemail|spamgourmet|moakt|tempr|discard)\./i;
+  var FREE=/@(gmail|hotmail|outlook|live|yahoo|icloud|aol|proton|protonmail)\./i;
+  function rucOk(v){ v=(v||'').replace(/\D/g,''); if(!/^\d{13}$/.test(v)) return ''; var pr=+v.slice(0,2), t=+v[2];
+    if(!((pr>=1&&pr<=24)||pr===30)) return ''; if(!/001$/.test(v.slice(10))&&v.slice(10)!=='001') { if(!/00[1-9]$/.test(v.slice(10))) return ''; }
+    if(t<6) return 'persona natural'; if(t===6) return 'entidad pública'; if(t===9) return 'sociedad privada'; return ''; }
+  function telOk(v){ v=(v||'').replace(/[\s\-()]/g,''); return /^(\+?593|0)9\d{8}$/.test(v)||/^(\+?593|0)[2-7]\d{7}$/.test(v); }
+  function setH(f,n,v){ var i=f.querySelector('input[name="'+n+'"]'); if(!i){i=document.createElement('input');i.type='hidden';i.name=n;f.appendChild(i);} i.value=v; }
+  window.slpGuard=function(f){
+    if(Date.now()-T0<4000) return 'Por seguridad, revisa tus datos unos segundos antes de enviar.';
+    var k='slp_sends', d=new Date().toISOString().slice(0,10), st={}; try{st=JSON.parse(localStorage.getItem(k)||'{}')}catch(e){}
+    if(st.d===d && st.n>=5) return 'Alcanzaste el límite de envíos de hoy. Escríbenos por WhatsApp +593 99 572 8488.';
+    var em=f.querySelector('input[type=email]'); if(em&&em.value){ if(DISP.test(em.value)) return 'Usa un correo real de trabajo; no aceptamos correos temporales.'; setH(f,'correo_tipo',FREE.test(em.value)?'gratuito':'corporativo'); }
+    var tel=f.querySelector('input[name=telefono]'); if(tel&&tel.value&&!telOk(tel.value)) return 'Ingresa un teléfono válido de Ecuador (ej. 0991234567 o +593991234567).';
+    var nm=f.querySelector('input[name=nombre]'); if(nm&&nm.value&&nm.value.trim().split(/\s+/).length<2) return 'Escribe tu nombre y apellido.';
+    var ru=f.querySelector('input[name=ruc]'); if(ru){ var tp=rucOk(ru.value); if(!tp) return 'El RUC no es válido: debe tener 13 dígitos y corresponder a un contribuyente de Ecuador.'; setH(f,'ruc_tipo',tp); }
+    setH(f,'segundos_en_formulario',String(Math.round((Date.now()-T0)/1000)));
+    try{ localStorage.setItem(k,JSON.stringify({d:d,n:(st.d===d?st.n:0)+1})) }catch(e){}
+    return '';
+  };
+  // Acceso a descargas
+  var docs=document.querySelector('.docs[data-base]'), gf=document.getElementById('gate-form'); if(!docs||!gf) return;
+  var KEY='slp_rec_ok', base=docs.getAttribute('data-base');
+  function ok(){ try{ var t=+localStorage.getItem(KEY)||0; return t && Date.now()-t<180*864e5; }catch(e){ return false; } }
+  function unlock(){ document.querySelectorAll('.gate-btn').forEach(function(b){ b.classList.add('open'); }); document.documentElement.classList.add('rec-ok'); }
+  if(ok()) unlock();
+  gf.addEventListener('slp:ok',function(){ try{localStorage.setItem(KEY,String(Date.now()))}catch(e){} unlock(); try{gtag('event','generate_lead',{method:'registro_recursos'})}catch(e){} });
+  document.querySelectorAll('.gate-btn').forEach(function(b){ b.addEventListener('click',function(){
+    if(!ok()){ gf.scrollIntoView({behavior:'smooth',block:'start'}); var m=gf.querySelector('.msg'); m.className='msg'; m.textContent='Registra tu empresa una sola vez para activar todas las descargas.'; setTimeout(function(){ var i=gf.querySelector('input:not([type=hidden]):not(.hp)'); i&&i.focus({preventScroll:true}); },600); return; }
+    var a=document.createElement('a'); a.href=base+b.dataset.f; a.download=b.dataset.f; document.body.appendChild(a); a.click(); a.remove();
+    try{gtag('event','file_download',{file_name:b.dataset.recurso})}catch(e){}
+  }); });
 })();
