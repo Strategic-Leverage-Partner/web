@@ -241,3 +241,13 @@ f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whats
   hs.addEventListener('keydown',function(e){ if(e.key==='ArrowRight') go(i+1,true); if(e.key==='ArrowLeft') go(i-1,true); });
   raf=requestAnimationFrame(loop);
 })();
+/* 2026u: relieve 3D suave en tarjetas al mover el mouse */
+(function(){
+  if(window.matchMedia&&(matchMedia('(prefers-reduced-motion: reduce)').matches||!matchMedia('(hover:hover)').matches)) return;
+  document.querySelectorAll('.unit,.city,.gcard,.hs-card').forEach(function(c){
+    c.addEventListener('mousemove',function(e){ var r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+      c.style.setProperty('--mx',(x*100)+'%'); c.style.setProperty('--my',(y*100)+'%');
+      c.style.transform='perspective(900px) rotateX('+((.5-y)*5).toFixed(2)+'deg) rotateY('+((x-.5)*6).toFixed(2)+'deg) translateY(-3px)'; });
+    c.addEventListener('mouseleave',function(){ c.style.transform=''; });
+  });
+})();
