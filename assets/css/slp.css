@@ -868,3 +868,69 @@ html[data-theme="light"] .foot-legal{color:rgba(255,255,255,.62)}
 .gate-btn.open::before{content:""}
 .rec-ok .gate-sec .gate-form{opacity:.6}
 @media (max-width:900px){.gate-wrap{grid-template-columns:1fr}}
+
+/* ===== CAPA SOBRIA 2026l: sin triángulo dorado, menos ornamento, más aire ===== */
+:root{--gold:#7E978F;--gold-2:#D7E3DF;--accent:#015D4C}
+/* fondos limpios: sin ruido, rayados ni marcas de agua */
+.texture::before,.texture::after,.section.dark.texture::after,.section.dark.texture .wrap::before{display:none!important}
+.hero,.page-hero,section.dark,.cta-band.dark,.site-foot,.nl.dark,.side-card.dark,.mv-card.dark{background:#0A2620!important}
+.page-hero .ph-img{opacity:.18;filter:grayscale(1)}
+.hero-chart,.hero-lines,.ph-lines,.cta-lines,.foot-lines,.mv-lines,.hatch-corner,.hatch-band,.ph-iso,.hero-visual,.foot-wm{display:none!important}
+.brand-hero .wrap.grid{grid-template-columns:1fr;max-width:1180px}
+.brand-hero .hero-copy{max-width:860px}
+.film:not(:has(> .frame)){grid-template-columns:1fr;max-width:900px}
+/* rótulos: solo una línea fina, sin isotipo */
+.eyebrow{color:#7E978F;letter-spacing:.18em}
+.dark .eyebrow,.hero .eyebrow,.page-hero .eyebrow{color:#A9BEB7}
+.eyebrow::before{width:24px!important;height:1px!important;-webkit-mask:none!important;mask:none!important;background:currentColor!important}
+.eyebrow::after{display:none!important}
+/* viñetas y sellos: puntos discretos en lugar de triángulos */
+.assure li::before,.panel li::before,.svc ul li::before,.art ul:not(.src) li::before,.src li::before{-webkit-mask:none!important;mask:none!important;width:6px!important;height:6px!important;border-radius:50%!important;background:#7E978F!important}
+.pillar .k::before,.next li+li::after,.step::after,.g-here::before{display:none!important}
+.unit::before,.case::before,.news::before,.due::before,.doc::before,.svc::before,.ch::before{display:none!important}
+.faq-i summary::after{-webkit-mask:none!important;mask:none!important;content:"+"!important;background:none!important;color:#015D4C;font-size:22px;width:auto!important;height:auto!important;transform:translateY(-50%)!important}
+.faq-i[open] summary::after{content:"–"!important}
+/* botones: verde institucional y blanco, sin dorado */
+.btn{--bg:#015D4C;--fg:#FFFFFF;box-shadow:none}
+.btn:hover{--bg:#014537}
+:is(.hero,.page-hero,section.dark,.cta-band,.svc-banner,.side-card,.nl,.site-head,.lp-hero,.mv-card.dark) .btn:not(.ghost):not(.green){--bg:#FFFFFF;--fg:#06201B}
+:is(.hero,.page-hero,section.dark,.cta-band,.svc-banner,.side-card,.nl,.site-head,.lp-hero) .btn:not(.ghost):not(.green):hover{--bg:#E6EEEB}
+.btn.ghost{border-color:rgba(255,255,255,.28)}
+.site-head .head-cta .btn{--bg:#FFFFFF;--fg:#06201B}
+/* acentos tipográficos */
+.brand-hero .wm span,.lp-copy h1 em,.tg em{color:inherit!important;font-style:italic}
+.brand-hero h1 .wm{letter-spacing:.12em}
+.v-n,.lp-get .n,.next .n,.stat b,.stats b{color:#015D4C!important}
+.dark :is(.v-n,.next .n,.stat b,.stats b){color:#D7E3DF!important}
+.val::before,.lp-form,.gate-form{border-top-color:#015D4C!important}
+.val::before{background:#015D4C!important}
+.lp-pain li::before{background:#015D4C!important;color:#fff!important}
+.lp-get{background:#fff!important;border-color:rgba(1,93,76,.18)!important}
+.mv-card.gold-c{background:#F3F6F5!important;border-color:rgba(1,93,76,.18)!important}
+.mv-k,.mv-card.gold-c .mv-k{color:#D7E3DF}
+.mv-card.gold-c .mv-k{color:#015D4C}
+.leader .ini{background:#0A2620;border-color:rgba(255,255,255,.12)}
+.leader .ini b{color:#D7E3DF}
+.lead-note,.aviso-fin{border-color:rgba(1,93,76,.25)!important;background:#F3F6F5!important}
+.lead-note{border-left-color:#015D4C!important}
+.aviso-fin b{color:#015D4C}
+.lp-why div{border-left-color:rgba(255,255,255,.25)}
+.lp-why b{color:#fff}
+/* asesor: icono de chat neutro */
+.as-fab{background:#0A2620;border-color:rgba(255,255,255,.18)}
+.as-fab::before{display:none}
+.as-fab .as-ic{width:26px;height:26px;color:#fff;flex:none}
+.as-head .as-ic{width:24px;height:24px;color:#015D4C;flex:none}
+.as-l small{color:#A9BEB7}
+/* espaciado más generoso y bordes más finos */
+.section{padding-block:clamp(72px,9vw,128px)}
+.unit,.case,.news,.doc,.svc,.ch,.leader,.val,.gcard{box-shadow:none!important;border-color:#E2E9E6!important}
+.unit:hover,.val:hover,.gcard:hover{transform:none!important;border-color:#B9CCC5!important}
+.wa-float{box-shadow:0 10px 24px -14px rgba(0,0,0,.45)}
+.signal .v,.signal .a,.signal .r{filter:saturate(.7)}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark,.site-foot,.cta-band.dark){background:#F3F6F5!important}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark,.cta-band,.svc-banner,.side-card,.nl,.site-head,.lp-hero) .btn:not(.ghost):not(.green){--bg:#015D4C;--fg:#FFFFFF}
+html[data-theme="light"] .site-head .head-cta .btn{--bg:#015D4C;--fg:#FFFFFF}
+html[data-theme="light"] :is(.hero,.page-hero,section.dark) .eyebrow{color:#5E7A71}
+.mb-cta{background:#FFFFFF!important;color:#06201B!important}
+html[data-theme="light"] .mb-cta{background:#015D4C!important;color:#fff!important}
