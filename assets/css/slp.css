@@ -1174,3 +1174,57 @@ html[data-theme="light"] .glow-x{opacity:.5}
 html body .hs .btn.wa-cta:not(.ghost){--bg:var(--dorado-c)!important;--fg:#13201C!important;background:var(--dorado-c)!important;color:#13201C!important}
 html body :is(.page-hero,.lp-hero,.cta-band,.svc-banner) .btn.wa-cta:not(.ghost){background:var(--dorado-c)!important;color:#13201C!important}
 .glow-x{background:radial-gradient(circle,rgba(242,198,109,.30),rgba(1,93,76,.25) 45%,transparent 70%)!important}
+/* ===== AJUSTES FINALES 2026y ===== */
+/* 1. Portada: isotipo visible, tablero desplazado */
+.hero-vis{width:min(560px,100%)}
+.iso3d-x{width:64%!important;margin:0!important;justify-self:start!important;align-self:start!important}
+.hero-vis .hero-dash{width:min(360px,74%)!important;margin-top:190px!important;justify-self:end!important}
+.hero-dash .hd-kpis{grid-template-columns:repeat(3,1fr)}
+.hero-dash .hd-kpis b{font-size:24px}
+@media (max-width:980px){
+  .hero-vis{display:flex;flex-direction:column;align-items:center;gap:0;width:100%}
+  .iso3d-x{width:min(230px,58%)!important;align-self:center!important;margin:6px auto -40px!important}
+  .glow-x{display:none}
+  .hero-vis .hero-dash{width:100%!important;margin-top:0!important}
+}
+/* 2. Banners: un solo tono de marca para todos */
+html body .hero.brand-hero:has([data-hs][data-tone]){background:var(--wm-w) no-repeat right -120px bottom -90px/620px auto,repeating-linear-gradient(0deg,rgba(255,255,255,.028) 0 1px,transparent 1px 56px),repeating-linear-gradient(90deg,rgba(255,255,255,.02) 0 1px,transparent 1px 56px),radial-gradient(1100px 520px at 88% 0%,rgba(63,209,166,.16),transparent 60%),linear-gradient(120deg,#013C31 0%,#015D4C 60%,#0E6B58 110%)!important}
+/* 3. Tarjetas dentro de secciones oscuras: cristal legible */
+.dark :is(.news,.case,.ins,.doc,.svc){background:rgba(255,255,255,.07)!important;border:1px solid rgba(255,255,255,.16)!important;box-shadow:0 20px 40px -28px rgba(0,0,0,.6)!important;backdrop-filter:blur(6px)}
+.dark :is(.news,.case,.ins) h3{color:#fff!important}
+.dark :is(.news,.case,.ins) p{color:rgba(255,255,255,.80)!important}
+.dark :is(.news,.case,.ins) .k{color:var(--dorado-c)!important}
+.dark :is(.news,.case,.ins) .meta{color:rgba(255,255,255,.65)!important}
+.dark :is(.news,.case,.ins):hover{background:rgba(255,255,255,.12)!important;border-color:rgba(242,198,109,.45)!important}
+.dark .news::after{background:var(--dorado-c)!important}
+/* 4. Tendencias: tipografía equilibrada, foco accesible, selección de marca */
+h1,h2,h3,.hs-h{text-wrap:balance}
+p,.lead{text-wrap:pretty}
+::selection{background:rgba(242,198,109,.45);color:#0B1311}
+:focus-visible{outline:2px solid var(--dorado-c);outline-offset:3px;border-radius:6px}
+html{scroll-behavior:smooth}
+/* barra de progreso de lectura (CSS con línea de tiempo de scroll) */
+.read-prog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:80;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#015D4C,#3FD1A6,#F2C66D);pointer-events:none}
+@supports (animation-timeline: scroll()){.read-prog{animation:rp linear both;animation-timeline:scroll(root)}@keyframes rp{to{transform:scaleX(1)}}}
+/* encabezado que se compacta al hacer scroll */
+.site-head{transition:background .3s ease,box-shadow .3s ease,padding .3s ease}
+.site-head.scrolled{box-shadow:0 10px 30px -18px rgba(0,0,0,.6)}
+.site-head.scrolled .bl-txt{opacity:.85}
+/* enlaces con subrayado animado */
+.link,.hs-more,.c-go{background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s ease}
+.link:hover,.hs-more:hover,.c-go:hover{background-size:100% 1px}
+/* borde luminoso en paneles de cristal */
+.hero-dash,.hs-card{border:1px solid transparent!important;background:linear-gradient(160deg,rgba(255,255,255,.16),rgba(255,255,255,.05)) padding-box,linear-gradient(140deg,rgba(242,198,109,.55),rgba(255,255,255,.10) 40%,rgba(63,209,166,.45)) border-box!important}
+html[data-theme="light"] .hero-dash,html[data-theme="light"] .hs-card{background:#fff padding-box,linear-gradient(140deg,rgba(212,151,36,.5),#E1EAE6 40%,rgba(1,93,76,.4)) border-box!important}
+/* imágenes que aparecen con suavidad */
+img[loading="lazy"]{animation:imgIn .6s ease both}
+@keyframes imgIn{from{opacity:0}to{opacity:1}}
+/* transiciones suaves entre páginas (navegadores compatibles) */
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.35s}
+@media (prefers-reduced-motion:reduce){.read-prog{display:none}img[loading="lazy"]{animation:none}@view-transition{navigation:none}}
+@media (min-width:981px){.hero-vis{width:min(600px,100%)}.iso3d-x{width:58%!important}.hero-vis .hero-dash{width:min(400px,72%)!important;margin-top:250px!important}}
+.hd-k{white-space:nowrap}.hd-top{flex-wrap:nowrap}
+.hd-tag{white-space:nowrap;font-size:10px;padding:4px 8px}
+.lp-form .eyebrow,.gate-form .eyebrow,.form .eyebrow{color:var(--verde)!important}
+.lp-form .form-sec,.form .form-sec{color:#5C6B66!important}.lp-form .form-sec a,.form .form-sec a{color:var(--verde)!important}

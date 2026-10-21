@@ -251,3 +251,11 @@ f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whats
     c.addEventListener('mouseleave',function(){ c.style.transform=''; });
   });
 })();
+/* 2026y: barra de lectura y encabezado compacto */
+(function(){
+  var pr=document.createElement('div'); pr.className='read-prog'; pr.setAttribute('aria-hidden','true'); document.body.appendChild(pr);
+  var h=document.querySelector('.site-head'); var sup=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','scroll()');
+  function on(){ var y=window.scrollY; if(h) h.classList.toggle('scrolled',y>40);
+    if(!sup){ var m=document.documentElement.scrollHeight-innerHeight; pr.style.transform='scaleX('+(m>0?y/m:0)+')'; } }
+  window.addEventListener('scroll',on,{passive:true}); on();
+})();
