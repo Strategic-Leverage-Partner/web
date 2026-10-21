@@ -1228,3 +1228,31 @@ img[loading="lazy"]{animation:imgIn .6s ease both}
 .hd-tag{white-space:nowrap;font-size:10px;padding:4px 8px}
 .lp-form .eyebrow,.gate-form .eyebrow,.form .eyebrow{color:var(--verde)!important}
 .lp-form .form-sec,.form .form-sec{color:#5C6B66!important}.lp-form .form-sec a,.form .form-sec a{color:var(--verde)!important}
+/* ===== Portada centrada con isotipo protagonista 2026zb ===== */
+.hs-slide .wrap.grid.hero-center{grid-template-columns:1fr!important;justify-items:center;text-align:center;max-width:980px}
+.hero-center .hero-copy{display:flex;flex-direction:column;align-items:center;max-width:860px}
+.hero-center .eyebrow{justify-content:center}
+.hero-center h1 .wm{display:block}
+.hero-center h1 .wm::after,.hero-center h1 .wm + *::before{margin-left:auto;margin-right:auto}
+.hero-center .lead{margin-left:auto;margin-right:auto;max-width:60ch}
+.hero-center .acts{justify-content:center}
+.hero-center .assure{justify-content:center}
+.hc-iso{position:relative;display:grid;place-items:center;width:min(300px,62vw);margin:6px auto 18px}
+.hc-iso>*{grid-area:1/1}
+.hc-iso .iso3d-x{width:100%!important;margin:0!important;justify-self:center!important;align-self:center!important;filter:drop-shadow(0 34px 44px rgba(0,0,0,.5))}
+.hc-iso .glow-x{display:block!important;width:120%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(242,198,109,.35),rgba(63,209,166,.18) 45%,transparent 70%)!important;filter:blur(30px)}
+.hs-slide[data-tone="tablero"] .hero-dash{justify-self:end;width:min(440px,100%)!important;margin:0!important}
+@media (max-width:980px){.hs-slide[data-tone="tablero"] .hero-dash{justify-self:stretch;width:100%!important;margin-top:8px!important}.hc-iso{width:min(210px,56vw);margin-bottom:10px}}
+.hero-center .wm::after{left:50%!important;transform:translateX(-50%)}
+@media (min-width:981px){
+ .hc-iso{width:min(230px,30vh)!important;margin:0 auto 6px!important}
+ .hero-center h1{margin:12px 0 14px!important;gap:12px!important}
+ .hero-center .tg{font-size:clamp(30px,3.2vw,46px)!important}
+ .hero-center .lead{font-size:18px}
+ .hero-center .acts{margin-top:20px!important}
+ .brand-hero:has(.hero-center){padding-top:40px!important}
+}
+.hc-iso{display:block!important;position:relative}
+.hc-iso .glow-x{position:absolute!important;inset:-12%!important;width:auto!important;aspect-ratio:auto!important}
+.hc-iso .iso3d-x{position:relative;display:block}
+@media (min-width:981px){.brand-hero:has(.hero-center){padding-top:64px!important}.hc-iso{width:min(210px,26vh)!important;margin:0 auto 14px!important}}
