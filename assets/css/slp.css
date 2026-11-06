@@ -1325,3 +1325,26 @@ html:not([data-theme="light"]) :is(.hd-kpis small,.hd-chart small,.hd-leg,.hd-ta
 .q-chip:hover{transform:translateY(-2px);border-color:#D49724;box-shadow:0 14px 28px -16px rgba(1,60,49,.6)}
 @media (max-width:900px){.pers-grid{grid-template-columns:1fr}.svc-ask{grid-column:auto}.q-chip{width:100%;justify-content:flex-start}}
 .pers-sec .pers-gain{background:linear-gradient(155deg,#015D4C 0%,#013C31 55%,#0B1311 100%)!important;box-shadow:0 30px 60px -36px rgba(1,60,49,.7);opacity:1!important;filter:none!important}
+/* 2026zk: método, modalidades, sectores y encaje */
+.m-steps{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:none}
+.m-step{position:relative;background:#fff;border:1px solid #DCE7E3;border-radius:16px;padding:22px 20px 24px}
+.m-step::after{content:"";position:absolute;top:38px;right:-14px;width:12px;height:2px;background:#D49724}
+.m-step:last-child::after{display:none}
+.m-n{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#013C31;color:#F2C66D;font-weight:800;font-family:var(--serif)}
+.m-step h3{margin:14px 0 6px;font-size:19px;color:#013C31}.m-step p{margin:0;font-size:15px;color:#3F4F4A}
+.modos-sec{background:#F4F7F6}
+.modos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+.modo{background:#fff;border-radius:16px;padding:24px;border-top:3px solid #D49724;box-shadow:0 18px 40px -32px rgba(1,60,49,.5)}
+.modo h3{font-size:19px;color:#013C31;margin:0 0 8px}.modo p{margin:0;font-size:15px;color:#3F4F4A}
+.sect-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.sect-tags span{padding:10px 16px;border-radius:999px;background:#fff;border:1px solid #CFDDD8;color:#013C31;font-weight:600;font-size:14px}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.fit>div{border-radius:16px;padding:24px 26px}
+.fit>div:first-child{background:#013C31;color:#fff}.fit>div:first-child h3{color:#F2C66D}
+.fit>div:last-child{background:#FBF6EA;border:1px solid #EBD9AE;color:#3A2C0A}
+.fit h3{font-size:20px;margin:0 0 10px}.fit ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:15px}
+.fit>div:first-child li{color:#DCE7E3}
+@media (max-width:1000px){.m-steps{grid-template-columns:1fr 1fr}.m-step::after{display:none}.modos{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.m-steps,.modos,.fit{grid-template-columns:1fr}}
+@media (min-width:1101px){.leaders{grid-template-columns:repeat(4,1fr)!important}}
+@media (min-width:641px) and (max-width:1100px){.leaders{grid-template-columns:repeat(2,1fr)!important}}
