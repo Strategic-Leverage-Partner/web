@@ -1297,3 +1297,31 @@ html:not([data-theme="light"]) :is(.hd-kpis small,.hd-chart small,.hd-leg,.hd-ta
 .hs-slide.on .hs-h em{display:inline-block;background:linear-gradient(90deg,transparent,rgba(242,198,109,.0));}
 .hs-bar span{transform-origin:left}
 @media (prefers-reduced-motion:reduce){.hs-slide.on *{animation:none!important}}
+/* 2026zi: persuasión por servicio — señales, beneficios, preguntas rápidas */
+.pers-sec{background:#F4F7F6}
+.pers-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:stretch}
+.pers-pain,.pers-gain{border-radius:20px;padding:clamp(24px,3vw,40px)}
+.pers-pain{background:#fff;border:1px solid #DCE7E3}
+.pers-pain h2{font-size:clamp(24px,2.6vw,34px);margin:12px 0 18px;color:#013C31;text-wrap:balance}
+.pain-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pain-list li{position:relative;padding:14px 16px 14px 48px;border-radius:12px;background:#F4F7F6;color:#1F2A27;font-size:16px;line-height:1.45}
+.pain-list li::before{content:"";position:absolute;left:16px;top:15px;width:20px;height:20px;border-radius:6px;border:2px solid #015D4C;background:#fff}
+.pain-list li::after{content:"✓";position:absolute;left:20px;top:12px;font-weight:800;color:#D49724;font-size:17px}
+.pain-cost{margin-top:18px;padding:14px 16px;border-left:3px solid #D49724;background:#FBF6EA;border-radius:0 12px 12px 0;color:#3A2C0A;font-size:15px}
+.pers-gain{background:linear-gradient(160deg,#013C31,#0B1311);color:#fff;display:flex;flex-direction:column;gap:14px}
+.pers-gain .eyebrow{color:#F2C66D}
+.g-it{padding:14px 16px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+.g-it b{display:block;font-family:var(--serif);font-size:20px;color:#F2C66D;margin-bottom:4px}
+.g-it p{margin:0;color:#DCE7E3;font-size:15px}
+.pers-gain .btn{margin-top:auto;justify-content:center}
+.pers-gain .note-s{color:#CBD9D4;font-size:13px;text-align:center;margin:0}
+.svc-ask{grid-column:2;justify-self:start;margin-top:10px;font-weight:700;font-size:14px;color:#015D4C;text-decoration:none;border-bottom:2px solid #F2C66D;padding-bottom:2px}
+.svc-ask:hover{color:#013C31;border-color:#D49724}
+.q-sec .sec-head{text-align:center;max-width:760px;margin-inline:auto}
+.q-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
+.q-chip{display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 12px;border-radius:999px;background:#fff;border:1px solid #CFDDD8;color:#013C31;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 8px 20px -14px rgba(1,60,49,.5);transition:transform .2s,box-shadow .2s,border-color .2s}
+.q-chip .wa-ic{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:#25D366;color:#fff;flex:none}
+.q-chip .wa-ic svg{width:16px;height:16px;fill:#fff}
+.q-chip:hover{transform:translateY(-2px);border-color:#D49724;box-shadow:0 14px 28px -16px rgba(1,60,49,.6)}
+@media (max-width:900px){.pers-grid{grid-template-columns:1fr}.svc-ask{grid-column:auto}.q-chip{width:100%;justify-content:flex-start}}
+.pers-sec .pers-gain{background:linear-gradient(155deg,#015D4C 0%,#013C31 55%,#0B1311 100%)!important;box-shadow:0 30px 60px -36px rgba(1,60,49,.7);opacity:1!important;filter:none!important}
