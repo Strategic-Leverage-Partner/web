@@ -1256,3 +1256,26 @@ img[loading="lazy"]{animation:imgIn .6s ease both}
 .hc-iso .glow-x{position:absolute!important;inset:-12%!important;width:auto!important;aspect-ratio:auto!important}
 .hc-iso .iso3d-x{position:relative;display:block}
 @media (min-width:981px){.brand-hero:has(.hero-center){padding-top:64px!important}.hc-iso{width:min(210px,26vh)!important;margin:0 auto 14px!important}}
+/* 2026ze: transición de banners más ágil y sin superposición de textos */
+.hs-slide{transition:opacity .22s ease-in,transform .22s ease-in,visibility 0s linear .22s!important;transform:translateY(6px)}
+.hs-slide.on{transition:opacity .38s cubic-bezier(.2,.7,.2,1) .12s,transform .45s cubic-bezier(.2,.7,.2,1) .12s,visibility 0s!important;transform:none}
+.hs-bar span{transition:none!important}
+@media (prefers-reduced-motion:reduce){.hs-slide,.hs-slide.on{transition:none!important}}
+/* 2026ze: control de color — contraste AA en todo el sitio, tarjetas de banner en vidrio oscuro (sin velo menta) */
+:root{--on-dark-muted:#CBD9D4;--gold:#5E716B}
+.eyebrow{color:#4A5C56}
+.dark .eyebrow,.hero .eyebrow,.page-hero .eyebrow{color:#F2C66D}
+.c-prov{color:#2C7596}
+html:not([data-theme="light"]) .hero-dash,html:not([data-theme="light"]) .hs-card{background:linear-gradient(160deg,rgba(1,46,38,.90),rgba(9,22,19,.84)) padding-box,linear-gradient(140deg,rgba(242,198,109,.65),rgba(255,255,255,.10) 42%,rgba(1,93,76,.70)) border-box!important;box-shadow:0 30px 70px -30px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.06)!important}
+html:not([data-theme="light"]) .hs-card li{background:rgba(255,255,255,.06)!important;color:#fff}
+html:not([data-theme="light"]) .hs-card .hs-bigs,html:not([data-theme="light"]) .hs-card .d small{color:#D7E5E0!important}
+html:not([data-theme="light"]) .hs-card .hs-k{color:#F2C66D!important}
+html:not([data-theme="light"]) :is(.hd-kpis div,.hd-chart,.hd-list li){background:rgba(255,255,255,.06)!important}
+html:not([data-theme="light"]) :is(.hd-kpis small,.hd-chart small,.hd-leg,.hd-tag){color:#D7E5E0!important}
+.hero .lead,.page-hero .lead,.hero-copy .lead{color:#DCE7E3}
+.site-foot,.site-foot a:not(.btn){color:#CBD9D4}
+.dark .pillar .k,section.dark .k,.section.dark .pillar .k{color:#F2C66D!important}
+.as-l small{color:#DCE7E3!important}
+.svc .link,.unit .link{color:#1F6F8F}
+.sem-r,.tag-red{color:#FFC9C0}
+.site-foot h4,.site-foot .f-h{color:#EEF4F2}

@@ -220,7 +220,7 @@ f.addEventListener('click',function(){try{window.gtag&&gtag('event','click_whats
 (function(){
   var hs=document.querySelector('[data-hs]'); if(!hs) return;
   var S=[].slice.call(hs.querySelectorAll('.hs-slide')), dots=hs.querySelector('.hs-dots'), bar=hs.querySelector('.hs-bar span'), pb=hs.querySelector('.hs-pause');
-  var i=0, T=8000, t0=0, raf=0, paused=false, hover=false;
+  var i=0, T=5500, t0=0, raf=0, paused=false, hover=false;
   var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches; if(RM) paused=true;
   S.forEach(function(s,k){ var b=document.createElement('button'); b.type='button'; b.setAttribute('role','tab'); b.setAttribute('aria-label','Ver banner '+(k+1)); b.onclick=function(){go(k,true)}; dots.appendChild(b); });
   var D=[].slice.call(dots.children);
